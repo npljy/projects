@@ -1,0 +1,487 @@
+/* 头部 */
+*{
+    margin: 0;
+    padding: 0;
+}
+/* .mainPage{
+    overflow: hidden;
+} */
+.header{
+    position: relative;
+    width: 100%;
+    height: 55px;
+    background-color: #2c323b;
+    z-index: 999;
+}
+
+/* 内容 */
+.content{
+    position: relative;
+    width: 100%; 
+    height: 915px;
+    overflow: hidden;
+    background-color: #000;
+    background-size: cover;
+}
+.songMain{
+    position: absolute;
+    left: 25%;
+    width: 840px;
+    margin-top: 5%;
+    z-index: 100;
+}
+
+.album{
+    width: 262px;
+    float: left;
+}
+
+.albumDown{
+    margin-top: 40px;
+    padding-left: 16px;
+}
+.albumDown a {
+    display: block;
+    width: 230px;
+    height: 50px;
+    background: url(../imgs/downlaod_bg.png) no-repeat;
+}
+.albumDown a:hover{
+    background-position: -231px 0;
+}
+.songCont{
+    width: 460px;
+    min-height: 580px;
+    margin-left: 116px;
+    float: left;
+}
+.songName span{
+    float: left;
+    max-width: 460px;
+    font-size: 24px;
+    color: #fff;
+}
+.songInfo{
+    margin-top: 10px;
+    color: #fff;
+
+}
+
+.songInfo span{
+    opacity: .6;
+    filter: alpha(opacity=60 );
+    color: #fff;
+}
+.albumName,.singerName{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 225px;
+    height: 24px;
+    float: left;
+    text-overflow: ellipsis;
+}
+.songLrc{
+    width: 460px;
+    height: 100%;
+    margin-top: 18px;
+}
+.songContainer{
+    position: relative;
+    overflow: hidden;
+    width: 460px;
+    height: 490px;
+}
+.songPanel{
+    position: absolute;
+    width: 460px;
+    color: #fff;
+    opacity: .6;
+    filter: alpha(opacity=60 );    
+}
+.songPanel p{
+    width: 420px;
+    height: 34px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.songBar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+}
+.barContainer{
+    position: relative;
+    height: 100%;
+    width: 8px;
+}
+.dragBar{
+    position: absolute;
+    width: 8px;
+    height: 90px;
+    background: #fff;
+    opacity: .2;
+    filter: alpha(opacity=20); 
+    border-radius: 8px;  
+}
+.blurMask{
+    position: absolute;
+    width: 100%;
+    height: 915px;
+    background-color: rgba(0,0,0,.5);
+    z-index: 10;
+    opacity: .6;
+    filter: alpha(opacity=60);
+}
+.blurbg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    -webkit-filter: blur(90px);
+    -moz-filter:blur(90px);
+    -ms-filter: blur(90px);
+    filter: blur(90px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 915px;
+    width: 100%;
+}
+/* 脚步 */
+.footer{
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    min-width: 940px;
+    height: 80px;  
+}
+.playerMask{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    opacity: .3;
+    filter:alpha(opacity=30);
+    box-shadow: 0 -10px 20px #403f3f;
+}
+.plyar{
+    width: 960px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+}
+.plyar div{
+    height: 80px;
+    display: inline-block;
+    position: absolute;
+}
+.playerBtn{
+    width: 160px;
+}
+#prev,#next{
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    margin-top: 22px;
+}
+#prev{
+    background: url(../imgs/btn.png) no-repeat;
+    background-position:  0 -143px;
+}
+#prev:hover{
+    background-position:  -36px -143px;
+}
+#next{
+    background: url(../imgs/btn.png) no-repeat;
+    background-position:  -144px -143px;
+    right: 0;
+}
+#next:hover{
+    background-position:  -180px -143px;
+}
+#toggle{
+    left: 50px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    background: url(../imgs/btn.png) no-repeat;
+    background-position:  0 0;
+}
+#toggle:hover{
+    background-position:  -60px 0;
+}
+#toggle.play{
+    background-position:  0 -60px !important;
+}
+#toggle.play:hover{
+    background-position:  -60px -60px !important;
+}
+.playerImg{
+    margin-left: 190px;
+    margin-top: 10px;
+    width: 60px;
+}
+.playerProgress{
+    margin-left: 270px;
+    width: 370px;
+}
+.playerProgress div{
+    position: relative;
+}
+.plyar .barInfo{
+    width: 370px;
+    height: 24px;
+    margin-top: 18px;
+}
+.plyar .bar{
+    width: 370px;
+    height: 12px;
+    margin-top: 10px;
+}
+.playerControl{
+    margin-left: 690px;
+    width: 300px;
+}
+.playerControl .volume {
+    position: relative;
+    width: 16px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.volume  span{
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    bottom: 0;
+    background: url(../imgs/btn.png) no-repeat;
+    background-position: -64px -195px;
+   
+}
+.mode span{
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    bottom: 0;
+    background: url(../imgs/btn.png) no-repeat;
+    background-position: -64px -179px;  
+}
+
+.download span{
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    bottom: 0;
+    background: url(../imgs/btn.png) no-repeat;
+    background-position: -240px -32px;
+}
+.share span{
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 16px;
+    bottom: 0;
+    background: url(../imgs/btn.png) no-repeat;
+    background-position: -240px 0;
+}
+.playerControl .volumePanel{
+    width: 30px;
+    height: 116px;
+    z-index: 30;
+    position: absolute;
+    bottom: 79px;
+    left: -7px;
+    background: #555;
+    display: none;
+}
+.volumePanel .volumeBar{
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    border-radius: 5px;
+    width: 6px;
+    height: 100px;
+    background: skyblue;
+}
+.volumePanel .currentVol{
+    width: 6px;
+    height: 50%;
+    left: 12px;
+    top: 8px;
+    /* border-radius: 6px; */
+    background: #666;
+}
+.volumePanel .volumeLong{
+    position: absolute;
+    width: 30px;
+    height: 100px;
+    top: 8px;
+}
+.volumePanel .volumeDot{
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    top: 50%;
+    z-index: 20;
+    cursor: pointer;
+}
+.volumePanel .volumeDot span{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    left: 10px;
+    z-index: 21;
+    background: url(../imgs/btn.png) no-repeat -242px -130px;
+}
+.volumePanel .volumeClick{
+    position: absolute;
+    width: 30px;
+    height: 100px;
+    top: 8px;
+    z-index: 10;
+    cursor: pointer;
+}
+.playerControl .mode {
+    position: relative;
+    width: 16px;
+    height: 50px;
+    margin-left: 30px;
+    cursor: pointer; 
+}
+.playerControl div.modePanel {
+    width: 130px;
+    height: 116px;
+    z-index: 30;
+    position: absolute;
+    bottom: 76px;
+    left: 0;
+    background: red;
+    display: none;
+}
+.playerControl .download {
+    position: relative;
+    width: 16px;
+    height: 50px;
+    margin-left: 30px;
+    cursor: pointer; 
+}
+.playerControl .share {
+    position: relative;
+    width: 16px;
+    height: 50px;
+    margin-left: 30px;
+    cursor: pointer; 
+}
+.plyar div.playerList{
+    position: absolute;
+    width: 480px;
+    height: 410px;
+    right: 24px;
+    bottom: 80px;
+    display: none;
+    background: red;
+}
+.playerProgress .infoName{
+    width: 250px;
+    height: 24px;
+}
+.barName{
+    color: #c4c3c3;
+}
+.playerProgress .infoTime{
+    height: 24px;
+}
+.playerProgress .duration{
+    height: 24px;
+    color: #fff;
+    opacity: .4;
+    filter:alpha(opacity=40);
+}
+.playerProgress .barLong{
+    height: 3px;
+    width: 370px;
+    background: #666;
+    top: 4px;
+}
+
+.playerProgress .barCurTime{
+    height: 3px;
+    /* width: 200px; */
+    background: blue;
+    top: 4px;
+}
+.playerControl .listBtn{
+    position: relative;
+    width: 60px;
+    height: 23px;
+    margin-left: 30px;
+    top: 4px;
+    cursor: pointer;
+    color:#fff;
+    background: url(../imgs/btn.png) no-repeat 0 -120px;
+}
+.playerControl .listBtn :hover{
+    color: #19b5f0;
+    background-position:  -61px -120px;
+}
+.playerControl .listBtn span{
+    position: absolute;
+    display: inline-block;
+    left: 32px; 
+}
+
+#bar div{
+    position: absolute;
+}
+#bar .barControl{
+    height: 10px;
+    width: 370px;
+    background: #000;
+    top: 4px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+}
+#bar .barDot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: url(../imgs/btn.png) no-repeat;
+    background-position: -217px -181px;
+    z-index: 20;
+    border-radius: 10px;
+    cursor: pointer;
+    left: 0;
+    /* margin-left: 52%; */
+}
+
+#bar .barDot:hover{
+    background-position: -238px -181px;
+}
+
+.music{
+    display: none;
+}
+/* 清除浮动 */
+.clear{
+    zoom:1;
+}
+.songMain::after,.songName::after,.songInfo::after{
+    content: ".";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
