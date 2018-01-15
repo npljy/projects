@@ -97,7 +97,8 @@
     width: 460px;
     color: #fff;
     opacity: .6;
-    filter: alpha(opacity=60 );    
+    filter: alpha(opacity=60 );  
+    transition: 1s;  
 }
 .songPanel p{
     width: 420px;
