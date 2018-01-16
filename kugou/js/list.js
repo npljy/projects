@@ -10,6 +10,8 @@ window.onload=function(){
 	let zhuan = document.getElementById('zhuan');
 	let btnPre = document.getElementById('prev');
     let btnNext = document.getElementById('next');
+
+    let mode=document.querySelector('.mode span');
 	let num=data.length;
 
 	
@@ -245,5 +247,19 @@ window.onload=function(){
 		audio.currentTime = 0;
 	}
 
-	
+
+	// 列表循环
+	var indexs = 0;
+	mode.onclick = function(){
+		indexs++;
+		if(indexs == 1){
+			mode.style.background = "url(imgs/btn.png) no-repeat 0px -179px";
+		}else if(indexs == 2){
+			mode.style.background = "url(imgs/btn.png) no-repeat -128px -179px";
+		}else if(indexs >= 3){
+			mode.style.background = "url(imgs/btn.png) no-repeat -64px -179px";
+			var indexs = 0;
+			//indexs++;
+		}
+	}
 }
