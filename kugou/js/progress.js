@@ -198,74 +198,13 @@ window.onload = function () {
 
     //上移、下移、删除、全部删除
     function keys() {
-        //处理上移
-        var upBtn = document.querySelectorAll('.up');
-        for (var i = 0; i < upBtn.length; i++) {
-            upBtn[i].onclick = function () {
-                var thisLi = this.parentNode.parentNode;
-                var prevLi = thisLi.previousElementSibling;
-                if (!prevLi) {
-                    //如果没有上一个兄弟节点了  直接跳出函数
-                    return;
-                }
-                //对换id
-                var a = thisLi.children[0].children[0].innerHTML;
-                var b = prevLi.children[0].children[0].innerHTML;
-                thisLi.children[0].children[0].innerHTML = b;
-                prevLi.children[0].children[0].innerHTML = a;
-                boxList.insertBefore(thisLi, prevLi);
-                thisLi.dataset.idx--;
-                prevLi.dataset.idx++;
-            }
-        }
-        //下移
-        var downBtn = document.querySelectorAll('.down');
-        for (var i = 0; i < downBtn.length; i++) {
-            downBtn[i].onclick = function () {
-                var thisLi = this.parentNode.parentNode;
-                var nextLi = thisLi.nextElementSibling;
-                if (!nextLi) {
-                    return;
-                }
-                //对换id
-                var a = thisLi.children[0].children[0].innerHTML;
-                var b = nextLi.children[0].children[0].innerHTML;
-                thisLi.children[0].children[0].innerHTML = b;
-                nextLi.children[0].children[0].innerHTML = a;
-                boxList.insertBefore(thisLi, nextLi.nextElementSibling);
-                thisLi.dataset.idx++;
-                nextLi.nextElementSibling--;
-            }
-        }
-        //删除
-        let delBtn = boxList.querySelectorAll('.delBtn');
-        for (var i = 0; i < delBtn.length; i++) {
-            delBtn[i].onclick = function () {
-                // data.splice(i,1);
-                this.parentNode.parentNode.remove();
-                num--;
-                listCount.innerHTML = num;
-                //重置id
-                let lis = document.querySelectorAll('li');
-                let n = 0;
-                for (var i = 0; i < lis.length; i++) {
-                    lis[i].children[0].children[0].innerHTML = ++n;
-                }
-                data[i].id = ++n;
-                renderList();
-            }
-        }
         //批量删除
         let delAll = document.querySelector('.delAll');
         delAll.onclick = () => {
             if (!confirm("确定要全部删除吗？")) {
                 return;
             }
-            let lis = document.querySelectorAll('li');
-            for (var i = 0; i < data.length; i++) {
-                boxList.removeChild(lis[i]);
-                data[i].inlist = 0;
-            }
+            boxList.innerHTML = "";
             listCount.innerHTML = 0;
             clearAll();
         }
