@@ -18,7 +18,7 @@
 .content{
     position: relative;
     width: 100%; 
-    height: 935px;
+    height: 915px;
     overflow: hidden;
     background-color: #000;
     background-size: cover;
@@ -146,7 +146,7 @@
 .blurMask{
     position: absolute;
     width: 100%;
-    height: 935px;
+    height: 915px;
     background-color: rgba(0,0,0,.5);
     z-index: 10;
     opacity: .6;
@@ -173,13 +173,13 @@
     z-index: 999;
     width: 100%;
     min-width: 940px;
-    height: 100px;  
+    height: 80px;  
 }
 .playerMask{
     position: absolute;
     left: 0;
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: #000;
     opacity: .3;
     filter:alpha(opacity=30);
@@ -187,12 +187,12 @@
 }
 .plyar{
     width: 960px;
-    height: 100px;
+    height: 80px;
     margin: 0 auto;
     position: relative;
 }
 .plyar div{
-    height: 100px;
+    height: 80px;
     display: inline-block;
     position: absolute;
 }
