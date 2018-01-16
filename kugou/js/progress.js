@@ -1,4 +1,5 @@
 window.onload = function () {
+    var content = document.getElementById("content");
     var myaudio = document.getElementById("myaudio");
     // 播放按钮
     var toggle = document.getElementById("toggle");
@@ -55,6 +56,10 @@ window.onload = function () {
     let num = data.length;
     // --xc ↑--
     myaudio.volume = 0.5;//声音默认是 50%
+    set(content);
+    window.onresize = function(){
+        set(content);
+    }
     renderList();
     lis = Array.from(boxList.querySelectorAll("li"));
     info(nowSong);
