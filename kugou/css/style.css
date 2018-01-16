@@ -192,7 +192,7 @@
     position: relative;
 }
 .plyar div{
-    height: 80px;
+    height: 100px;
     display: inline-block;
     position: absolute;
 }
@@ -450,7 +450,7 @@
     width: 400px;
     height: 400px;
     right: 24px;
-    bottom: 80px;
+    bottom: 100px;
     /* display: none; */
     background:#2f343b;
     padding: 15px;
@@ -618,7 +618,7 @@ ul,li{
     overflow: hidden;
     position: absolute;
     right: 20px;
-    bottom:80px;
+    bottom:100px;
     z-index: 101;
     width: 480px;
     height: 410px;
