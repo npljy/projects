@@ -21,17 +21,12 @@ window.onload = function(){
     var albumName = document.querySelector(".albumName");
     var singerName = document.querySelector(".singerName");
     var barName =  document.querySelector(".barName");
-    var lists = document.querySelector(".playerList ul");
-    var albumImg = document.querySelector(".albumImg img");
     var x = myaudio.duration;
-    var listSong = null;
     var songPs = null;
     var add = 60;//歌词调整，加快减少时间，默认60秒
     var scale = 0;
     var volscale = 0.5;
     var onoff = false;
-    var listStr = "";
-    var curSong = 3;// 记录当前播放的歌曲，点击上一首下一首的时候使用
 
     myaudio.volume = 0.5;//声音默认是 50%
     dura.lastElementChild.innerText = totime(x);
@@ -45,16 +40,10 @@ window.onload = function(){
     // var albumName = document.querySelector(".albumName");
     // var singerName = document.querySelector(".singerName");
 
-    data.forEach((e,i)=>{
-        listStr += '<li><span class="song" data-idx = "'+e.id+'">'+e.songName+'</span><span>↑</span><span>↓</span><span>删</span><span>'+e.songTime+'</span></li>';
-    });
-    lists.innerHTML = listStr;
-    listSong = Array.from(document.querySelectorAll(".song"));
 
     info();
     //  方法：写入歌曲信息
     function info(id=3){
-        albumImg.src = data[id]["songPicture"];
         songName.innerHTML = "<span>"+data[id]["songName"]+"</span>";
         albumName.innerHTML = "<span>专辑：</span>"+ (data[id]["albumName"] ? data[id]["albumName"] : data[id]["songName"] ) ;
         singerName.innerHTML = "<span>歌手：</span>"+ data[id]["singer"] ;
@@ -65,19 +54,6 @@ window.onload = function(){
         }
         songPanel.innerHTML = songStr;
     }
-
-    // 点击列表播放
-    listSong.forEach(e => {
-        e.ondblclick = function(){
-            curSong = e.dataset.idx;//记录当前播放的歌曲， 点击上一首下一首的时候使用
-            info(e.dataset.idx);
-            myaudio.play();
-            myaudio.currentTime = 0;
-            onoff = true;
-            toggle.classList.add("play");
-        }
-    });
-
 
 // 歌词自定义滚动条
 // barContainer  dragBar 

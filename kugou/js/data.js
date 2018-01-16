@@ -4,8 +4,8 @@ var data = [
         "songName":"红色高跟鞋" ,
         "singer": "蔡健雅",
         "songTime":"03:26",
-        "songUrl":"./song/蔡健雅 - 红色高跟鞋.mp3",
-        "songPicture":"./imgs/1.jpg",
+        "songUrl":"song/hong.mp3",
+        "songPicture":"../imgs/1.jpg",
         "Lyric":{
 			"00:00":"红色高跟鞋 - 蔡健雅",
 			"00:05":"",
@@ -53,8 +53,8 @@ var data = [
         "songName":"红玫瑰" ,
         "singer": "陈奕迅",
         "songTime":"04:02" ,
-        "songUrl":"./song/陈奕迅 - 红玫瑰.mp3",
-        "songPicture":"./imgs/2.jpg",
+        "songUrl":"song/red.mp3",
+        "songPicture":"../imgs/2.jpg",
         "Lyric":{
 			"00:02":"红玫瑰",
 			"00:04":"演唱：陈奕迅",
@@ -117,8 +117,8 @@ var data = [
         "songName":"不为谁而作的歌" ,
         "singer": "林俊杰",
         "songTime":"04:26" ,
-        "songUrl":"./song/林俊杰 - 不为谁而作的歌.mp3",
-        "songPicture":"./imgs/3.jpg",
+        "songUrl":"song/bu.mp3",
+        "songPicture":"../imgs/3.jpg",
         "Lyric":{
 			"00:00":"我爱歌词网 www.5ilrc.com",
 			"00:01":"不为谁而作的歌 - 林俊杰",
@@ -175,8 +175,8 @@ var data = [
         "songName":"凉凉" ,
         "singer": "张碧晨&杨宗纬",
         "songTime":"05:33" ,
-        "songUrl":"./songs/liangliang.mp3",
-        "songPicture":"./imgs/liangliang.jpg",
+        "songUrl":"song/liang.mp3",
+        "songPicture":"../imgs/4.jpg",
         "Lyric":{
 			"00:01":"凉凉",
 			"00:05":"专辑：(电视剧《三生三世十里桃花》片尾曲)",
