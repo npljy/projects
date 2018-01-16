@@ -170,7 +170,7 @@ var data = [
         "singer": "麦振鸿",
         "songTime":"04:29" ,
         "songUrl":"./songs/aihen.mp3",
-		"songPicture":"./imgs/aihen.jpg",
+		"songPicture":"./imgs/aihen.png",
 		"inlist":1,
         "Lyric":{
 			"00:01":"暂无歌词",
