@@ -3,21 +3,9 @@
     margin: 0;
     padding: 0;
 }
- .mainPage{
+/* .mainPage{
     overflow: hidden;
-} 
-.fl{
-	float: left;
-}
-.fr{
-	float: right;
-}
-.icon {
-    display: block;
-    cursor: pointer;
-    background: url(../imgs/btn.png);
-    background-repeat: no-repeat;
-}
+} */
 .header{
     position: relative;
     width: 100%;
@@ -109,7 +97,8 @@
     width: 460px;
     color: #fff;
     opacity: .6;
-    filter: alpha(opacity=60 );    
+    filter: alpha(opacity=60 );  
+    transition: 1s;  
 }
 .songPanel p{
     width: 420px;
@@ -129,9 +118,11 @@
 .barContainer{
     position: relative;
     height: 100%;
+    width: 8px;
 }
 .dragBar{
-    position: relative;
+    position: absolute;
+    width: 8px;
     height: 90px;
     background: #fff;
     opacity: .2;
@@ -222,10 +213,16 @@
     height: 60px;
     margin-top: 10px;
     background: url(../imgs/btn.png) no-repeat;
-    background-position:  0 -60px;
+    background-position:  0 0;
 }
 #toggle:hover{
-    background-position:  -60px -60px; 
+    background-position:  -60px 0;
+}
+#toggle.play{
+    background-position:  0 -60px !important;
+}
+#toggle.play:hover{
+    background-position:  -60px -60px !important;
 }
 .playerImg{
     margin-left: 190px;
@@ -251,7 +248,7 @@
 }
 .playerControl{
     margin-left: 690px;
-    width: 260px;
+    width: 300px;
 }
 .playerControl .volume {
     position: relative;
@@ -279,20 +276,16 @@
     background: url(../imgs/btn.png) no-repeat;
     background-position: -64px -179px;  
 }
-.download span{/*列表按钮改动*/
+
+.download span{
     position: absolute;
     display: block;
-    width: 18px;
+    width: 16px;
     height: 16px;
     bottom: 0;
     background: url(../imgs/btn.png) no-repeat;
-    background-position: -8px -123px;
+    background-position: -240px -32px;
 }
-.download span:hover{
-	background: url(../imgs/btn.png) no-repeat;
-    background-position: -70px -123px;
-}
-
 .share span{
     position: absolute;
     display: block;
@@ -307,8 +300,59 @@
     height: 116px;
     z-index: 30;
     position: absolute;
-    bottom: 80px;
-    left: -6px;
+    bottom: 79px;
+    left: -7px;
+    background: #555;
+    display: none;
+}
+.volumePanel .volumeBar{
+    position: absolute;
+    left: 12px;
+    top: 8px;
+    border-radius: 5px;
+    width: 6px;
+    height: 100px;
+    background: skyblue;
+}
+.volumePanel .currentVol{
+    width: 6px;
+    height: 50%;
+    left: 12px;
+    top: 8px;
+    /* border-radius: 6px; */
+    background: #666;
+}
+.volumePanel .volumeLong{
+    position: absolute;
+    width: 30px;
+    height: 100px;
+    top: 8px;
+}
+.volumePanel .volumeDot{
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    top: 50%;
+    z-index: 20;
+    cursor: pointer;
+}
+.volumePanel .volumeDot span{
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    left: 10px;
+    z-index: 21;
+    background: url(../imgs/btn.png) no-repeat -242px -130px;
+}
+.volumePanel .volumeClick{
+    position: absolute;
+    width: 30px;
+    height: 100px;
+    top: 8px;
+    z-index: 10;
+    cursor: pointer;
 }
 .playerControl .mode {
     position: relative;
@@ -316,6 +360,16 @@
     height: 50px;
     margin-left: 30px;
     cursor: pointer; 
+}
+.playerControl div.modePanel {
+    width: 130px;
+    height: 116px;
+    z-index: 30;
+    position: absolute;
+    bottom: 76px;
+    left: 0;
+    background: red;
+    display: none;
 }
 .playerControl .download {
     position: relative;
@@ -333,14 +387,58 @@
 }
 .plyar div.playerList{
     position: absolute;
-    width: 480px;
-    height: 490px;
-    right: 0;
-    bottom: -490px;
-    transition: .5s;
+    width: 400px;
+    height: 400px;
+    right: 24px;
+    bottom: 80px;
+    /* display: none; */
+    background:#2f343b;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.playerList ul{
+    margin-top: 30px;
+}
+.playerList li{
+    list-style: none;
+    width: 380px;
+    height: 50px;
+    line-height: 50px;
+    color: #19b5f0;
+    border-bottom: 1px solid #42484e;
+}
+.playerList li.act{
+    background: #40444b;
+}
+.playerList li span{
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    cursor: pointer;
+}
+.playerList li span.song{
+    display: inline-block;
+    width: 160px;
+    text-align: left;
+    padding-left: 15px;
+}
+div.listHead{
+    width: 360px;
+    height: 40px;
+    color: #86898e;
+}
+.listHead span:first-child{
+    float: left;
+}
+.listHead span:last-child{
+    float: right;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: url(../imgs/btn.png) no-repeat -240px -96px;
 }
 .playerProgress .infoName{
-    width: 290px;
+    width: 230px;
     height: 24px;
 }
 .barName{
@@ -358,27 +456,47 @@
 .playerProgress .barLong{
     height: 3px;
     width: 370px;
-    background: #000;
+    background: #666;
     top: 4px;
 }
 
 .playerProgress .barCurTime{
     height: 3px;
-    width: 200px;
+    /* width: 200px; */
     background: blue;
     top: 4px;
 }
+.playerControl .listBtn{
+    position: relative;
+    width: 60px;
+    height: 23px;
+    margin-left: 30px;
+    top: 4px;
+    cursor: pointer;
+    color:#fff;
+    background: url(../imgs/btn.png) no-repeat 0 -120px;
+}
+.playerControl .listBtn :hover{
+    color: #19b5f0;
+    background-position:  -61px -120px;
+}
+.playerControl .listBtn span{
+    position: absolute;
+    display: inline-block;
+    left: 32px; 
+}
+
 #bar div{
     position: absolute;
 }
 #bar .barControl{
-    height: 3px;
+    height: 10px;
     width: 370px;
     background: #000;
     top: 4px;
     cursor: pointer;
     z-index: 10;
-    opacity: 1;
+    opacity: 0;
 }
 #bar .barDot {
     position: absolute;
@@ -389,127 +507,25 @@
     z-index: 20;
     border-radius: 10px;
     cursor: pointer;
+    left: 0;
+    /* margin-left: 52%; */
 }
 
 #bar .barDot:hover{
     background-position: -238px -181px;
 }
+
+.music{
+    display: none;
+}
 /* 清除浮动 */
 .clear{
     zoom:1;
 }
-.songMain::after,.songName::after,.songInfo::after{
+.songMain::after,.songName::after,.songInfo::after,div.listHead::after{
     content: ".";
     display: block;
     visibility: hidden;
     height: 0;
     clear: both;
-}
-/*列表框*/
-ul,li{
-	padding: 0px;
-	margin: 0px;
-	list-style: none;
-}
-#list{
-	display: none;
-    overflow: hidden;
-    position: absolute;
-    right: 20px;
-    bottom:-100px;
-    z-index: 101;
-    width: 480px;
-    height: 410px;
-    color: #7c898e;
-}
-#list .box-header {
-    width: 442px;
-    height: 50px;
-    padding: 0 19px;
-    background: #2a2e35;
-    font-size: 16px;
-    line-height: 50px;
-    overflow: hidden;
-    color: #86898e;
-    background-color: #2a2e35;
-}
-#list .box-header .action-box {
-    position: absolute;
-    right: 19px;
-    top: 0;
-    width: 75px;
-    height: 40px;
-    line-height: 40px;
-}
-#list .box-header .action-box .line {
-    float: left;
-    width: 1px;
-    height: 20px;
-    border-right:1px solid #F0F1F1 ;
-   	margin-top: 20px;
-   	margin-right: 15px;
-    opacity: .5;
-}
-#list .icon {
-    float: left;
-    display: block;
-    width: 18px;
-    height: 18px;
-    margin-top: 22px;
-    
-}
-.list-menu-icon-close {
-    background-position: -240px -96px;
-}
-#list .up,.down{
-	color: #CCD5DB;
-	cursor: pointer;
-}
-#list .del{
-	margin-right: 15px;
-	background-position: -240px -64px;
-	cursor: pointer;
-}
-#list .delBtn{
-	margin-top: 13px;
-}
-#list .box-list{
-	height: 360px;
-	width:100%;
-    background-color:#2f343b;
-    position: absolute;
-    top: 50px;
-    left: 0px;
-    zoom:1;
-}
-#list .box-list li{
-	height: 40px;
-	font: 14px/40px "微软雅黑";
-	color: #F0EFEB;
-	padding:0px 20px ;
-	cursor: pointer;
-}
-#list .box-list li span{
-	margin-right: 10px;
-}
-#list .box-list li.active {
-    background-color: #40444b;
-    border-bottom: 1px solid #40444b;
-}
-/*ym图片播放转圈*/
-.albumImg{
-
-    border-radius: 130px;   
-    overflow: hidden;
-}
-@-webkit-keyframes rotation{
-from {-webkit-transform: rotate(0deg);}
-to {-webkit-transform: rotate(360deg);}
-}
-.Rotation{
--webkit-transform: rotate(360deg);
-animation: rotation 15s linear infinite;
--moz-animation: rotation 15s linear infinite;
--webkit-animation: rotation 15s linear infinite;
--o-animation: rotation 15s linear infinite;
 }
