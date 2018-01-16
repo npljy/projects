@@ -140,7 +140,10 @@ window.onload = function () {
         }
     }   
     // ----播放模式控制 ↑
-
+    // 阻止list冒泡
+    list.onclick = function(el){
+        el.stopPropagation ? el.stopPropagation() : el.cancelBubble = true;
+    }
     // --xc ↓--
     //列表开关
     listOpenBtn.onclick = (ec) => {
