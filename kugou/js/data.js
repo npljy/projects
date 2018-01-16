@@ -166,7 +166,7 @@ var data = [
 	},
 	{
         "id": 3,
-        "songName":"很爱交加" ,
+        "songName":"恨爱交加" ,
         "singer": "麦振鸿",
         "songTime":"04:29" ,
         "songUrl":"./songs/aihen.mp3",
