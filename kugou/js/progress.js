@@ -31,7 +31,8 @@ window.onload = function () {
     var mode = document.querySelector(".mode");
     var modePanel = document.querySelector(".modePanel");
     var modeLis = Array.from(document.querySelectorAll(".modePanel li"));
-
+    var blurbg = document.querySelector(".blurbg");
+    var blurMask = document.querySelector(".blurMask");
     var playMode = "sx";
     var x = myaudio.duration;
     var nowSong = 0;
@@ -57,8 +58,12 @@ window.onload = function () {
     // --xc ↑--
     myaudio.volume = 0.5;//声音默认是 50%
     set(content);
+    set(blurbg);
+    set(blurMask);
     window.onresize = function(){
         set(content);
+        et(blurbg);
+        set(blurMask);
     }
     renderList();
     lis = Array.from(boxList.querySelectorAll("li"));
