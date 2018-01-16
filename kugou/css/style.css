@@ -594,7 +594,7 @@ div.listHead{
     display: inherit;
     position: relative;
 }
-/* 徐晨 ↓ */
+/* xc ↓ */
 /*列表框*/
 ul,li{
 	padding: 0px;
@@ -699,4 +699,4 @@ ul,li{
     border-bottom: 1px solid #40444b;
 }
 
-/* 徐晨 ↑ */
+/* xc ↑ */

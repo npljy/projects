@@ -178,7 +178,9 @@ window.onload = function () {
     function ge() {
         //下一首
         btnNext.onclick = function () {//下一首
-            nowSong++;
+            if(playMode == "sx") nowSong++;
+            if(playMode == "loop") nowSong = nowSong;
+            if(playMode == "sj") nowSong = randNum(nowSong);
             nowSong = nowSong > data.length - 1 ? 0 : nowSong
             info(nowSong);
             onoff ? myaudio.play() : myaudio.pause();
@@ -187,7 +189,9 @@ window.onload = function () {
         }
         //上一首
         btnPre.onclick = function () {//上一首
-            nowSong--;
+            if(playMode == "sx") nowSong--;
+            if(playMode == "loop") nowSong = nowSong;
+            if(playMode == "sj") nowSong = randNum(nowSong);
             nowSong = nowSong < 0 ? data.length - 1 : nowSong
             info(nowSong);
             onoff ? myaudio.play() : myaudio.pause();
