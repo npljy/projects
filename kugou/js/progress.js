@@ -30,6 +30,7 @@ window.onload = function () {
     var mode = document.querySelector(".mode");
     var modePanel = document.querySelector(".modePanel");
     var modeLis = Array.from(document.querySelectorAll(".modePanel li"));
+
     var playMode = "sx";
     var x = myaudio.duration;
     var nowSong = 0;
@@ -47,13 +48,15 @@ window.onload = function () {
     let listClose = document.querySelector('.list-menu-icon-close');
     let listCount = document.querySelector('.count');
     let boxList = document.querySelector('.box-list');
+    let lis = null;
     let zhuan = document.getElementById('zhuan');
     let btnPre = document.getElementById('prev');
     let btnNext = document.getElementById('next');
     let num = data.length;
     // --xc ↑--
     myaudio.volume = 0.5;//声音默认是 50%
-
+    renderList();
+    lis = Array.from(boxList.querySelectorAll("li"));
     info(nowSong);
     //  方法：写入歌曲信息
     function info(idx) {
@@ -80,7 +83,10 @@ window.onload = function () {
         albumDown.onclick = function () {
             window.open(myaudio.src);
         }
+
         listNum.innerText = data.length;
+        lis.forEach(e=>e.classList.remove("active"));
+        lis[nowSong].classList.add("active");
     }
 
     // 播放暂停
@@ -137,14 +143,14 @@ window.onload = function () {
 
     // --xc ↓--
     //列表开关
-    listOpenBtn.onclick = () => {
+    listOpenBtn.onclick = (ec) => {
+        ec.stopPropagation ? ec.stopPropagation() : ec.cancelBubble = true;
         volumePanel.style.display = "none";
         modePanel.style.display = "none";
         list.style.display == "block" ? list.style.display = "none" : list.style.display = "block";
         listClose.onclick = () => {
             list.style.display = "none";
         }
-        renderList();
         boxList.onclick = function (ev) {
             if (ev.target.tagName === 'LI') {
                 //大清洗
@@ -154,7 +160,6 @@ window.onload = function () {
             }
         }
         //li双击播放
-        let lis = document.querySelectorAll('.box-list li');
         for (var i = 0; i < lis.length; ++i) {
             lis[i].dataset.idx = i;
             lis[i].ondblclick = function (e) {//双击播放该音乐
@@ -238,7 +243,6 @@ window.onload = function () {
         }
         boxList.innerHTML = html;
         listCount.innerHTML = num;
-
     }
 
     // 添加清空方法
@@ -288,7 +292,8 @@ window.onload = function () {
     }
 
     // 控制声音
-    volume.onclick = function () {
+    volume.onclick = function (ev) {
+        ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
         myaudio.muted = myaudio.muted ? false : true;
         myaudio.muted ? this.firstElementChild.style.backgroundPosition = "-144px -195px" : this.firstElementChild.style.backgroundPosition = "-64px -195px";
     }
@@ -335,6 +340,8 @@ window.onload = function () {
     // 播放模式菜单
     document.onclick = function(){
         modePanel.style.display = "none";
+        list.style.display = "none";
+        volumePanel.style.display = "none";
     }
     mode.onclick = function(e) {
         e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
