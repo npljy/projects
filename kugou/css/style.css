@@ -588,7 +588,11 @@ div.listHead{
     height: 0;
     clear: both;
 }
-
+.box-list div{
+    height: auto;
+    display: inherit;
+    position: relative;
+}
 /* 徐晨 ↓ */
 /*列表框*/
 ul,li{

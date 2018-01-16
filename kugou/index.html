@@ -1,207 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>音乐播放</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<div class="mainPage">
-    <!-- 头部 ↓ -->
-   <div class = "header"></div>
-    <!-- 头部 ↑ -->
-    <!-- 中间部分 ↓ 高度自适应 -->
-   <div class="content" id="content">
-       <!-- 主要部分 ↓ -->
-        <div class="songMain clear">
-            <!-- 专辑 ↓ -->
-            <div class="album">
-                <!-- 专辑封面图 ↓ -->
-                <div class="albumImg" id="zhuan">
-                    <img src="" width="260" height="260" alt="">
-                </div>
-                <!-- 专辑封面图 ↑ -->
-                <!-- 下载按钮 ↓ -->
-                <div class="albumDown">
-                    <a href="javascript:"></a>
-                </div>
-                <!-- 下载按钮 ↑ -->
-            </div>
-            <!-- 专辑 ↑ -->
-            <!-- 歌曲部分 ↓ -->
-            <div class="songCont">
-                <!-- 歌曲名字 ↓ -->
-                <div class="songName clear">
-                    <span></span>
-                </div>
-                <!-- 歌曲名字 ↑ -->
-                <!-- 歌曲信息 ↓ -->
-                <div class="songInfo clear">
-                    <div class="albumName">
-                        <span>专辑：</span>
-                        
+    <div class="mainPage">
+        <!-- 头部 ↓ -->
+        <div class="header"></div>
+        <!-- 头部 ↑ -->
+        <!-- 中间部分 ↓ 高度自适应 -->
+        <div class="content" id="content">
+            <!-- 主要部分 ↓ -->
+            <div class="songMain clear">
+                <!-- 专辑 ↓ -->
+                <div class="album">
+                    <!-- 专辑封面图 ↓ -->
+                    <div class="albumImg" id="zhuan">
+                        <img src="" width="260" height="260" alt="">
                     </div>
-                    <div class="singerName">
-                        <span>歌手：</span>
-                       
+                    <!-- 专辑封面图 ↑ -->
+                    <!-- 下载按钮 ↓ -->
+                    <div class="albumDown">
+                        <a href="javascript:"></a>
                     </div>
+                    <!-- 下载按钮 ↑ -->
                 </div>
-                <!-- 歌曲信息 ↑ -->
-                <!-- 歌词部分 ↓ -->
-                <div class="songLrc">
-                    <!-- 歌词可见部分 ↓ 高度自适应 -->
-                    <div class="songContainer">
-                        <!-- 歌词内容 ↓ 高度为 内容撑开的高度-->
-                        <div class="songPanel">
-                            <!-- 歌词 -->
+                <!-- 专辑 ↑ -->
+                <!-- 歌曲部分 ↓ -->
+                <div class="songCont">
+                    <!-- 歌曲名字 ↓ -->
+                    <div class="songName clear">
+                        <span></span>
+                    </div>
+                    <!-- 歌曲名字 ↑ -->
+                    <!-- 歌曲信息 ↓ -->
+                    <div class="songInfo clear">
+                        <div class="albumName">
+                            <span>专辑：</span>
+
                         </div>
-                        <!-- 歌词内容 ↑ -->
-                        <!-- 歌词自定义滚动条 ↓ 高度自适应-->
-                        <div class="songBar">
-                            <!-- 拖动条 ↓ 高度为 自适应 -->
-                            <div class="barContainer">
-                                <div class="dragBar"></div>
+                        <div class="singerName">
+                            <span>歌手：</span>
+
+                        </div>
+                    </div>
+                    <!-- 歌曲信息 ↑ -->
+                    <!-- 歌词部分 ↓ -->
+                    <div class="songLrc">
+                        <!-- 歌词可见部分 ↓ 高度自适应 -->
+                        <div class="songContainer">
+                            <!-- 歌词内容 ↓ 高度为 内容撑开的高度-->
+                            <div class="songPanel">
+                                <!-- 歌词 -->
                             </div>
-                            <!-- 拖动条 ↑ -->
+                            <!-- 歌词内容 ↑ -->
+                            <!-- 歌词自定义滚动条 ↓ 高度自适应-->
+                            <div class="songBar">
+                                <!-- 拖动条 ↓ 高度为 自适应 -->
+                                <div class="barContainer">
+                                    <div class="dragBar"></div>
+                                </div>
+                                <!-- 拖动条 ↑ -->
+                            </div>
+                            <!-- 歌词自定义滚动条 ↑ -->
                         </div>
-                        <!-- 歌词自定义滚动条 ↑ -->
+                        <!-- 歌词可见部分 ↑ -->
                     </div>
-                    <!-- 歌词可见部分 ↑ -->
+                    <!-- 歌词部分 ↑ -->
                 </div>
-                <!-- 歌词部分 ↑ -->
+                <!-- 歌曲部分 ↑ -->
             </div>
-            <!-- 歌曲部分 ↑ -->
+            <!-- 主要部分 ↑ -->
+            <!-- 遮罩 ↓ -->
+            <div class="blurMask"></div>
+            <div class="blurbg"></div>
+            <!-- 遮罩 ↑ -->
         </div>
-        <!-- 主要部分 ↑ -->
-        <!-- 遮罩 ↓ -->
-        <div class="blurMask"></div>
-        <div class="blurbg" ></div>
-        <!-- 遮罩 ↑ -->
-   </div> 
-   <!-- 中间部分 ↑ -->
-   <!-- 尾部 ↓ -->
-   <div class="footer">
-       <!-- 底部遮罩层 ↓ -->
-       <div class="playerMask"></div>
-       <!-- 底部遮罩层 ↑ -->
-       <!-- 播放条 ↓ -->
-       <div class="plyar">
-            <!-- 播放按钮 ↓ -->
-            <div class="playerBtn">
-                <a id="prev" href="javascript:"></a>
-                <a id="toggle" href="javascript:"></a>
-                <a id="next" href="javascript:"></a>
-            </div>
-            <!-- 播放按钮 ↑ -->
-            <!-- 专辑图片 ↓ -->
-            <div class="playerImg">
-                <img src="" widht = "60" height = "60" alt="">
-            </div>
-            <!-- 专辑图片 ↑ -->
-        
-            <!-- 进度条信息 ↓ -->
-            <div class="playerProgress">
-                <div class="barInfo">
-                    <!-- 歌曲名 ↓ -->
-                    <div class="infoName">
-                        <span class = "barName" >凉凉</span>
-                    </div>
-                    <!-- 歌曲名 ↑ -->
-                    <!-- 歌曲时长 ↓ -->
-                    <div class="infoTime">
-                        <div id="duration" class="duration">
-                            <span class="changeTime">00:00</span>
-                            /
-                            <span class="allTime">00:00</span>
+        <!-- 中间部分 ↑ -->
+        <!-- 尾部 ↓ -->
+        <div class="footer">
+            <!-- 底部遮罩层 ↓ -->
+            <div class="playerMask"></div>
+            <!-- 底部遮罩层 ↑ -->
+            <!-- 播放条 ↓ -->
+            <div class="plyar">
+                <!-- 播放按钮 ↓ -->
+                <div class="playerBtn">
+                    <a id="prev" href="javascript:"></a>
+                    <a id="toggle" href="javascript:"></a>
+                    <a id="next" href="javascript:"></a>
+                </div>
+                <!-- 播放按钮 ↑ -->
+                <!-- 专辑图片 ↓ -->
+                <div class="playerImg">
+                    <img src="" widht="60" height="60" alt="">
+                </div>
+                <!-- 专辑图片 ↑ -->
+
+                <!-- 进度条信息 ↓ -->
+                <div class="playerProgress">
+                    <div class="barInfo">
+                        <!-- 歌曲名 ↓ -->
+                        <div class="infoName">
+                            <span class="barName">凉凉</span>
                         </div>
+                        <!-- 歌曲名 ↑ -->
+                        <!-- 歌曲时长 ↓ -->
+                        <div class="infoTime">
+                            <div id="duration" class="duration">
+                                <span class="changeTime">00:00</span>
+                                /
+                                <span class="allTime">00:00</span>
+                            </div>
+                        </div>
+                        <!-- 歌曲时长 ↑ -->
                     </div>
-                    <!-- 歌曲时长 ↑ -->
-                </div>
-                <!-- 进度条 ↓-->
-                <div class="bar" id="bar">
-                    <div class="barDot"></div>
-                    <div class="barControl"></div>
-                    <div class="barLong"></div>
-                    <div class="barCurTime"></div>
-                </div>
-                <!-- 进度条 ↑ -->
-            </div>  
-            <!-- 进度条信息 ↑ -->
-            <!-- 控制条 ↓ -->
-            <div class="playerControl">
-                <!-- 音量控制 ↓ -->
-                <div class="volume">
-                    <span></span>
-                </div>
-                <!-- 音量控制条 ↓ -->
-                <div class="volumePanel">
-                    <div class="volumeBar"></div>
-                    <div class="currentVol"></div>
-                    <div class="volumeLong">
-                        <div class="volumeDot"><span></span></div>
+                    <!-- 进度条 ↓-->
+                    <div class="bar" id="bar">
+                        <div class="barDot"></div>
+                        <div class="barControl"></div>
+                        <div class="barLong"></div>
+                        <div class="barCurTime"></div>
                     </div>
-                    <div class="volumeClick"></div>
+                    <!-- 进度条 ↑ -->
                 </div>
-                <!-- 音量控制条 ↑ -->
-                <!-- 音量控制 ↑ -->
-                <!-- 播放模式 ↓ -->
-                <div class="mode"><span></span></div>
-                <div class="modePanel">
-                    <ul>
-                        <li class = "sx act" data-mode="sx"><i class="act"></i>列表循环</li>
-                        <li class="lo" data-mode="loop"><i></i>单曲循环</li>
-                        <li class="sj" data-mode="sj"><i></i>随机播放</li>
-                    </ul>
+                <!-- 进度条信息 ↑ -->
+                <!-- 控制条 ↓ -->
+                <div class="playerControl">
+                    <!-- 音量控制 ↓ -->
+                    <div class="volume">
+                        <span></span>
+                    </div>
+                    <!-- 音量控制条 ↓ -->
+                    <div class="volumePanel">
+                        <div class="volumeBar"></div>
+                        <div class="currentVol"></div>
+                        <div class="volumeLong">
+                            <div class="volumeDot">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="volumeClick"></div>
+                    </div>
+                    <!-- 音量控制条 ↑ -->
+                    <!-- 音量控制 ↑ -->
+                    <!-- 播放模式 ↓ -->
+                    <div class="mode">
+                        <span></span>
+                    </div>
+                    <div class="modePanel">
+                        <ul>
+                            <li class="sx act" data-mode="sx">
+                                <i class="act"></i>列表循环</li>
+                            <li class="lo" data-mode="loop">
+                                <i></i>单曲循环</li>
+                            <li class="sj" data-mode="sj">
+                                <i></i>随机播放</li>
+                        </ul>
+                    </div>
+                    <!-- 播放模式 ↑ -->
+                    <!-- 播放列表 ↓ -->
+                    <div class="download">
+                        <span></span>
+                    </div>
+                    <div id="list">
+                        <div class="box-header">
+                            <div class="title">播放队列/
+                                <span class="count"></span>
+                            </div>
+                            <div class="action-box fr">
+                                <span class="icon del delAll"></span>
+                                <span class="line"></span>
+                                <span class="icon list-menu-icon-close closePlayList"></span>
+                            </div>
+                        </div>
+                        <ul class="box-list"></ul>
+                    </div>
+                    <!-- 播放列表 ↑ -->
+                    <!-- 分享 ↓ -->
+                    <div class="share">
+                        <span></span>
+                    </div>
+                    <!-- 分享 ↑ -->
                 </div>
-                <!-- 播放模式 ↑ -->
-                <!-- 播放列表 ↓ -->
-                <div class="download"><span></span></div>
-                <!-- 播放列表 ↑ -->
-                <!-- 分享 ↓ -->
-                <div class="share"><span></span></div>
-                <!-- 分享 ↑ -->
+                <!-- 控制条 ↑ -->
             </div>
-            <!-- 控制条 ↑ -->
-       </div>
-    <!-- 播放条 ↑ -->
+            <!-- 播放条 ↑ -->
+        </div>
+        <!-- 尾部 ↑ -->
+        <audio class="music" id="myaudio" src="" preload="auto"></audio>
     </div>
-    <!-- 尾部 ↑ -->
-
-<!-- 播放列表 ↓ -->
-    <div id="list">
-	    <div class="box-header">
-	        <div class="title">播放队列/<span class="count"></span></div>
-	        <div class="action-box fr">
-	        	<span class="icon del delAll"></span>
-	            <span class="line"></span>
-	            <span class="icon list-menu-icon-close closePlayList" ></span>
-	        </div
-		</div>
-        <ul class="box-list">
-        	<!--<li>
-        		<div class="fl clear" style="width: 200px;">
-        			<span>1</span>
-    				<span>凉凉</span>
-        		</div>
-        		<div class="list-btn">
-        			<span class="up fl" >▲</span>
-					<span class="down fl">▼</span>
-					<span class="icon del delBtn"></span>
-        		</div>
-    			<div class="fr clear">
-    				<span class="fl">张碧晨</span>
-    				<span class="fl">05:26</span>
-    			</div>
-        	</li>-->
-        </ul>
-   </div>
-<!-- 播放列表 ↑ -->
-
-    <audio class="music" id="myaudio" src=""  preload="auto"></audio>
     <script src="./js/data.js"></script>
     <script src="./js/tools.js"></script>
     <script src="./js/progress.js"></script>
     <script src="./js/matching.js"></script>
-</div>
 </body>
+
 </html>

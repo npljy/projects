@@ -152,7 +152,7 @@ window.onload = function () {
             }
         }
         //li双击播放
-        let lis = document.querySelectorAll('li');
+        let lis = document.querySelectorAll('.box-list li');
         for (var i = 0; i < lis.length; ++i) {
             lis[i].dataset.idx = i;
             lis[i].ondblclick = function (e) {//双击播放该音乐
