@@ -23,7 +23,11 @@ window.onload = function(){
     var barName =  document.querySelector(".barName");
     var lists = document.querySelector(".playerList ul");
     var albumImg = document.querySelector(".albumImg img");
+    var playerImg = document.querySelector(".playerImg img");
+    var blurbg = document.querySelector(".blurbg");
+    var albumDown = document.querySelector(".albumDown a");
     var x = myaudio.duration;
+    var nowSong = 0;
     var listSong = null;
     var songPs = null;
     var add = 60;//歌词调整，加快减少时间，默认60秒
@@ -44,27 +48,41 @@ window.onload = function(){
 	let num = data.length;
     // --徐晨 ↑--
     myaudio.volume = 0.5;//声音默认是 50%
-    dura.lastElementChild.innerText = totime(x);
-    toggle.onclick = function(){
-        onoff = !onoff; //保存播放状态
-        myaudio.paused ?  myaudio.play() : myaudio.pause();
-        toggle.classList.toggle("play");
-    }
-
-    info();
+    
+    info(nowSong);
     //  方法：写入歌曲信息
-    function info(id=3){
-        albumImg.src = data[id]["songPicture"];
-        songName.innerHTML = "<span>"+data[id]["songName"]+"</span>";
-        albumName.innerHTML = "<span>专辑：</span>"+ (data[id]["albumName"] ? data[id]["albumName"] : data[id]["songName"] ) ;
-        singerName.innerHTML = "<span>歌手：</span>"+ data[id]["singer"] ;
+    function info(idx){
+        myaudio.src = data[idx].songUrl;
+        blurbg.style.background = 'url('+data[idx]["songPicture"]+')';
+        albumImg.src = data[idx]["songPicture"];
+        playerImg.src = data[idx]["songPicture"];
+        songName.innerHTML = "<span>"+data[idx]["songName"]+"</span>";
+        albumName.innerHTML = "<span>专辑：</span>"+ (data[idx]["albumName"] ? data[idx]["albumName"] : data[idx]["songName"] ) ;
+        singerName.innerHTML = "<span>歌手：</span>"+ data[idx]["singer"] ;
         var songStr = "";
-        var  lrc = data[id]["Lyric"];
+        var  lrc = data[idx]["Lyric"];
         for(a in lrc){
             songStr += "<p data-time="+a+">"+lrc[a]+"</p>"
         }
         songPanel.innerHTML = songStr;
+        myaudio.addEventListener("canplay",function(){
+            x = myaudio.duration;
+            dura.lastElementChild.innerText = totime(x);
+        })
+        // 下载
+        albumDown.onclick = function(){
+            window.open(myaudio.src);
+        }
     }
+
+    // 播放暂停
+    toggle.onclick = function(){
+        onoff = !onoff; //保存播放状态
+        myaudio.paused ?  myaudio.play() : myaudio.pause();
+        toggle.classList.toggle("play");
+        zhuan.classList.toggle("Rotation");
+    }
+
 // 监听timeupdate，计算播放进度
     myaudio.addEventListener("timeupdate",function(){
         barDot.style.left = this.currentTime/x*(bar.clientWidth - barDot.offsetWidth)+"px";
@@ -83,8 +101,8 @@ window.onload = function(){
             }
         });
     });
-// --徐晨 ↓--
 
+// --徐晨 ↓--
 	//列表开关
 	listOpenBtn.onclick = () => {
 		list.style.display = "block";
@@ -103,16 +121,18 @@ window.onload = function(){
 		//li双击播放
 		let lis = document.querySelectorAll('li');
 		for (var i = 0; i < lis.length; ++i) {
-			lis[i].index = i;
+            lis[i].dataset.idx = i;
 			lis[i].ondblclick = function (e) {//双击播放该音乐
 				e.preventDefault();
-				myaudio.src = data[this.index].songUrl;
-				console.log(myaudio.src);
+                nowSong = this.dataset.idx;
 				for (var j = 0; j < lis.length; ++j) {
 					lis[j].className = '';
 				}
-				this.className = 'active';
-				playMusic();
+                this.className = 'active';
+                info(this.dataset.idx);
+                myaudio.play();
+                toggle.classList.add("play");
+                zhuan.classList.add("Rotation");
 			}
 		}
 		keys();
@@ -120,26 +140,21 @@ window.onload = function(){
 	}
 	ge();
 	function ge() {
-		let index = 0;//初始化歌曲所在位置
 		//下一首
-		btnNext.onclick = function () {//下一首
-			index++;
-			if (index > data.length - 1) {//判断是否为最后一首，然后循环播放
-				index = 0;
-			}
-			console.log(index);
-			myaudio.src = data[index].songUrl;//切换到下一首
-			playMusic()
+        btnNext.onclick = function () {//下一首
+            nowSong++;
+			info(nowSong  > data.length - 1 ? 0 : nowSong);
+            myaudio.play();
+            toggle.classList.add("play");
+            zhuan.classList.add("Rotation");
 		}
 		//上一首
 		btnPre.onclick = function () {//上一首
-			index--;
-			if (index < 0) {//判断是否为第一首首，然后循环播放
-				index = data.length - 1;
-			}
-			console.log(index);
-			myaudio.src = data[index].songUrl;//切换到上一首
-			playMusic()
+			nowSong--;
+			info(nowSong <0  ? data.length - 1 : nowSong);
+            myaudio.play();
+            toggle.classList.add("play");
+            zhuan.classList.add("Rotation");
 		}
 	}
 
@@ -160,7 +175,9 @@ window.onload = function(){
 				var b = prevLi.children[0].children[0].innerHTML;
 				thisLi.children[0].children[0].innerHTML = b;
 				prevLi.children[0].children[0].innerHTML = a;
-				boxList.insertBefore(thisLi, prevLi);
+                boxList.insertBefore(thisLi, prevLi);
+                thisLi.dataset.idx--;
+                prevLi.dataset.idx++;
 			}
 		}
 		//下移
@@ -177,13 +194,16 @@ window.onload = function(){
 				var b = nextLi.children[0].children[0].innerHTML;
 				thisLi.children[0].children[0].innerHTML = b;
 				nextLi.children[0].children[0].innerHTML = a;
-				boxList.insertBefore(thisLi, nextLi.nextElementSibling);
+                boxList.insertBefore(thisLi, nextLi.nextElementSibling);
+                thisLi.dataset.idx++;
+                nextLi.nextElementSibling--;
 			}
 		}
 		//删除
 		let delBtn = boxList.querySelectorAll('.delBtn');
 		for (var i = 0; i < delBtn.length; i++) {
 			delBtn[i].onclick = function () {
+                // data.splice(i,1);
 				this.parentNode.parentNode.remove();
 				num--;
 				listCount.innerHTML = num;
@@ -193,7 +213,8 @@ window.onload = function(){
 				for (var i = 0; i < lis.length; i++) {
 					lis[i].children[0].children[0].innerHTML = ++n;
 				}
-				data[i].id = ++n;
+                data[i].id = ++n;
+                renderList();
 			}
 		}
 		//批量删除
@@ -204,17 +225,20 @@ window.onload = function(){
 			}
 			let lis = document.querySelectorAll('li');
 			for (var i = 0; i < data.length; i++) {
-				boxList.removeChild(lis[i]);
+                boxList.removeChild(lis[i]);
+                data[i].inlist = 0;
 			}
-			listCount.innerHTML = 0;
-		}
+            listCount.innerHTML = 0;
+            clearAll();
+        }
 	}
 	//列表渲染
 	function renderList() {
 		let html = '';
 		for (var i = 0; i < data.length; i++) {
+            if(data[i].inlist == 1)
 			html += `
-					<li index="1">
+					<li >
 		        		<div class="fl clear" style="width: 200px;">
 		        			<span>${data[i].id + 1}</span>
 		    				<span>${data[i].songName}</span>
@@ -234,36 +258,19 @@ window.onload = function(){
 		boxList.innerHTML = html;
 		listCount.innerHTML = num;
 	}
-	//音乐开关
-	toggle.onclick = function () {
-		playMusic();
-	}
-	//音乐播放封装函数
-	function playMusic() {
-		if (myaudio !== null) {
-			//检测播放是否已暂停.myaudio.paused 在播放器播放时返回false.
-			//alert(myaudio.paused);
-			if (myaudio.paused) {
-				myaudio.play();//myaudio.play();// 这个就是播放  
-				toggle.style.background = "url(imgs/btn.png) no-repeat 0px -60px";
-				zhuan.classList.add("Rotation");
-			} else {
-				myaudio.pause();// 这个就是暂停
-				toggle.style.background = "url(imgs/btn.png) no-repeat 0px 0px";
-				zhuan.classList.remove("Rotation");
-			}
-		}
-		myaudio.addEventListener("timeupdate", function () {
-			if (myaudio.ended) {
-				toggle.style.background = "url(imgs/btn.png) no-repeat 0px 0px";
-				zhuan.classList.remove("Rotation");
-			}
-		})
-	}
-	function rbf() {
-		// var audio = document.getElementById('myaudio');
-		audio.currentTime = 0;
-	}
+
+    // 添加清空方法
+    function clearAll(){
+        data.length = 0;
+        myaudio.src = "";
+        blurbg.style.css = "background:url('')";
+        albumImg.src = "";
+        playerImg.src = "";
+        songName.innerHTML = "";
+        albumName.innerHTML = "";
+        singerName.innerHTML = "" ;
+        songPanel.innerHTML = "";
+    }
 // --徐晨 ↑--
 
     // 拖动进度条
@@ -319,7 +326,6 @@ window.onload = function(){
             volscale = (ev.pageY - volumeLong.getBoundingClientRect().top)/(volumeLong.offsetHeight-volumeDot.offsetHeight);
             volscale <= 0 && (volscale = 0);
             volscale >= 1 && (volscale = 1);
-            console.log(volscale)
             volumeDot.style.top = volscale * (volumeLong.offsetHeight-volumeDot.offsetHeight) + "px";
             currentVol.style.height = volscale * (volumeLong.offsetHeight-volumeDot.offsetHeight) +5+ "px";
             myaudio.volume = (1-volscale).toFixed(1);

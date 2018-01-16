@@ -17,7 +17,7 @@
             <!-- 专辑 ↓ -->
             <div class="album">
                 <!-- 专辑封面图 ↓ -->
-                <div class="albumImg">
+                <div class="albumImg" id="zhuan">
                     <img src="./imgs/liangliang.jpg" width="260" height="260" alt="">
                 </div>
                 <!-- 专辑封面图 ↑ -->
@@ -75,7 +75,6 @@
         <!-- 主要部分 ↑ -->
         <!-- 遮罩 ↓ -->
         <div class="blurMask"></div>
-
         <div class="blurbg" style="background:url(./imgs/liangliang.jpg)"></div>
         <!-- 遮罩 ↑ -->
    </div> 
@@ -149,35 +148,55 @@
                 <div class="mode"><span></span></div>
                 <div class="modePanel"></div>
                 <!-- 播放模式 ↑ -->
-                <!-- 下载 ↓ -->
+                <!-- 播放列表 ↓ -->
                 <div class="download"><span></span></div>
-                <!-- 下载 ↑ -->
+                <!-- 播放列表 ↑ -->
                 <!-- 分享 ↓ -->
                 <div class="share"><span></span></div>
                 <!-- 分享 ↑ -->
-                <!-- 播放列表 ↓ -->
-                    <!-- 列表按钮 ↓ -->
-                <div class="listBtn"><span>1</span></div>
-                    <!-- 列表按钮 ↑ -->
-                <div class="playerList">
-                    <div class="listHead clear">
-                        <span>播放队列</span><span></span>
-                    </div>
-                    <ul>
-                        <!-- 歌曲列表 -->
-                    </ul>
-                </div>
-                <!-- 播放列表 ↑ -->
+                
             </div>
             <!-- 控制条 ↑ -->
        </div>
     <!-- 播放条 ↑ -->
     </div>
     <!-- 尾部 ↑ -->
-    <audio class="music" id="myaudio" src="./songs/liang.mp3"  preload="auto"></audio>
+
+<!-- 播放列表 ↓ -->
+    <div id="list">
+	    <div class="box-header">
+	        <div class="title">播放队列/<span class="count"></span></div>
+	        <div class="action-box fr">
+	        	<span class="icon del delAll"></span>
+	            <span class="line"></span>
+	            <span class="icon list-menu-icon-close closePlayList" ></span>
+	        </div
+		</div>
+        <ul class="box-list">
+        	<!--<li>
+        		<div class="fl clear" style="width: 200px;">
+        			<span>1</span>
+    				<span>凉凉</span>
+        		</div>
+        		<div class="list-btn">
+        			<span class="up fl" >▲</span>
+					<span class="down fl">▼</span>
+					<span class="icon del delBtn"></span>
+        		</div>
+    			<div class="fr clear">
+    				<span class="fl">张碧晨</span>
+    				<span class="fl">05:26</span>
+    			</div>
+        	</li>-->
+        </ul>
+   </div>
+<!-- 播放列表 ↑ -->
+
+    <audio class="music" id="myaudio" src=""  preload="auto"></audio>
     <script src="./js/data.js"></script>
     <script src="./js/tools.js"></script>
     <script src="./js/progress.js"></script>
+    <script src="./js/matching.js"></script>
 </div>
 </body>
 </html>

@@ -35,7 +35,21 @@
     width: 262px;
     float: left;
 }
-
+.albumImg {
+    border-radius: 130px;
+    overflow: hidden;
+}
+@-webkit-keyframes rotation{
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+.Rotation{
+    -webkit-transform: rotate(360deg);
+    animation: rotation 15s linear infinite;
+    -moz-animation: rotation 15s linear infinite;
+    -webkit-animation: rotation 15s linear infinite;
+    -o-animation: rotation 15s linear infinite;
+}
 .albumDown{
     margin-top: 40px;
     padding-left: 16px;
@@ -284,7 +298,7 @@
     height: 16px;
     bottom: 0;
     background: url(../imgs/btn.png) no-repeat;
-    background-position: -240px -32px;
+    background-position: -8px -123px;
 }
 .share span{
     position: absolute;
@@ -529,3 +543,110 @@ div.listHead{
     height: 0;
     clear: both;
 }
+
+/* 徐晨 ↓ */
+/*列表框*/
+ul,li{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+.fl{
+    float: left;
+}
+.icon {
+    display: block;
+    cursor: pointer;
+    background: url(../imgs/btn.png);
+    background-repeat: no-repeat;
+}
+.list-btn{
+    visibility: hidden;
+}
+#list{
+	display: none;
+    overflow: hidden;
+    position: absolute;
+    right: 20px;
+    bottom:80px;
+    z-index: 101;
+    width: 480px;
+    height: 410px;
+    color: #7c898e;
+}
+#list .box-header {
+    width: 442px;
+    height: 50px;
+    padding: 0 19px;
+    background: #2a2e35;
+    font-size: 16px;
+    line-height: 50px;
+    overflow: hidden;
+    color: #86898e;
+    background-color: #2a2e35;
+}
+#list .box-header .action-box {
+    position: absolute;
+    right: 19px;
+    top: 0;
+    width: 75px;
+    height: 40px;
+    line-height: 40px;
+}
+#list .box-header .action-box .line {
+    float: left;
+    width: 1px;
+    height: 20px;
+    border-right:1px solid #F0F1F1 ;
+   	margin-top: 20px;
+   	margin-right: 15px;
+    opacity: .5;
+}
+#list .icon {
+    float: left;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-top: 22px;
+    
+}
+.list-menu-icon-close {
+    background-position: -240px -96px;
+}
+#list .up,.down{
+	color: #CCD5DB;
+	cursor: pointer;
+}
+#list .del{
+	margin-right: 15px;
+	background-position: -240px -64px;
+	cursor: pointer;
+}
+#list .delBtn{
+	margin-top: 13px;
+}
+#list .box-list{
+	height: 360px;
+	width:100%;
+    background-color:#2f343b;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    zoom:1;
+}
+#list .box-list li{
+	height: 40px;
+	font: 14px/40px "微软雅黑";
+	color: #F0EFEB;
+	padding:0px 20px ;
+	cursor: pointer;
+}
+#list .box-list li span{
+	margin-right: 10px;
+}
+#list .box-list li.active {
+    background-color: #40444b;
+    border-bottom: 1px solid #40444b;
+}
+
+/* 徐晨 ↑ */
