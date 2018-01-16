@@ -306,7 +306,6 @@
     width: 16px;
     height: 16px;
     bottom: 0;
-    background: url(../imgs/btn.png) no-repeat;
     background-position: -240px 0;
 }
 .playerControl .volumePanel{
@@ -375,16 +374,62 @@
     margin-left: 30px;
     cursor: pointer; 
 }
+.playerControl div.modePanel ul{
+    padding-top: 10px;
+    font-size: 14px;
+}
 .playerControl div.modePanel {
-    width: 130px;
+    text-align: center;
+    width: 120px;
     height: 116px;
     z-index: 30;
     position: absolute;
-    bottom: 76px;
+    bottom: 79px;
     left: 0;
-    background: red;
+    background:url(../imgs/mode.png) no-repeat;
     display: none;
 }
+.playerControl div.modePanel li{
+    list-style: none;
+    line-height: 30px;
+    height: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+.playerControl div.modePanel li.act{
+    color: skyblue;
+}
+.playerControl div.modePanel li i{  
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 7px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.modePanel li.sx i.act{
+    background: url(../imgs/btn.png) -96px -179px; 
+}
+.modePanel li.lo i.act{
+    background: url(../imgs/btn.png) -32px -179px;
+}
+.modePanel li.sj i.act{
+    background: url(../imgs/btn.png) -160px -179px;
+}
+
+.modePanel .sx i{
+    background: url(../imgs/btn.png) -64px -179px;
+    /* -96px -179px */
+}
+.modePanel .lo i{
+    background: url(../imgs/btn.png) 0 -179px;
+    /* -32px -179px; */
+}
+.modePanel .sj i{
+    background: url(../imgs/btn.png) -128px -179px;
+    /* -160px -179px */
+}
+
 .playerControl .download {
     position: relative;
     width: 16px;
@@ -396,8 +441,8 @@
     position: relative;
     width: 16px;
     height: 50px;
-    margin-left: 30px;
     cursor: pointer; 
+    color: #fff;
 }
 .plyar div.playerList{
     position: absolute;

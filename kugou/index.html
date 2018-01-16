@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>音乐播放</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -146,7 +146,13 @@
                 <!-- 音量控制 ↑ -->
                 <!-- 播放模式 ↓ -->
                 <div class="mode"><span></span></div>
-                <div class="modePanel"></div>
+                <div class="modePanel">
+                    <ul>
+                        <li class = "sx act" data-mode="sx"><i class="act"></i>列表循环</li>
+                        <li class="lo" data-mode="loop"><i></i>单曲循环</li>
+                        <li class="sj" data-mode="sj"><i></i>随机播放</li>
+                    </ul>
+                </div>
                 <!-- 播放模式 ↑ -->
                 <!-- 播放列表 ↓ -->
                 <div class="download"><span></span></div>
@@ -154,7 +160,6 @@
                 <!-- 分享 ↓ -->
                 <div class="share"><span></span></div>
                 <!-- 分享 ↑ -->
-                
             </div>
             <!-- 控制条 ↑ -->
        </div>

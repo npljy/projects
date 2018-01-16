@@ -7,3 +7,15 @@ function totime(num){
     s <10 ? s = "0"+s : s;
     return m+":"+s;
 }
+
+// 获取一个不等于 num 的随机数
+function randNum(nu){
+    var num = parseInt(Math.random()*4);
+    if( !isNaN(nu) && num != nu ){
+        return num;
+    }
+    else{
+        return randNum(nu);
+    }
+    
+}
