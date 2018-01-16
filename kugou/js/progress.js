@@ -138,6 +138,8 @@ window.onload = function () {
     // --xc ↓--
     //列表开关
     listOpenBtn.onclick = () => {
+        volumePanel.style.display = "none";
+        modePanel.style.display = "none";
         list.style.display == "block" ? list.style.display = "none" : list.style.display = "block";
         listClose.onclick = () => {
             list.style.display = "none";
@@ -348,6 +350,8 @@ window.onload = function () {
         myaudio.muted ? this.firstElementChild.style.backgroundPosition = "-144px -195px" : this.firstElementChild.style.backgroundPosition = "-64px -195px";
     }
     volume.onmouseover = function () {
+        list.style.display = "none";
+        modePanel.style.display = "none";
         volumePanel.style.display = "block";
     }
     volume.onmouseout = function () {
@@ -391,6 +395,8 @@ window.onload = function () {
     }
     mode.onclick = function(e) {
         e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+        volumePanel.style.display = "none";
+        list.style.display = "none";
         modePanel.style.display == "block" ? modePanel.style.display = "none" : modePanel.style.display = "block";
     }
    
@@ -400,6 +406,7 @@ window.onload = function () {
     modePanel.onmouseout = function () {
         this.style.display = "none";
     }
+
     /**
      *  播放模式 playMode赋值，
      *  点击html中的循环模式，给playMode 赋相对应的值 ， 
