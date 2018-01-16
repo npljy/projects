@@ -305,6 +305,7 @@
     display: block;
     width: 16px;
     height: 16px;
+    line-height: 16px;
     bottom: 0;
     background-position: -240px 0;
 }
