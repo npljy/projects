@@ -387,15 +387,58 @@
 }
 .plyar div.playerList{
     position: absolute;
-    width: 480px;
-    height: 410px;
+    width: 400px;
+    height: 400px;
     right: 24px;
     bottom: 80px;
-    display: none;
-    background: red;
+    /* display: none; */
+    background:#2f343b;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.playerList ul{
+    margin-top: 30px;
+}
+.playerList li{
+    list-style: none;
+    width: 380px;
+    height: 50px;
+    line-height: 50px;
+    color: #19b5f0;
+    border-bottom: 1px solid #42484e;
+}
+.playerList li.act{
+    background: #40444b;
+}
+.playerList li span{
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    cursor: pointer;
+}
+.playerList li span.song{
+    display: inline-block;
+    width: 160px;
+    text-align: left;
+    padding-left: 15px;
+}
+div.listHead{
+    width: 360px;
+    height: 40px;
+    color: #86898e;
+}
+.listHead span:first-child{
+    float: left;
+}
+.listHead span:last-child{
+    float: right;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: url(../imgs/btn.png) no-repeat -240px -96px;
 }
 .playerProgress .infoName{
-    width: 250px;
+    width: 230px;
     height: 24px;
 }
 .barName{
@@ -479,7 +522,7 @@
 .clear{
     zoom:1;
 }
-.songMain::after,.songName::after,.songInfo::after{
+.songMain::after,.songName::after,.songInfo::after,div.listHead::after{
     content: ".";
     display: block;
     visibility: hidden;
