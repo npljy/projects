@@ -62,7 +62,7 @@ window.onload = function () {
     set(blurMask);
     window.onresize = function(){
         set(content);
-        et(blurbg);
+        set(blurbg);
         set(blurMask);
     }
     renderList();
@@ -123,6 +123,7 @@ window.onload = function () {
             }
         });
     });
+    // 监听ended，播放结束切换
     myaudio.addEventListener("ended", function () {
         toggle.classList.remove("play"); 
         zhuan.classList.remove("Rotation") ;
@@ -150,6 +151,7 @@ window.onload = function () {
         }
     }   
     // ----播放模式控制 ↑
+
     // 阻止list冒泡
     list.onclick = function(el){
         el.stopPropagation ? el.stopPropagation() : el.cancelBubble = true;
