@@ -1,0 +1,143 @@
+//清浮动工具类
+.clear_float{
+    zoom: 1;
+}
+.clear_float:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+#calc_logo{
+    float: left;
+}
+#calc{
+    width: 322px;
+    //height: 533px;
+    box-sizing: border-box;
+    border:1px solid #6b98ba;
+    background-color: #e6e6e6;
+    position: absolute;
+    left:300px;
+    display: none;
+    transition: 0.5s;
+    opacity: 0;
+}
+#title{
+    position: relative;
+}
+#calc_head{
+    height: 30px;
+    span{
+        line-height: 30px;
+        font-size: 10px;
+    }
+
+    .head_l{
+        float: left;
+        margin-left: 12px;
+        span{
+            cursor: default;
+        }
+    }
+
+    .head_r{
+        float: right;
+        span{
+            margin-right: 18px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+}
+//作者
+#author{
+    background-color: #f0f0f0;
+    padding: 15px;
+    display: none;
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    box-sizing: border-box;
+}
+//折叠
+#folding{
+    height: 50px;
+    span{
+        display: inline-block;
+        line-height: 50px;
+        margin-left: 14px;
+    }
+    img{
+        cursor: pointer;
+    }
+}
+//结果
+#results{
+    height: 102px;
+
+    #results_t{
+        padding-right: 23px;
+        height: 27px;
+        span{
+            line-height: 27px;
+            font-size: 14px;
+            color: #5c5c5c;
+            float: right;
+        }
+    }
+
+    #results_b{
+        padding-right: 14px;
+        span{
+            line-height: 59px;
+            color: #000;
+            float: right;
+            font-size: 32px;
+            font-weight:bold;
+        }
+    }
+}
+//键盘输入
+#enter{
+    margin-left: 4px;
+    li{
+        float: left;
+        //padding: 4px;
+        margin-right: 4px;
+        margin-bottom:4px;
+        .hov_color{
+            font-size: 24px;
+            &:hover{
+                background-color: #2986CC;
+            }
+        }
+        .bold{
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
+    button{
+        display: inline-block;
+        width: 75px;
+        height: 49px;
+        text-align: center;
+        line-height: 49px;
+        font-size: 18px;
+        background-color: #f0f0f0;
+        cursor: default;
+        outline: none;
+        border: 0;
+        &:hover{
+            background-color: #D1D1D1;
+        }
+    }
+}

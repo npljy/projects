@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  color: #fff;
+  background: #333;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+.ammieeL{
+	/*width:100%;
+	height:560px;
+	position:relative;
+	margin:0 auto;*/
+}
+.ammieeL .left {
+  float: left;
+}
+
+.ammieeL .right {
+  float: right;
+}
+
+.ammieeL .clear {
+  clear: both;
+}
+
+#backgroundLx {
+
+  position: absolute;
+  /*top: 50px;*/
+  /*left: 100px;*/
+  width: 100%;
+  height: 100%;
+  background: url(../../img/3.jpg) no-repeat 0 0;
+  background-size: 100% 100%;
+  opacity: 0.1;
+  /*-moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;*/
+}
+#backgroundLx  img{
+	width: 100%;
+	height:100%;
+	background-size: 100%;
+}
+.centerLx{
+	/*width:100%;
+	height: 100%;	*/
+  float: left;
+	overflow: hidden;
+	margin-left: 30px;
+}
+.songLx{
+	float: left;
+	margin-left: 30px;
+	width: 320px;
+	height:400px;
+	
+	box-shadow: 0 2 2 #333;
+	/*background: rgba(0,0,0,0.3);*/
+}
+.songLx div{
+	width: 400px;
+	height:500px;
+	margin:0;
+	background: url(../../img/roll.png) no-repeat 60px 110px;
+	background-size: 80%;
+	position:relative;
+}
+.ammieeL .cdCover img
+{
+    max-width: 36%;
+    max-height: 36%;
+    border-radius: 100px;
+    background: url("../../img/1.jpg") no-repeat 0 0;
+    background-size: cover;
+    position: absolute;
+    top: 54%;
+    left: 55%;
+    margin-top: -18%;
+    margin-left: -18%;
+    z-index: 3;
+    transition:all 0.5s;
+    position: absolute;
+    /*left:10px;*/
+}
+
+.cdStart
+{
+    animation:myCDRotate 5s infinite linear;
+}
+.cdPause
+{
+    animation-play-state:paused;
+}
+.ammieeL #player {
+  width: 500px;
+  height: 130px;
+  padding: 25px;
+  margin: 90px 0 30px 50px;
+  position: relative;
+}
+.ammieeL #player .cover {
+  width: 130px;
+  height: 130px;
+  /*background: rgba(0, 0, 0, 0.5);*/
+ 	background:url(../../img/3.jpg) no-repeat;
+ background-size: 100%;
+  border: 1px solid #333;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  overflow: hidden;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+ 	/*width: 390px;
+  height: 390px;*/
+  -moz-box-shadow: 0 2px 10px black;
+  -webkit-box-shadow: 0 2px 10px black;
+  -o-box-shadow: 0 2px 10px black;
+  box-shadow: 0 2px 10px black;
+}
+.ammieeL #player .cover img {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  width: 130px;
+  height: 130px;
+}
+.ammieeL #player .ctrl {
+  margin-left: 155px;
+  /*text-shadow: 0 1px 2px #000;*/
+  line-height: 16px;
+}
+.ammieeL #player .ctrl .tag strong,.ammieeL #player .ctrl .tag span {
+  display: block;
+  text-overflow: ellipsis;
+}
+.ammieeL #player .ctrl .tag span {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #ccc;
+}
+.ammieeL #player .ctrl .icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  opacity: 0.6;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.ammieeL #player .ctrl .icon:hover,.ammieeL #player .ctrl .icon.enable {
+  opacity: 1;
+}
+.ammieeL #player .ctrl .icon:active {
+  opacity: 0.3;
+}
+.ammieeL #player .ctrl .control {
+  margin-top: 10px;
+  height: 25px;
+}
+.ammieeL #player .ctrl .control .rewind {
+  background-image: url(../images/rewind.png);
+}
+.ammieeL #player .ctrl .control .playback {
+  background-image: url(../images/play.png);
+}
+.ammieeL #player .ctrl .control .playback.playing {
+  background-image: url(../images/pause.png);
+}
+.ammieeL #player .ctrl .control .fastforward {
+  background-image: url(../images/fastforward.png);
+}
+.ammieeL #player .ctrl .control .volume .mute {
+  background-image: url(../images/volume.png);
+}
+.ammieeL #player .ctrl .control .volume .mute.enable {
+  background-image: url(../images/mute.png);
+}
+.ammieeL #player .ctrl .control .volume .slider {
+  margin-top: 11px;
+  margin-left: 10px;
+  width: 100px;
+}
+.ammieeL #player .ctrl .progress {
+  margin-top: 10px;
+}
+.ammieeL #player .ctrl .progress .timer {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 8px;
+}
+.ammieeL #player .ctrl .progress .repeat,.ammieeL #player .ctrl .progress .shuffle {
+  background-position: center bottom;
+}
+.ammieeL #player .ctrl .progress .repeat {
+  background-image: url(../images/repeat.png);
+}
+.ammieeL #player .ctrl .progress .repeat.once,.ammieeL #player .ctrl .progress .repeat.all {
+  opacity: 1;
+}
+.ammieeL #player .ctrl .progress .repeat.once {
+  position: relative;
+}
+.ammieeL #player .ctrl .progress .repeat.once:before {
+  content: "1";
+  position: absolute;
+  top: 3px;
+  right: -2px;
+  font-size: 8px;
+}
+.ammieeL #player .ctrl .progress .shuffle {
+  background-image: url(../images/shuffle.png);
+}
+
+.ammieeL .slider {
+  background: rgba(0, 0, 0, 0.3);
+  height: 5px;
+  position: relative;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+  -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+}
+.ammieeL .slider:hover a,.ammieeL .slider.enable a {
+  opacity: 1;
+}
+.ammieeL .slider a {
+  background: #fff;
+  margin-left: -2.5px;
+  position: absolute;
+  opacity: 0;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border-radius: 50%;
+  -moz-transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.ammieeL .slider .loaded,.ammieeL .slider .pace {
+  position: absolute;
+  height: 100%;
+  opacity: 0.7;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+}
+.ammieeL .slider .loaded {
+  background: rgba(255, 255, 255, 0.1);
+}
+.ammieeL .slider .pace {
+  background: #258fb8;
+}
+
+.ammieeL #playlist {
+  background: rgba(0, 0, 0, 0.5);
+  width: 470px;
+  margin: 0 0 50px 70px;
+  padding: 10px 15px;
+  list-style: none;
+  position: relative;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.ammieeL #playlist li {
+  color: #aaa;
+  font-size: 12px;
+  line-height: 2;
+  padding-left: 25px;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.ammieeL #playlist li:hover {
+  color: #fff;
+}
+.ammieeL #playlist li.playing {
+  background: url(../images/playing.png) no-repeat 0 center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.ammieeL footer {
+  position: relative;
+  font-size: 12px;
+  color: white;
+  margin-top:160px;
+  text-shadow: 0 1px 2px #000;
+  text-align: center;
+}
+.ammieeL footer a {
+  color: #fff;
+  font-weight: bold;
+}
+.ammieeL footer a:hover {
+  text-decoration: none;
+}
+@keyframes myCDRotate
+{
+    from {transform:rotate(0);}
+    to {transform:rotate(360deg);}
+}
+
+@-moz-keyframes myCDRotate /* Firefox */
+{
+    from {transform:rotate(0);}
+    to {transform:rotate(360deg);}
+}
+
+@-webkit-keyframes myCDRotate /* Safari 和 Chrome */
+{
+    from {transform:rotate(0);}
+    to {transform:rotate(360deg);}
+}
+
+@-o-keyframes myCDRotate /* Opera */
+{
+    from {transform:rotate(0);}
+    to {transform:rotate(360deg);}
+}

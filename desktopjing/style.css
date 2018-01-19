@@ -1,0 +1,135 @@
+.clear_float {
+  zoom: 1;
+}
+.clear_float:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+#calc_logo {
+  float: left;
+}
+#calc {
+  width: 322px;
+  box-sizing: border-box;
+  border: 1px solid #6b98ba;
+  background-color:rgba(156,206,232,0.8);
+  position: absolute;
+  left: 300px;
+  display: none;
+  transition: 0.5s;
+  opacity: 0;
+  border-radius: 15px;
+}
+#title {
+  position: relative;
+}
+#calc_head {
+  height: 30px;
+}
+#calc_head span {
+  line-height: 30px;
+  font-size: 10px;
+}
+#calc_head .head_l {
+  float: left;
+  margin-left: 12px;
+}
+#calc_head .head_l span {
+  cursor: default;
+}
+#calc_head .head_r {
+  float: right;
+}
+#calc_head .head_r span {
+  margin-right: 18px;
+  font-size: 14px;
+  cursor: pointer;
+}
+#author {
+  background-color: #f0f0f0;
+  padding: 15px;
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  box-sizing: border-box;
+}
+#folding {
+  height: 50px;
+}
+#folding span {
+  display: inline-block;
+  line-height: 50px;
+  margin-left: 14px;
+}
+#folding img {
+  cursor: pointer;
+}
+#results {
+  height: 102px;
+}
+#results #results_t {
+  padding-right: 23px;
+  height: 27px;
+}
+#results #results_t span {
+  line-height: 27px;
+  font-size: 14px;
+  color: #5c5c5c;
+  float: right;
+}
+#results #results_b {
+  padding-right: 14px;
+}
+#results #results_b span {
+  line-height: 59px;
+  color: #000;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+}
+#enter {
+  margin-left: 4px;
+}
+#enter li {
+  float: left;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+#enter li .hov_color {
+  font-size: 24px;
+}
+#enter li .hov_color:hover {
+  background-color: rgba(252,241,245,1);
+}
+#enter li .bold {
+  font-size: 24px;
+  font-weight: bold;
+}
+#enter button {
+  display: inline-block;
+  width: 75px;
+  height: 49px;
+  text-align: center;
+  line-height: 49px;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255,0.8);
+  cursor: default;
+  outline: none;
+  border: 0;
+  border-radius: 15px;
+
+}
+#enter button:hover {
+  background-color: #D1D1D1;
+}

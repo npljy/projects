@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background: url(img/d.jpg) no-repeat center 150px #f9f6e3;
+			}
+			.webBox{
+	width: 700px;
+	height: 450px;
+	display: none;
+	z-index: 222;
+	box-shadow: 1px 1px 3px #999;
+	cursor: pointer;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -225px;
+	margin-left: -350px;
+}
+.webBoxTop{
+	height:28px;
+	background: #f2f2f2;
+	line-height: 28px;
+	border-radius: 5px 5px 0 0;
+	cursor: pointer;
+}
+.webBoxTop p{
+	text-align: center;
+	font-size: 18px;
+	color:deepskyblue;
+	font-weight:bold;
+    font-family: "arial black"; 
+}
+.webBoxTop .shuaxin{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	float: left;
+	background: url(img/shua.png) no-repeat 3px 9px;
+}
+.webBoxView{
+	position: absolute;
+	width: 90px;
+	height: 30px;
+	right: 0;
+	top: 0;
+}
+ .magnify, .close{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	float: left;
+	background: url(img/xxx.png) no-repeat ;
+}
+.webBoxView .magnify{
+	background-position: left -30px; 
+}
+.webBoxView .close{
+	background-position: left -90px;
+}
+.webBoxContent{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	border: 1px solid lightgray;
+}
+.webBoxView .reduce:hover{background-position:left -120px;}
+.webBoxView .magnify:hover{background-position:left -149px;}
+.webBoxView .close:hover{background-position:left -208px;}
+.webBoxView a.active{background-position:left -60px;}
+.webBoxView a.active:hover{background-position:left -181px;}
+iframe{
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+		</style>
+	</head>
+	<body>
+    <div class="box">
+    	<img src="img/Net.png" id="img"/>
+    </div> 
+    <div class="webBox">
+    	<div class="webBoxTop">
+    		
+    		<p>浏览网页</p>
+    		<div class="webBoxView" id="webBoxView">
+    			<a href="javascript:;" class="shuaxin"></a>
+    			<a href="javascript:;" class="magnify"></a>
+    			<a href="javascript:;" class="close"></a>
+    		</div>
+    	</div>
+    	<div class="webBoxContent">
+    		<iframe src="index.html" frameborder="no" class="ifra"></iframe>
+    	</div>	
+    </div>
+    <script>
+    	var btn = document.getElementById('img');
+    	var webBox = document.querySelector('.webBox');
+    	var reduce = document.querySelector('.reduce');
+    	var magnify = document.querySelector('.magnify');
+    	var close = document.querySelector('.close');
+    	var shua = document.querySelector('.shuaxin');
+    	var ifra = document.querySelector('.ifra');
+    	shua.onclick = function(){
+    		ifra.src = 'index.html';
+    	}
+    	
+        btn.onclick = function(){
+        	webBox.style.display = 'block';
+        }
+        close.onclick = function(){
+        	webBox.style.display = 'none'
+        	onOff = false;
+        	fn1();
+        	ifra.src = 'index.html';
+        }
+        var	onOff = true;
+        magnify.onclick = fn1;
+        
+        function fn1(){
+        
+        	if(onOff){
+	            webBox.style.width = '100%';
+	        	webBox.style.height = '100%';
+	        	webBox.style.left = '0';
+	        	webBox.style.top = '0';
+	        	webBox.style.marginTop = 0;
+	        	webBox.style.marginLeft = 0;
+	        	magnify.style.backgroundPosition = 'left -60px';
+	        	onOff = false;
+        	}else{
+        	    webBox.style.width = '700px';
+	        	webBox.style.height = '450px';
+	        	webBox.style.left = '50%';
+	        	webBox.style.top = '50%';
+	        	webBox.style.marginTop = '-225px';
+	        	webBox.style.marginLeft = '-350px';
+	        	magnify.style.backgroundPosition = 'left -30px';
+	        	onOff = true;
+        	}
+        }
+    </script>
+	</body>
+</html>

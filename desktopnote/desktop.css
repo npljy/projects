@@ -1,0 +1,174 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+@font-face{
+    font-family:myFont;
+    src: url('MFDingDing_Noncommercial-Regular.ttf')
+}
+body{
+    background: url(img/d.jpg) no-repeat center 150px #f9f6e3;
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+}
+#logo{
+    height: 800px;
+    width: auto;
+    float: left;
+    list-style: none; 
+}
+#logo li{
+    margin:10px;
+    font-family: myFont;
+    text-align:center;
+    font-weight: bold;
+    color: #243e2a;
+    font-size: 24px;
+    width:74px;
+    height:110px;
+    position: absolute;
+    top:0px;
+    left: 0px;   
+    outline:0;
+}
+.bag{
+    background-color:rgba(32, 94, 92, 0.2);
+    border:5px solid #fbdae3;
+    border-radius: 20px;
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow-x:hidden;
+}
+.bag li{
+    margin:5px;
+    font-family: myFont;
+    text-align:center;
+    font-weight: bold;
+    color: #243e2a;
+    font-size: 24px;
+    width:70px;
+    height:100px;
+    position: absolute;
+    float: left;
+    list-style: none; 
+}
+.bag img{
+    display: block;
+    transform: scale(0.7);  
+}
+.bag ul span{
+    display: block;
+    width:70px; 
+    height:24px; 
+}
+.active,.bang,#logo li:hover,.bag li:hover{
+    background: pink;
+    border:1px solid #000;
+    border-radius: 15%;
+}
+#logo li img{
+    display: block;
+}
+#logo li span{
+    display: block;
+    width:74px; 
+    height:30px;  
+}
+#bot{
+    position: absolute;
+    padding:0 10px;
+    bottom: 0;
+    height: 70px;
+    background-color: rgba(236, 166, 91, 0.2);
+    border-radius: 10%;
+    list-style: none;
+}
+#bot li{
+    float: left;
+    height:60px;
+    width: 70px;
+    transition: 0.3s
+}
+#bot li img{
+    position: absolute;
+    transform: scale(0.7);
+    display: block;
+}
+.kuang{
+    position: absolute;
+    background: olivedrab;
+    opacity:0.2;
+    border: 6px solid transparent;
+    border-radius: 15px 0 15px 0;
+}
+.editor{
+	display: none;
+    width:68px; 
+    height:26px;   
+	line-height:24px;
+	color:#000;
+	margin:0 auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    outline:0;
+}
+.bag ul{
+    position: relative
+}
+.feilei{
+    display: block;
+    width:350px; 
+    height:30px; 
+    background-color: rgba(32, 94, 92, 0.2);
+    text-align: center;
+    line-height: 30px;
+    font-size: 24px;
+    font-family:myFont;
+}
+.btn{
+    height:30px;
+    color:black;
+    width: 30px;
+    position: absolute;
+    top:0;
+    left:320px;
+    background-color: rgba(32, 94, 92,0);
+    outline: none;
+}
+.editorq{
+    outline: none;
+    background-color: rgba(32, 94, 92,0.2);
+    text-align: center;
+    line-height: 30px;
+    font-size: 24px;
+    font-family:myFont;
+    display: none;
+    width:350px; 
+    height:30px; 
+}
+
+@keyframes snow{
+	0% {
+		background-position: 0 0, 0 0;
+	}
+	100% {
+		background-position: 500px 500px, 1000px 500px;
+	}
+}
+
+#snowMask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url('snow1.png'),url('snow2.png');
+	animation: 10s snow linear infinite;
+	pointer-events: none;
+}
+
+
+
+

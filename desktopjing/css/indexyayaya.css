@@ -1,0 +1,237 @@
+
+.paneLi{
+	/* margin:100px auto; */
+	width:600px;
+	height:224px;
+	position: relative;
+	border-radius: 15px;
+	border:1px solid #6d6c6c;
+	display: none	
+}
+.boxLi{
+	width:600px;
+	height:200px;
+	position: relative;
+	overflow: hidden;
+}	
+
+/*雪碧图*/
+.picLi{
+	background:url(../img/1.png) no-repeat;
+}
+
+.flaky{
+	width:40px;
+	height:44px;
+	position: absolute;
+	left:2px;
+	bottom:0px;
+	background-position: -42px -5px;
+}
+
+.wrapLi{
+	width:600px;
+	height:200px;
+	position: relative;
+	overflow: hidden;
+	/*display: none;*/
+}
+
+/*地面*/
+.floorImg{
+	width:598px;
+	height:200px;
+	position: relative;
+	left:0;
+	bottom:0px;
+	display: none;
+
+}
+.floorOne, .floorTwo{
+	width:598px;
+	height:10px;
+	background-position: 0px -58px;
+	position: absolute;
+	left:0;
+	bottom:0px;
+}
+.floorTwo{
+	left:598px;
+}
+/*云朵*/
+.clouds{
+	position: absolute;
+	left:600px;
+	top:20px;
+	width:46px;
+	height:13px;
+	background-position: -86px -2px;
+}
+.clouds{
+    position:absolute;
+    top: 0;
+    left: 600px;
+    width: 46px;
+    height:14px;
+   	background-position: -86px -2px;
+}
+
+/*行走的恐龙变化位置*/
+#dragon{
+	display: none;
+}
+.dinosaur{
+	width:44px;
+	height:49px;
+	position: absolute;
+	left:2px;
+	bottom:0px;
+	
+}
+.Loong1{
+	background-position: -677px -2px;
+}
+.Loong2{
+	background-position: -765px -2px;
+}
+.Loong3{
+	background-position: -810px -2px;
+}
+/*蹲下的恐龙变化位置*/
+.dgDown{
+	width:59px;
+	height:30px;
+	position: absolute;
+	left:2px;
+	bottom:0px;
+}
+.LoongDown1{
+	background-position: -941px -19px;
+}
+.LoongDown2{
+	background-position: -1001px -19px;
+}
+/*障碍物*/
+.bar{
+	position: absolute;
+	left:40px;
+	bottom:3px;
+	
+}
+/*大树*/
+.bar1{
+	width:25px;
+	height:47px;
+	background-position: -332px -2px;
+}
+.bar2{
+	width:75px;
+	height:47px;
+	background-position: -407px -2px;
+}
+.bar3{
+	width:50px;
+	height:47px;
+	background-position: -357px -2px;
+}
+/*小树*/
+.bar4{
+	width:17px;
+	height:35px;
+	background-position: -228px -2px;
+}
+.bar5{
+	width:34px;
+	height:35px;
+	background-position: -228px -2px;
+}
+.bar6{
+	width:51px;
+	height:35px;
+	background-position: -228px -2px;
+}
+/*小鸟*/
+.bar7{
+	width:46px;
+	height:34px;
+	background-position: -134px -8px;
+}
+.bar8{
+	width:46px;
+	height:30px;
+	background-position: -180px -2px;
+}
+
+/*碰撞的恐龙*/
+.Loong5{
+	background-position: -853px 0px;
+}
+
+
+/*游戏结束*/
+.over{
+	position: absolute;
+	left:200px;
+	top:20px;
+	display: none;
+}
+.word{
+	background-position: -484px -15px;
+	display: inline-block;
+	width:191px;
+	height:11px;
+}
+.open{
+	position: absolute;
+	left:75px;
+	top:34px;
+	width:36px;
+	height:32px;
+	background-position: -2px -2px;
+}
+/*时间*/
+.timelqw{
+	position: absolute;
+	top:0;
+	right:30px;
+	font: 600 18px/20px Courier;
+	color:#6d6c6c;
+}
+.all_time{
+	display: none;
+}
+.single_time{
+	display: none;
+}
+.showlqw{
+	display: block;
+}
+.activelqw{
+	display: none;
+}
+
+.closeLi{
+	width:100%;
+	height:24px;
+	background-color:rgba(0,0,0,.4);
+	font:20px/24px "微软雅黑";
+	/*position: absolute;
+	top:0px;
+	right:0px;*/
+	color:#fff;
+	text-align: right;
+	padding-right:5px;
+	box-sizing: border-box;
+	border-radius: 15px;
+	/*display: none;*/
+}
+
+/*.Loong1{
+	background-position: -721px 0px;
+}*/
+/*.Loong4{
+	background-position: -853px 0px;
+}
+.Loong5{
+	background-position: -899px 0px;
+}*/

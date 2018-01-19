@@ -1,0 +1,23 @@
+        #logocaidan{
+            width:100px;
+            border:1px solid #999;
+            padding:2px 3px;
+            background-color: rgba(0, 0, 204,0.2);
+            font:12px/18px '宋体';
+            color: #000;
+            position:absolute;
+            display:none;
+            top:0;
+            left:0;
+            border-radius: 12px;
+            box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+        .logocaidanS {
+            height:18px;
+            padding-left:16px;
+        }
+        .logocaidanS:hover {
+            cursor: pointer;  
+            background: url("img/dot.png") no-repeat 2px 6px;          
+        }
+

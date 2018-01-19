@@ -1,0 +1,89 @@
+
+
+        ul{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        #boxr{
+            width:138px;
+            border:1px solid #999;
+            padding:2px 3px;
+            background-color: rgba(236, 169, 94, 0.2);
+            font:12px/18px '宋体';
+            color: #000;
+            position:absolute;
+            display:none;
+            top:0;
+            left:0;
+            border-radius: 12px;
+            box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+        }
+        .item{
+            padding:4px 0 3px;
+            border-bottom:1px solid #333;
+            border-top:1px solid #fff;
+        }
+        .first{
+            border-top:0;
+            padding-top:0;
+        }
+        .last{
+            border-bottom:0;
+            padding-bottom:0;
+        }
+        .content{
+            height:18px;
+            padding-left:16px;
+            white-space: nowrap;
+        }
+        .content:hover{
+            background-color: #3399fe;
+            color: #fff;
+            cursor: pointer;
+        }
+        .content .text{
+            display: inline-block;
+            height:100%;
+            width:100%;
+            vertical-align: top;
+        }
+        .content:hover ul{
+            color: black;
+            display: inline-block;
+        }
+        .content ul{
+            margin-left:-7px;
+            display: none;
+            background-color: rgba(236, 166, 91,0.6);
+            border: 1px solid #0b0b0b;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+
+        }
+        .content ul li{
+            font:13px/23px '微软雅黑';
+            padding-left:18px;
+            padding-right: 10px;
+        }
+
+        .content ul li:hover{
+            background-color: #999;
+            background: url("img/dot.png") no-repeat 6px 8px;
+        }
+        .onoff {
+            display:none;
+            
+        }
+        .crrow{
+            background: url("img/crrow.png") no-repeat 129px 4px;
+        }
+        .crrowdown{
+            background: url("img/crrowdown.png") no-repeat 126px 9px;
+        }
+        .crrowup{
+            background: url("img/crrowup.png") no-repeat 126px 9px;
+        }
+        .yes{
+            background: url("img/yes.png") no-repeat 3px 6px;
+        }
