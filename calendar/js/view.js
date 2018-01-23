@@ -5,7 +5,7 @@ window.onload = function(){
     var year = date.getFullYear();
     var mon = date.getMonth();
     var today = date.getDate();
-    setDate(year,mon+5);
+    setDate(year,mon);
 
     function setDate(year,mon){
         ym.innerHTML = "<span>"+year+"</span><span>"+(mon+1)+"</span>"
