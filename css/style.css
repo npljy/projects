@@ -28,7 +28,6 @@ a{
     position: relative;
 }
 
-
 .paper{
     position: absolute;
     top: 0;
@@ -37,7 +36,7 @@ a{
     transform-origin: 0 100%;
     transform: rotateY(0deg) skewY(0deg);
     width: 60%;
-    height: 900px;;
+    height: 100%;
     overflow: hidden;
 }
 .prev{
@@ -48,6 +47,7 @@ a{
     top: 0;
     left: 0;
     z-index: 1;
+    height: 100%;
 }
 .rightPage{
     position: absolute;
@@ -55,6 +55,7 @@ a{
     left: 0;
     transform: rotateY(180deg);
     z-index: 0;
+    height: 100%;
 }
 .act{
     z-index: -1;

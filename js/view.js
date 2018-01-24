@@ -1,5 +1,7 @@
 window.onload = function(){
     
+    setMain();
+
     var timer = null;
     var timer2 = null;
     var onoff = false;
