@@ -27,26 +27,37 @@ a{
 .main{
     position: relative;
 }
+
+
 .paper{
     position: absolute;
     top: 0;
-    left: 50%;
-    transform-origin: 0 0 ;
-    transform: rotateY(0deg);
-    transition: 1s;
+    left: 30%;
+    transition: left 1s;
+    transform-origin: 0 100%;
+    transform: rotateY(0deg) skewY(0deg);
+    width: 60%;
+    height: 900px;;
+    overflow: hidden;
+}
+.prev{
+    transform: rotateY(180deg) skewY(0deg);
 }
 .leftPage{
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 20;
+    z-index: 1;
 }
 .rightPage{
     position: absolute;
     top: 0;
     left: 0;
     transform: rotateY(180deg);
-    z-index: 10;
+    z-index: 0;
+}
+.act{
+    z-index: -1;
 }
 .clear::after{
     content: ".";
