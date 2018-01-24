@@ -1,9 +1,6 @@
 window.onload = function(){
-    
     setMain();
 
-    var timer = null;
-    var timer2 = null;
     var onoff = false;
     var papers = Array.from(document.querySelectorAll(".paper"));
     papers.forEach((e,i)=>{
@@ -15,6 +12,8 @@ window.onload = function(){
     });
    
     function turnPage(e,i){
+        var timer = null;
+        var timer2 = null;
         if(!onoff){
             onoff = true;
             if(!e.dataset.click || e.dataset.click == "no"){
