@@ -17,13 +17,37 @@ a{
     list-style: none;
     margin: 0 auto;
     width: 80%;
+    min-width: 600px;
 }
 .nav li{
     float: left;
     width: 15%;
     padding-left: 5%;
 }
-
+.main{
+    position: relative;
+}
+.paper{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: 0 0 ;
+    transform: rotateY(0deg);
+    transition: 1s;
+}
+.leftPage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+.rightPage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    z-index: 10;
+}
 .clear::after{
     content: ".";
     display: block;
