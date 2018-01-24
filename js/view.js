@@ -20,7 +20,7 @@ window.onload = function(){
                 var numY = 0;
                 var numZ = 0;
                 papers.forEach(e =>e.style.left = "50%");
-                if(i==papers.length-1)papers.forEach(e =>e.style.left = "67%");
+                if(i==papers.length-1)papers.forEach(e =>e.style.left = "66%");
                 e.dataset.click = "yes";
                 timer = setInterval(function(){
                     numY++;
@@ -50,7 +50,7 @@ window.onload = function(){
                 var numZ = 0;
                 e.dataset.click = "no";
                 papers.forEach(e =>e.style.left = "50%");
-                if(i==0)papers.forEach(e =>e.style.left = "30%");
+                if(i==0)papers.forEach(e =>e.style.left = "33%");
                 timer = setInterval(function(){
                     numY--;
                     numZ = parseFloat(numZ.toFixed(2)) + 0.1;
