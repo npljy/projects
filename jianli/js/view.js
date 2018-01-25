@@ -3,14 +3,19 @@ window.onload = function(){
 
     var onoff = false;
     var papers = Array.from(document.querySelectorAll(".paper"));
+    var navs = Array.from(document.querySelectorAll(".nav li"));
     papers.forEach((e,i)=>{
         e.style.zIndex = papers.length-1-i;
-        // if(i == papers.length-1)return;
         e.onclick = function(){
             turnPage(e,i);
         }
     });
-   
+    // navs.forEach((e,i)=>{
+    //     // if(i==0)return;
+    //     e.onclick = function(){
+
+    //     }
+    // })
     function turnPage(e,i){
         var timer = null;
         var timer2 = null;
@@ -73,9 +78,7 @@ window.onload = function(){
                         onoff = false;
                     },500);
                 },1000)
-
             }
-
         }
     }
 

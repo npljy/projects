@@ -52,14 +52,13 @@ a{
 .paper{
     position: absolute;
     top: 15px;
-    /* left: 33%; */
-    transition: left 1s;
     transform-origin: 0 100%;
     transform: rotateY(0deg) skewY(0deg);
     width: 40%;
     min-width: 300px;
     height: 100%;
     overflow: hidden;
+    transition: 1s;
 }
 .prev{
     transform: rotateY(180deg) skewY(0deg);
@@ -71,16 +70,16 @@ a{
     background: #f4f4f4;
     border: 1px solid #e8e4e2;
     box-sizing: border-box;
+    height: 100%;
+    width: 100%;
 }
 .leftPage{
     z-index: 1;
-    height: 100%;
     border-left: 2px solid #797979;
 }
 .rightPage{
     transform: rotateY(180deg);
     z-index: 0;
-    height: 100%;
     border-right: 2px solid #797979;
 }
 .act{
