@@ -1,5 +1,5 @@
 function setMain() {
-    var main = document.querySelector(".main");
+    var main = document.querySelector(".content");
     var nav = document.querySelector(".nav");
     var imgs = Array.from(main.querySelectorAll("img"));
     var rightPage = Array.from(main.querySelectorAll(".rightPage"));
