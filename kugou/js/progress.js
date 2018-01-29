@@ -33,6 +33,11 @@ window.onload = function () {
     var modeLis = Array.from(document.querySelectorAll(".modePanel li"));
     var blurbg = document.querySelector(".blurbg");
     var blurMask = document.querySelector(".blurMask");
+    var songbar = document.querySelector('.songBar');
+    var dragBar = document.querySelector('.dragBar');
+    var barContainer = document.querySelector('.barContainer');
+    // var songContainer = document.querySelector('.songContainer')	;
+    // var songPanel = document.querySelector('.songPanel');
     var playMode = "sx";
     var x = myaudio.duration;
     var nowSong = 0;
@@ -120,6 +125,7 @@ window.onload = function () {
                 e.style.color = "blue";
                 // 将当前歌词保持在中间
                 songPanel.style.top = i < 5 ? 0 : - e.offsetHeight * (i - 5) + "px";
+                dragBar.style.top = this.currentTime / x * (barContainer.offsetHeight - dragBar.offsetHeight) + "px";
             }
         });
     });
