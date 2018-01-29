@@ -292,6 +292,7 @@ window.onload = function () {
             myaudio.currentTime = scale * x;
             myaudio.pause();
             songPanel.style.top = scale * (songContainer.offsetHeight - songPanel.offsetHeight) > -260 ? songPanel.style.top = 0 : scale * (songContainer.offsetHeight - songPanel.offsetHeight) + "px";
+            dragBar.style.top = scale * (barContainer.offsetHeight - dragBar.offsetHeight) + "px";
             return false;
         }
         document.onmouseup = function () {
@@ -309,6 +310,7 @@ window.onload = function () {
         barCurTime.style.width = scale * (bar.clientWidth - barDot.offsetWidth) + "px";
         myaudio.currentTime = scale * x;
         songPanel.style.top = scale * (songContainer.offsetHeight - songPanel.offsetHeight) > -260 ? songPanel.style.top = 0 : scale * (songContainer.offsetHeight - songPanel.offsetHeight) + "px";
+        dragBar.style.top = scale * (barContainer.offsetHeight - dragBar.offsetHeight) + "px";
         return false;
     }
 
