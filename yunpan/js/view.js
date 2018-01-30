@@ -317,7 +317,7 @@ window.onload = function () {
         var newdate = new Date();
         var newobj = {};
         gid = pn(window.location.hash.substring(1).split("=")[1]) || 0;
-        folders.innerHTML += '<div class="file-item" oid = "' + (+newdate) + '" pid = "' + gid + '"><img src="img/folder-b.png" alt="" /><span class="folder-name" style="display:none">新建文件夹</span><input type="text" class="editor" style = "display:block" value = "新建文件夹"/><i class=""></i></div>';
+        folders.innerHTML += '<div class="file-item" oid = "' + (+newdate) + '" pid = "' + gid + '"><img src="img/folder-bg.png" alt="" /><span class="folder-name" style="display:none">新建文件夹</span><input type="text" class="editor" style = "display:block" value = "新建文件夹"/><i class=""></i></div>';
         newobj.id = pn(+newdate);
         newobj.pid = pn(gid);
         newobj.title = "新建文件夹";
@@ -400,7 +400,7 @@ window.onload = function () {
     function renderRight(id){
         cntStr = "";// 存右侧内容
         for (a in data) {
-            pn(data[a].pid) == (pn(id) || 0 ) && (cntStr += '<div class="file-item" oid = "' + data[a].id + '" pid = "' + data[a].pid + '"><img src="img/folder-b.png" alt="" /><span class="folder-name">' + data[a].title + '</span><input type="text" class="editor"/><i class=""></i></div>');
+            pn(data[a].pid) == (pn(id) || 0 ) && (cntStr += '<div class="file-item" oid = "' + data[a].id + '" pid = "' + data[a].pid + '"><img src="img/folder-bg.png" alt="" /><span class="folder-name">' + data[a].title + '</span><input type="text" class="editor"/><i class=""></i></div>');
         }
         cntStr ? (folders.innerHTML = cntStr, folders.style.display = "block", fempty.style.display = "none") : (folders.style.display = "none", fempty.style.display = "block");
     }
