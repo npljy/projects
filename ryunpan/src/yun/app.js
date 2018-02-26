@@ -12,14 +12,19 @@ class App extends Component{
         this.state = {
             data :data,
             oid : 0 ,
+            chkoid : -1,
             rmwin : false,
-            chkoid:-1
+            delwin : false,
+            newfolder : 1
          }
     }
     // 移动菜单，选择移动目标id
     changeOid = (cid)=>{
         let {chkoid} = this.state;
         chkoid = cid;
+        let tar = data.filter(e=>e.id === cid);
+        let tarP = document.getElementById("tarP"); 
+        tarP.innerText = tar[0].title;
         this.setState({
             chkoid
         });
@@ -46,6 +51,7 @@ class App extends Component{
             data
         });
     }
+// 移动 
     openRmWin = ()=>{
         let ckdata = data.filter((e,i)=>{
             return e.checked === true;
@@ -53,7 +59,6 @@ class App extends Component{
         if(ckdata.length>0){
             let {rmwin} = this.state;
             rmwin = true;
-
             this.setState({
                 rmwin
             });
@@ -70,12 +75,140 @@ class App extends Component{
     }
     
     rmCkData = ()=>{
+        let {data,chkoid} = this.state;
+        if(chkoid !== -1){
+            data.forEach(e=>{
+                if(e.checked === true){
+                    e.pid = chkoid;
+                }
+            })
+            this.setState({
+                data
+            });
+            this.closeRmWin();
+        }
+    }
+// 删除
+    openDelWin = ()=>{
+        let ckdata = data.filter((e,i)=>{
+            return e.checked === true;
+        });
+        if(ckdata.length>0){
+            let {delwin} = this.state;
+            delwin = true;
+            this.setState({
+                delwin
+            });
+        }else{
 
+        }
+    }
+    closeDelWin = ()=>{
+        let {delwin} = this.state;
+        delwin = false;
+        this.setState({
+            delwin
+        });
+    }
+    delData = ()=>{
+        let {data} = this.state;
+        let ckdata = data.filter(e=>{
+            return e.checked
+        });
+        if(ckdata.length>0){
+            data.forEach(e=>{
+                if(e.checked === true){
+                    e.pid = -1;
+                }
+            })
+            this.setState({
+                data
+            });
+            this.closeDelWin();
+        }
+    }
+// 重命名
+    navRnFn = ()=>{
+        let {data} = this.state;
+        let ckdata = data.filter(e=>e.checked)
+        if(ckdata.length===1){
+            data.forEach(e=>{
+                e.checked && (e.rename = true);
+            })
+            this.setState({
+                data
+            })
+        }
+    }
+    changeTitle = (oid,val)=>{
+        let {data} = this.state;
+        data.forEach(e=>{
+            if(e.id === oid){
+                e.title = val;
+                e.rename = false;
+            };
+        })
+        this.setState({
+            data
+        })
+    }
+//  新建文件夹
+    newFolder = ()=>{
+        let {data,oid,newfolder} = this.state;
+        let nd = new Date();
+        let obj = {
+            "id": +nd,
+            "pid": oid,
+            "title": "新建文件夹" + newfolder++,
+            "checked":false,
+            "rename":false
+        }
+        data.push(obj);
+        this.setState({
+            data:data,
+            newfolder:newfolder
+        })
+    }
+// 查找父元素
+    findParent = (oid=0)=>{
+        let {data} = this.state;
+        let arr = [];
+        let num = oid;
+
+        let paloop = ()=>{
+            data.forEach(e=>{
+                if(e.id === num){
+                    arr.unshift(e.title);
+                    num = e.pid;
+                    if(num === -1 ){
+                        return;
+                    }
+                    else{
+                        paloop();
+                    }; 
+                }
+            })
+        }
+        paloop();// 声明后调用
+        return arr;
     }
 
-    render(){
-        let {data,oid,rmwin} = this.state;
     
+
+    render(){
+        let {data,oid,rmwin,delwin} = this.state;
+
+        let curlist = this.findParent(oid);
+
+        curlist = curlist.map((e,i)=>{
+            return (
+               <Cur {...{
+                   key:i,
+                   curtxt:e
+               }} /> 
+            )
+        });
+
         let contlist = data.filter((e,i)=>{
             return e.pid === oid;
         });
@@ -87,14 +220,23 @@ class App extends Component{
                     pid:e.pid,
                     title:e.title,
                     checked:e.checked,
-                    chgChked :this.changeChecked
+                    rename:e.rename,
+                    chgChked :this.changeChecked,
+                    changeTitle:this.changeTitle
                 }}/>
             )
         });
+
+         
         return (
             <div id="box">
                 {/* head ↓ */}
-                <Head openRmWin = {this.openRmWin}/>
+                <Head 
+                    openRmWin = {this.openRmWin} 
+                    openDelWin = {this.openDelWin} 
+                    rnfn = {this.navRnFn}
+                    nf = {this.newFolder}    
+                />
                 {/* head ↑ */}
                 <section id="section">
                     <div id="treediv" className="tree-menu fix" >
@@ -103,9 +245,16 @@ class App extends Component{
                         {/* 左侧树 ↑ */}
                     </div>
                     <div className="folder-content">
-                        {/* 面包屑 ↓ */}
-                        <Cur />
-                        {/* 面包屑 ↑ */}
+                        <div className="breadmenu">
+                            <div className="checkall">
+                                <i className="checkedAll"></i>
+                            </div>
+                            {/* 面包屑 ↓ */}
+                            <div className="bread-nav" >
+                                {curlist}
+                            </div>
+                            {/* 面包屑 ↑ */}
+                        </div>
                         {/* 无数据展示 ↓ */}
                         <div className="f-empty"></div>
                         {/* 无数据展示 ↑ */}
@@ -128,7 +277,7 @@ class App extends Component{
                 {/* 移动确认框 ↓ */}
                 <div  className="modal-tree" style = {{ display: rmwin?'block':'none' }}>
                     <h2>选择存储位置</h2>
-                    <p className="folderName">移动目录</p>
+                    <p id="tarP" className="folderName">移动目录</p>
                     <div className="content" id="rmtreediv">
                         <RmTree coid = {this.changeOid} />
                     </div>
@@ -138,7 +287,8 @@ class App extends Component{
                             onClick = {this.closeRmWin}
                         />
                         <input type="button" name="" className ="ok" value="确定"
-                            style={{cursor:"pointer"}}
+                            style={{cursor:"pointer"}} 
+                            onClick = {this.rmCkData}
                         />
                         <p className="tip"></p>
                     </div>
@@ -148,16 +298,22 @@ class App extends Component{
                 </div>
                 {/* 移动确认框 ↑ */}
                 {/* 删除确认框 ↓ */}
-                <div id="tanbox">
+                <div id="tanbox" style = {{ display: delwin?'block':'none' }}>
                     <div className="conf">
-                        <i className="close-ico">X</i>
+                        <i className="close-ico"
+                            onClick = {this.closeDelWin}
+                        >X</i>
                         <h3 className="conf-title">删除文件</h3>
                         <div className="conf-content">
                             确定要删除文件吗？
                         </div>
                         <div className="conf-btn">
-                            <a href="javascript:;">确定</a>
-                            <a href="javascript:;">取消</a>
+                            <a href="javascript:;"
+                                onClick = {this.delData}
+                            >确定</a>
+                            <a href="javascript:;"
+                                onClick = {this.closeDelWin}
+                            >取消</a>
                         </div>
                     </div>
                 </div>

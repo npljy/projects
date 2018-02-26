@@ -6,22 +6,22 @@ class Nav extends Component{
         this.state={}
     }
     click = (id)=>{
-        let {disp} = this.props;
+        let {dispRm,dispDel,rn,nf} = this.props;
         switch (id) {
             case "remove":
-                disp();
+                dispRm();
                 break;
             case "rename":
-            
+                rn();
                 break;
             case "del":
-            
+                dispDel();
+                console.log(1112223333)
                 break;
             case "create":
-            
+                nf();
                 break;
             case "refresh":
-            
                 break;
             default:
                 break;

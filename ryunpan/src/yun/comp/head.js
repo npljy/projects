@@ -36,10 +36,24 @@ class Head extends Component{
             ]
         }
     }
-    disp = ()=>{
+    dispRm = ()=>{
         let {openRmWin} = this.props;
         openRmWin();
     };
+    dispDel = ()=>{
+        let {openDelWin} = this.props;
+        openDelWin();
+    };
+    rename = ()=>{
+        let {rnfn} = this.props;
+        rnfn();
+    }
+
+    newFolder =()=>{
+        let {nf} = this.props;
+        nf();
+    }
+
     render(){
         let {nav} = this.state;
 
@@ -49,7 +63,10 @@ class Head extends Component{
                     key:i,
                     id:e.id,
                     txt:e.txt,
-                    disp:this.disp
+                    dispRm:this.dispRm,
+                    dispDel : this.dispDel,
+                    rn : this.rename,
+                    nf : this.newFolder
                 }} />
             )
         })

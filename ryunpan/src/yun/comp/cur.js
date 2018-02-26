@@ -6,16 +6,9 @@ class Cur extends Component{
         this.state={}
     }
     render(){
+        let {curtxt} = this.props;
         return (
-            <div className="breadmenu">
-                <div className="checkall">
-                    <i className="checkedAll"></i>
-                </div>
-                <div className="bread-nav" >
-                    <a href="javascript">微云</a>
-                        <span>我的音乐</span>
-                </div>
-            </div>
+            <a href="javascript">{curtxt}</a>
         )
     }
 }

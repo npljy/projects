@@ -346,6 +346,9 @@ html,body{
 	line-height:48px;
 	background: url(../img/br_jt.png) no-repeat right center;
 }
+.bread-nav a:last-child{
+	background: none;
+}
 .bread-nav span{
 	float:left;
 	height:48px;
@@ -443,6 +446,9 @@ html,body{
 }
 .editor{
 	display: none;
+	position: absolute;
+    left: 30px;
+    bottom: 30px;
 	width:120px;
 	height:20px;
 	line-height:20px;
