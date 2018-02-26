@@ -275,26 +275,28 @@ class App extends Component{
                     </div>
                 </section>
                 {/* 移动确认框 ↓ */}
-                <div  className="modal-tree" style = {{ display: rmwin?'block':'none' }}>
-                    <h2>选择存储位置</h2>
-                    <p id="tarP" className="folderName">移动目录</p>
-                    <div className="content" id="rmtreediv">
-                        <RmTree coid = {this.changeOid} />
-                    </div>
-                    <div className="footer">
-                        <input type="button" name="" className="cancel" value="取消"
-                            style={{cursor:"pointer"}}
+                <div class="mv-conf" id="mtree" style="display: block;" style = {{ display: rmwin?'block':'none' }}>
+                    <div  className="modal-tree" style = {{ display: rmwin?'block':'none' }}>
+                        <h2>选择存储位置</h2>
+                        <p id="tarP" className="folderName">移动目录</p>
+                        <div className="content" id="rmtreediv">
+                            <RmTree coid = {this.changeOid} />
+                        </div>
+                        <div className="footer">
+                            <input type="button" name="" className="cancel" value="取消"
+                                style={{cursor:"pointer"}}
+                                onClick = {this.closeRmWin}
+                            />
+                            <input type="button" name="" className ="ok" value="确定"
+                                style={{cursor:"pointer"}} 
+                                onClick = {this.rmCkData}
+                            />
+                            <p className="tip"></p>
+                        </div>
+                        <i className="icon_close" style={{cursor:"pointer"}}
                             onClick = {this.closeRmWin}
-                        />
-                        <input type="button" name="" className ="ok" value="确定"
-                            style={{cursor:"pointer"}} 
-                            onClick = {this.rmCkData}
-                        />
-                        <p className="tip"></p>
+                        ></i>
                     </div>
-                    <i className="icon_close" style={{cursor:"pointer"}}
-                        onClick = {this.closeRmWin}
-                    ></i>
                 </div>
                 {/* 移动确认框 ↑ */}
                 {/* 删除确认框 ↓ */}

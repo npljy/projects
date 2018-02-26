@@ -618,7 +618,15 @@ html,body{
 	color: #fff;
 	cursor: default;
 }
-
+.mv-conf {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
 .modal-tree{
 	overflow: hidden;
 	height: 416px;
