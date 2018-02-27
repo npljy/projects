@@ -16,8 +16,7 @@ class Cont extends Component{
         dblRn(num);
         setTimeout(()=>{
             // 双击重命名聚焦
-            this.refs[num].select();
-            // this.refs[num].focus();
+            this.refs[num].focus();
             // this.refs[num].selectionStart = this.refs[num].value.length;
         })
     }
@@ -60,7 +59,7 @@ class Cont extends Component{
         let {oid,rename} = this.props;
         if(rename){
             setTimeout(()=>{
-                this.refs[oid].select();
+                this.refs[oid].focus();
             })
         }
     }
@@ -72,7 +71,9 @@ class Cont extends Component{
     render(){
         let {val} = this.state;
         let {oid,pid,title,checked,rename} = this.props;
+
         this.aufocs();//单击导航条重命名，聚焦
+
         return (
             <div className="file-item" oid={oid} pid={pid} >
                 <img 
