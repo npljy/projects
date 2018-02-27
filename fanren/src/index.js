@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from  './test/App2';
+import App from  './test/App3';
 // 平滑过渡
 if(module.hot){
     module.hot.accept();
@@ -10,7 +10,7 @@ if(module.hot){
 ReactDOM.render(
     <App />,
     document.getElementById("root"),
-    function(){
-        console.log("200")
-    }
+    // function(){
+    //     console.log("success")
+    // }
 )
