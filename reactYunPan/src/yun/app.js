@@ -146,10 +146,20 @@ class App extends Component{
             })
         }
     }
+    //  双击重命名
+    dblRnFn = (num)=>{
+        let {data} = this.state;
+        data.forEach(e=>{
+            e.id===num && (e.rename = true);
+        })
+        this.setState({
+            data
+        })
+    }
     changeTitle = (oid,val)=>{
         let {data} = this.state;
         data.forEach(e=>{
-            if(e.id === oid){
+            if(e.id === oid){  
                 e.title = val;
                 e.rename = false;
             };
@@ -214,9 +224,7 @@ class App extends Component{
 
     render(){
         let {data,oid,rmwin,delwin,ckall} = this.state;
-
         let curlist = this.findParent(oid);
-
         curlist = curlist.map((e,i)=>{
             return (
                <Cur {...{
@@ -242,7 +250,8 @@ class App extends Component{
                     rename:e.rename,
                     chgChked :this.changeChecked,
                     changeTitle:this.changeTitle,
-                    changeid :this.changeId
+                    changeid :this.changeId,
+                    dblRn : this.dblRnFn
                 }}/>
             )
         });
