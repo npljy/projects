@@ -74,7 +74,7 @@ class Head extends Component{
             <header id="head">
                 <div id="top">
                     <h1 className="title">
-                        <a href="javascript:" title="妙味云盘"></a>
+                        <a  title="妙味云盘">&nbsp;</a>
                     </h1>
                     <div className="right">
                         <div className="user">

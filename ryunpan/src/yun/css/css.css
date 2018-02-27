@@ -338,6 +338,7 @@ html,body{
 	background: url(../img/checked.png) no-repeat;
 }
 .bread-nav a{
+	cursor: pointer;
 	padding:0 24px 0 14px;
 	height:48px;
 	float:left;

@@ -15,7 +15,8 @@ class App extends Component{
             chkoid : -1,
             rmwin : false,
             delwin : false,
-            newfolder : 1
+            newfolder : 1,
+            ckall : false
          }
     }
     // 移动菜单，选择移动目标id
@@ -31,27 +32,32 @@ class App extends Component{
     }
     //更改显示内容的id
     changeId = (cid)=>{
-        let {oid} = this.state;
+        let {data,oid,ckall} = this.state;
+        ckall = false;
         if(oid !== cid){
             data.forEach((e,i)=>{
                 e.checked = false;
             })
             this.setState({
                 data:data,
-                oid:cid
+                oid:cid,
+                ckall
             })
         }
     }
-    changeChecked = (oid)=>{
-        let {data} = this.state;
+    changeChecked = (cid)=>{
+        let {data,oid,ckall} = this.state;
         data.forEach((e,i)=>{
-            e.id === oid && (e.checked = !e.checked)
+            e.id === cid && (e.checked = !e.checked)
         })
+        let ckalldata = data.filter(e=>e.pid === oid);
+        ckall = ckalldata.every(e=>e.checked)
         this.setState({
-            data
+            data,
+            ckall
         });
     }
-// 移动 
+    // 移动 
     openRmWin = ()=>{
         let ckdata = data.filter((e,i)=>{
             return e.checked === true;
@@ -178,7 +184,7 @@ class App extends Component{
         let paloop = ()=>{
             data.forEach(e=>{
                 if(e.id === num){
-                    arr.unshift(e.title);
+                    arr.unshift(e);
                     num = e.pid;
                     if(num === -1 ){
                         return;
@@ -193,10 +199,21 @@ class App extends Component{
         return arr;
     }
 
-    
+    // 全选
+    togAll = ()=>{
+        let {data,oid,ckall} = this.state;
+        ckall = !ckall;
+        data.forEach(e=>{
+            if(e.pid === oid)e.checked = ckall;
+        })
+        this.setState({
+            data,
+            ckall
+        });
+    }
 
     render(){
-        let {data,oid,rmwin,delwin} = this.state;
+        let {data,oid,rmwin,delwin,ckall} = this.state;
 
         let curlist = this.findParent(oid);
 
@@ -204,7 +221,9 @@ class App extends Component{
             return (
                <Cur {...{
                    key:i,
-                   curtxt:e
+                   oid:e.id,
+                   curtxt:e.title,
+                   changeid:this.changeId
                }} /> 
             )
         });
@@ -246,9 +265,13 @@ class App extends Component{
                     </div>
                     <div className="folder-content">
                         <div className="breadmenu">
-                            <div className="checkall">
-                                <i className="checkedAll"></i>
+                            {/* 全选 ↓ */}
+                            <div className="checkall" >
+                                <i className={ckall?'checkedAll checked':'checkedAll'}
+                                    onClick = {this.togAll}
+                                ></i>
                             </div>
+                            {/* 全选 ↑ */}
                             {/* 面包屑 ↓ */}
                             <div className="bread-nav" >
                                 {curlist}
@@ -275,7 +298,7 @@ class App extends Component{
                     </div>
                 </section>
                 {/* 移动确认框 ↓ */}
-                <div class="mv-conf" id="mtree" style="display: block;" style = {{ display: rmwin?'block':'none' }}>
+                <div className="mv-conf" id="mtree" style = {{ display: rmwin?'block':'none' }}>
                     <div  className="modal-tree" style = {{ display: rmwin?'block':'none' }}>
                         <h2>选择存储位置</h2>
                         <p id="tarP" className="folderName">移动目录</p>
@@ -310,10 +333,10 @@ class App extends Component{
                             确定要删除文件吗？
                         </div>
                         <div className="conf-btn">
-                            <a href="javascript:;"
+                            <a 
                                 onClick = {this.delData}
                             >确定</a>
-                            <a href="javascript:;"
+                            <a 
                                 onClick = {this.closeDelWin}
                             >取消</a>
                         </div>

@@ -5,10 +5,17 @@ class Cur extends Component{
         super(props);
         this.state={}
     }
+    click = (num)=>{
+        let {changeid} = this.props;
+        console.log(num)
+        changeid(num);
+    }
     render(){
-        let {curtxt} = this.props;
+        let {oid,curtxt} = this.props;
         return (
-            <a href="javascript">{curtxt}</a>
+            <a oid={oid}
+                onClick = {this.click.bind(this,oid)}
+            >{curtxt}</a>
         )
     }
 }
