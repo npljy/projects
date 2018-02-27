@@ -64,6 +64,7 @@ class Cont extends Component{
             })
         }
     }
+    // 双击文件夹图片 查看其子目录
     cid = (num)=>{
         let {changeid} = this.props;
         changeid(num);
@@ -71,7 +72,7 @@ class Cont extends Component{
     render(){
         let {val} = this.state;
         let {oid,pid,title,checked,rename} = this.props;
-        this.aufocs();
+        this.aufocs();//单击导航条重命名，聚焦
         return (
             <div className="file-item" oid={oid} pid={pid} >
                 <img 
