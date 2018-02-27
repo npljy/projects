@@ -124,7 +124,7 @@ class App extends Component{
         if(ckdata.length>0){
             data.forEach(e=>{
                 if(e.checked === true){
-                    e.pid = -1;
+                    e.pid = -999;
                 }
             })
             this.setState({
