@@ -1,6 +1,18 @@
 var data = [
-   	{
+	{
         "id": 0,
+        "songName":"江湖笑" ,
+        "singer": "周华健",
+        "songTime":"04:24",
+        "songUrl":"./songs/xiao.mp3",
+		"songPicture":"./imgs/xiao.jpg",
+		"inlist":1,
+        "Lyric":{
+			"00:01":"暂无歌词",
+		}
+    },
+   	{
+        "id": 1,
         "songName":"曾经沧海" ,
         "singer": "周深",
         "songTime":"03:40",
@@ -58,7 +70,7 @@ var data = [
 		}
     },
     {
-        "id": 1,
+        "id": 2,
         "songName":"幸福在梦中" ,
         "singer": "赵艺",
         "songTime":"03:32" ,
@@ -110,7 +122,7 @@ var data = [
 		}
     },
     {
-        "id": 2,
+        "id": 3,
         "songName":"凉凉" ,
         "singer": "张碧晨&杨宗纬",
         "songTime":"05:33" ,
@@ -165,7 +177,7 @@ var data = [
 		}
 	},
 	{
-        "id": 3,
+        "id": 4,
         "songName":"恨爱交加" ,
         "singer": "麦振鸿",
         "songTime":"04:29" ,
