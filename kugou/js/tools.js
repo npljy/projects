@@ -15,7 +15,7 @@ function randNum(nu){
         return num;
     }
     else{
-        return randNum(nu);
+        return randNum(nu); //在执行一次，直到进if
     }
     
 }

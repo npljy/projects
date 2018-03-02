@@ -126,6 +126,7 @@ img{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center; /* 歌词居中 */
 }
 
 .songBar{
