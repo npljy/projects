@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp瀑布流</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            margin: 0 auto;
+            position: relative;
+        }
+        li{
+            list-style: none;
+            position: absolute;
+            transition: 1s;
+        }
+        #load{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: red;
+            opacity: 0;
+            display: none;
+            transition: 1s;
+        }
+        #load p{
+            margin: 0 auto;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="ul">
+        <!-- picturs -->
+    </ul>
+    <div id="load">
+        <p>………………………………</p>
+    </div>
+    <script>
+        //  封装jsonp
+        function jsonp(obj) {
+            //  默认配置
+            let opt = {
+                url: "",
+                attrs: {}, //存储 请求地址中的各个字段
+                callback: "callback", //字段名，有些为callback 有些为 cb ，或者其他
+                success: function () {}, //成功之后调用的方法
+                error: function () {}, //失败之后调用的方法
+                t: 5000 // t时间之后，仍没有获取到数据，则认为获取失败
+            }
+            let onoff = false; //没获取到数据
+            // 没配置则走默认配置
+            Object.assign(opt, obj);
+            // 随机方法名，防止被缓存
+            let fname = "jsonpFn" + (Math.random() + "").replace(".", "") + (+new Date());
+            //设置callback字段的 方法名，即jsonp的方法名
+            opt.attrs[opt.callback] = fname;
+            let arr = [];
+            // 将字段变为 a=b 格式
+            for (a in opt.attrs) {
+                arr.push(a + "=" + opt.attrs[a]);
+            }
+            // 然后用 & 拼接为字符串
+            opt.attrs = arr.join("&");
+
+            window[fname] = function(data) {
+                onoff = true; // 已获取到数据
+                opt.success(data);
+            }
+            // 如果一段时间后还没加载到数据，则执行opt.error()
+            setTimeout(function () {
+                if (!onoff) {
+                    opt.error();
+                }
+            }, opt.t)
+
+            let sc = document.createElement("script");
+            // srcipt标签的请求地址 ，接收jsonp数据 fn(data) ，因fn(data)为函数，同时执行了函数
+            sc.src = opt.url + opt.attrs;
+            document.getElementsByTagName('head')[0].appendChild(sc);
+            // 删除script，防止页面中插入过多的script标签
+            sc.remove();
+        }
+
+        const ul = document.getElementById("ul");
+        const load = document.getElementById("load");
+        let w = 232; //每个图片宽度
+        let pl = 10; //padding-left
+        let pagenum = 0; //页码
+        let ww = document.documentElement.clientWidth;
+        let len = Math.floor(ww / (w + pl));
+        ul.style.width = len * (w +pl) + "px";
+        let arrT = [];
+        let arrL = [];
+        for (let i = 0; i < len; i++) {
+            arrT.push(0);
+            arrL.push(i * (w + pl));
+        }
+        let onoff = false;
+        // 找最小值
+        function minIdx(){
+            return arrT.findIndex(e=>e===Math.min.apply(null,arrT));
+        }
+        render();
+        function render(){
+            onoff = true;
+            load.style.opacity = 1;
+            load.style.display = "block";
+            jsonp({
+                url:"http://www.wookmark.com/api/json/popular?",
+                attrs:{
+                    page:pagenum
+                },
+                success:function(data){
+                    // console.log(data)
+                    data.forEach(e=>{
+                        let li = document.createElement("li");
+                        let img = new Image();
+                        img.src = e.preview;
+                        li.appendChild(img);
+                        let lh = w * (e.height / e.width);
+                        li.style.height = lh + "px";
+                        li.style.width = w + "px";
+                        img.onload = function(){
+                            let mi = minIdx();
+                            li.style.left = arrL[mi] + "px";
+                            li.style.top = arrT[mi] + "px";
+                            ul.appendChild(li);
+                            arrT[mi] += (li.offsetHeight*1)+10; 
+                        }
+                    })
+                    onoff = false;
+                    setTimeout(function(){
+                        load.style.opacity = 0;
+                        setTimeout(function(){
+                            load.style.display = "none";
+                        },500) 
+                    },500)
+                }
+            })
+        }
+
+        window.onresize = function(){
+            ww = document.documentElement.clientWidth;
+            arrT.length = arrL.length = 0;
+            len = Math.floor(ww / (w + pl));
+            for (let i = 0; i < len; i++) {
+                arrT.push(0);
+                arrL.push(i * (w + pl));
+            }
+            ul.style.width = len * (w +pl) + "px";
+            lis = Array.from(document.getElementsByTagName("li"));
+            lis.forEach(e=>{
+                let mi = minIdx();
+                e.style.left = arrL[mi] + "px";
+                e.style.top = arrT[mi] + "px";
+                arrT[mi] += (e.offsetHeight*1)+10; 
+                console.log(e.offsetHeight)
+            })
+        }
+
+        window.onscroll = function(){
+            let mi = minIdx();
+            if(arrT[mi] < window.innerHeight + window.pageYOffset){
+                if(!onoff){
+                    pagenum++;
+                    render();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
