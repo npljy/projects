@@ -10,13 +10,9 @@ window.onload=function(){
 	let zhuan = document.getElementById('zhuan');
 	let btnPre = document.getElementById('prev');
     let btnNext = document.getElementById('next');
-
     let mode=document.querySelector('.mode span');
 	let num=data.length;
 
-	
-	
-	
 	//列表开关
 	listOpenBtn.onclick=()=>{	
 		list.style.display="block";

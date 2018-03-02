@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width:100%;
+    height: 945px;
+    overflow: hidden;
+    background: skyblue;
+}
+      
+.content{
+    margin: 50px auto;
+    width: 400px;
+    height: 760px;
+    background: black;
+    border-radius: 30px;
+}
+.screen{
+    position: relative;
+    background: skyblue url(../img/rbg.jpg);
+    background-size: 100% 100%;
+    margin: 0 auto;
+    width:360px;
+    height: 610px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 5px;
+    zoom: 1;
+}
+
+.chat{
+    position: absolute;
+    left:360px;
+    top: 0;
+    z-index: 9;
+    background: skyblue url(../img/rbg.jpg);
+    background-size: 100% 100%;
+    margin: 0 auto;
+    width:360px;
+    height: 610px;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: 0.5s;
+
+}
+.chat ul {
+    height: 520px;
+    width: 377px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.chat li{
+    width: 270px;
+    list-style: none;
+    margin: 0 5px;
+}
+.chat .lcont{
+    background: url(../img/lico.png) left 6px no-repeat;
+    background-size: 30px 30px;
+    float: left;
+    padding-left: 40px;
+}
+.chat .rcont{
+    background: url(../img/rico.png) right 6px no-repeat;
+    background-size: 30px 30px;
+    float: right;
+    padding-right: 40px;
+}
+.chat p{
+    background: skyblue;
+    display: inline-block;
+    font: normal 18px "微软雅黑";
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.lcont p{
+    float: left;
+}
+.rcont p{
+    float: right;
+}
+
+.chattitle{
+    text-align: center;
+    background: skyblue;
+    height: 40px;
+    line-height: 40px;
+    cursor: default;
+    position: relative;
+}
+
+.ipts{
+    width: 100%;
+    padding: 10px;
+}
+.ipts .lipt{
+    float: left;
+}
+
+.ipts .ript{
+    float: left;
+    text-align: center;
+    width: 54px;
+    height: 36px;
+    margin: 0 3px;
+    line-height: 36px;
+    background: yellow;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#img{
+    cursor: pointer;
+}
+#ipt {
+    border: none;
+    border-radius: 5px;
+    resize: none;
+    font: 20px 'microsoft yahei';
+    height: 36px;
+    width: 250px;
+}
+
+.ting{
+    height: 60px;
+    overflow: hidden;
+}
+.ting div{
+    height: 6px;
+    width: 100px;
+    background: white;
+    margin: 28px auto 0;
+    border-radius: 10px;
+}
+.key{
+    
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+}
+.home{
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    margin: 15px auto;
+    border: 1px solid #484C4B;
+    cursor: pointer;
+}
+.home div{
+    height: 20px;
+    width: 20px;
+    border: 1px solid #484C4B;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.list{
+    margin: 20px auto;
+    width: 300px;
+    font-size:20px;
+    background: black;
+    color: white;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+}
+.list dt,.list dd{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 2em;
+    cursor: pointer;
+}
+
+dd:hover{
+    background: #5B5B5B;   
+}
+
+.act{
+    background: #7B2C3A !important;
+}
+.you,.xia{
+    width: 0px;
+    height: 0px;
+    display: inline-block;
+    position: absolute;
+    left: 6%;
+    top: 16px;
+}
+.you{
+    border-left: 8px solid white;
+    border-right: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    transform: rotate(0);
+    transition: .2s;
+}
+.xia{
+    transform: rotate(90deg);
+    transition: .2s;
+}
+.goback{
+    display: inline-block;
+    position: absolute;
+    left:10px;
+    top: 7px;
+    z-index: 99;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 20px;
+    line-height: 20px;
+    padding: 2px;
+}
+/*展开标题  #B54658 */
+/*hover好友  #5B5B5B */
+/*选中好友 #7B2C3A */

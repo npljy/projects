@@ -117,18 +117,21 @@ class App extends Component{
         });
     }
     delData = ()=>{
-        let {data} = this.state;
+        let {data,ckall} = this.state;
         let ckdata = data.filter(e=>{
             return e.checked
         });
         if(ckdata.length>0){
             data.forEach(e=>{
                 if(e.checked === true){
+                    e.checked = false;
+                    ckall = false;
                     e.pid = -999;
                 }
             })
             this.setState({
-                data
+                data,
+                ckall
             });
             this.closeDelWin();
         }
@@ -344,9 +347,11 @@ class App extends Component{
                         </div>
                         <div className="conf-btn">
                             <a 
+                                style = {{cursor:"pointer"}}
                                 onClick = {this.delData}
                             >确定</a>
                             <a 
+                                style = {{cursor:"pointer"}}
                                 onClick = {this.closeDelWin}
                             >取消</a>
                         </div>

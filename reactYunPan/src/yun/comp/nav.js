@@ -16,7 +16,6 @@ class Nav extends Component{
                 break;
             case "del":
                 dispDel();
-                console.log(1112223333)
                 break;
             case "create":
                 nf();
