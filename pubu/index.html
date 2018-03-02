@@ -84,9 +84,10 @@
             let sc = document.createElement("script");
             // srcipt标签的请求地址 ，接收jsonp数据 fn(data) ，因fn(data)为函数，同时执行了函数
             sc.src = opt.url + opt.attrs;
+            console.log(sc.src)
             document.getElementsByTagName('head')[0].appendChild(sc);
             // 删除script，防止页面中插入过多的script标签
-            sc.remove();
+            // sc.remove();
         }
 
         const ul = document.getElementById("ul");
@@ -162,7 +163,6 @@
                 e.style.left = arrL[mi] + "px";
                 e.style.top = arrT[mi] + "px";
                 arrT[mi] += (e.offsetHeight*1)+10; 
-                console.log(e.offsetHeight)
             })
         }
 
