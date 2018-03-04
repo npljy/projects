@@ -589,7 +589,7 @@ div.listHead{
 .clear{
     zoom:1;
 }
-.songMain::after,.songName::after,.songInfo::after,div.listHead::after{
+.clear::after{
     content: ".";
     display: block;
     visibility: hidden;

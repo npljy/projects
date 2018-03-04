@@ -1,0 +1,226 @@
+/* CSS 样式重置 ↓ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+h1,h2,h3,h4,h5,h6,em,i {
+    font-weight: 100;
+    font-style: normal
+}
+ul,ol,li {
+    list-style-type: none
+}
+a {
+    color: #666;
+    text-decoration: none;
+    outline: 0
+}
+a:hover {
+    text-decoration: none
+}　
+/* CSS 样式重置 ↑ */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+.adcenter{
+	width: 1200px;
+	height: 90px;
+	margin: 0 auto;
+	padding-left: 80px;
+}
+.adcenter div{
+	display: inline-block;
+}
+.adtop{
+	padding-left: 16px;
+}
+.header{
+ 	width: 100%;
+}
+.header .container{
+  	position: relative;
+}
+.header .logo {
+	position: absolute;
+	z-index: 10;
+}
+.container{
+	width: 1170px;
+	margin: 0 auto;
+}
+.head-top{
+	width: 100%;
+	background: #2e2e2e;
+	padding: 0.5em 0;  
+}
+.head-top a {
+	color: #fff;
+}
+.head-top a:hover{
+	color: #f67777;
+}
+.head-top ul{
+	margin-left: 200px;
+}
+.head-top li{
+	width: 60px;
+}
+.head-btm ul{
+	margin-left: 170px;
+}
+.head-btm li{
+	box-sizing: border-box;
+	width: 122px;
+	height: 68px;
+	text-align: center;
+	overflow: hidden;
+	border-right: 1px solid #EFEFEF;
+}
+.head-btm li a{
+	display: inline-block;
+	width: 100%;
+	padding: 25px 0;
+	cursor: pointer;
+}
+.head-btm li a:hover{
+	background: #f67777;
+	color:#fff;
+}
+.act{
+	background: #f67777;
+	color:#fff !important;
+}
+
+.search{
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	width: 40px;
+	height: 64px;
+	line-height: 70px;
+	padding-left: 60px;
+	background: url(./main/imgs/search.jpg) no-repeat left center ;
+	background-size: 70px 70px ;
+	margin-left: 12px;
+}
+.container li{
+	list-style: none;
+	float: left;
+	text-align: center;
+}
+.banner{
+	width: 100%;
+	height: 700px;
+	background: url(./main/imgs/ba11.jpg) no-repeat right top;
+	background-size: cover;
+	overflow-x: hidden;
+	font-family: "Microsoft YaHei"
+}
+
+.banner .container{
+	margin: 0 auto;
+	padding: 210px 0 0;
+}
+h1>span:first-child{
+	display: block;
+	font-size: 5em;	
+}
+.rw-words {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+}
+.rw-words span{
+	position: absolute;
+	opacity: 0;
+	perspective: 800px;
+	white-space: nowrap;
+}
+.rw-words-1 span{
+	animation: rotateWords1 18s linear infinite 0s;
+	font-size: 1.6em;
+	line-height: 2em;
+}
+.rw-words-2 span{
+	animation: rotateWords2 18s linear infinite 0s;
+	font-size: 3em;
+	color: #f67777;
+	font-style: italic; 
+}
+.rw-words span:nth-child(2){
+	animation-delay: 3s;
+}
+.rw-words span:nth-child(3){
+	animation-delay: 6s;
+}
+.rw-words span:nth-child(4){
+	animation-delay: 9s;
+}
+.rw-words span:nth-child(5){
+	animation-delay: 12s;
+}
+@keyframes rotateWords1 {
+    0% { opacity: 0; animation-timing-function: ease-in; width: 0px;}
+    5% { opacity: 1; animation-timing-function: ease-out; width: 100%;}
+    17% { opacity: 1; }
+    20% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes rotateWords2 {
+	0% { opacity: 0; transform: translateZ(200px) translateX(200px);}
+    8% { opacity: 1; transform: translateZ(0px) translateX(0px);}
+    17% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.cont-t-lt{
+	float: left;
+}
+
+.cont-t-rt{
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.clearfix{
+  zoom:1
+}
+.clearfix::after{
+  content: ".";
+  height: 0;
+  width: 100%;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
