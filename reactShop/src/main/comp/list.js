@@ -7,6 +7,7 @@ class List extends Component{
     }
     render(){
         let {id,sex,title,price,sale,img,count,send } = this.props;
+        console.log(`${img}`)
         return (
             <li>
                 <div>
