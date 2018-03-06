@@ -12,7 +12,7 @@ let data = [
     {
         id : 2,
         sex : "man",
-        title:"女款长袖",
+        title:"女款短袖",
         price : 88,
         sale : 69,
         img : "imgs/pc1.jpg",
@@ -21,8 +21,8 @@ let data = [
     },
     {
         id : 3,
-        sex : "women",
-        title:"女款长袖",
+        sex : "man",
+        title:"男款长袖",
         price : 98,
         sale : 56,
         img : "imgs/pc2.jpg",
@@ -32,7 +32,7 @@ let data = [
     {
         id : 4,
         sex : "man",
-        title:"女款长袖",
+        title:"男款短袖",
         price : 89,
         sale : 67,
         img : "imgs/pc3.jpg",
@@ -42,7 +42,7 @@ let data = [
     {
         id : 5,
         sex : "kid",
-        title:"女款长袖",
+        title:"儿童短袖",
         price : 92,
         sale : 82,
         img : "imgs/pc4.jpg",
@@ -52,7 +52,7 @@ let data = [
     {
         id : 6,
         sex : "man",
-        title:"女款长袖",
+        title:"男款衬衫",
         price : 69,
         sale : 56,
         img : "imgs/pc5.jpg",
@@ -61,8 +61,8 @@ let data = [
     },
     {
         id : 7,
-        sex : "kid",
-        title:"女款长袖",
+        sex : "women",
+        title:"女款短袖",
         price : 119,
         sale : 98,
         img : "imgs/pc6.jpg",
@@ -71,8 +71,8 @@ let data = [
     },
     {
         id : 8,
-        sex : "women",
-        title:"女款长袖",
+        sex : "man",
+        title:"男款长袖",
         price : 108,
         sale : 82,
         img : "imgs/pc7.jpg",

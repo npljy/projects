@@ -3729,6 +3729,7 @@ stat.ea3w.com
 stat.fengniao.com
 stat.gw.youmi.net
 stat.it168.com
+stat.jspatch.com
 stat.komoona.com
 stat.letv
 stat.lianmeng.360.cn

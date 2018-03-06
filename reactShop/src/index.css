@@ -455,6 +455,9 @@ label{
 	float: right;
 	padding-top: .2em;
 }
+.pro-add a{
+	cursor: pointer;
+}
 .pro-add img{
 	vertical-align: middle;
 }

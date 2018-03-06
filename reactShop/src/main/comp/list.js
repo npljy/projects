@@ -11,6 +11,9 @@ class List extends Component{
     detail = ()=>{
 
     }
+    addcart=()=>{
+        
+    }
     render(){
         let {id,sex,title,price,sale,img,count,send } = this.props;
 
@@ -35,7 +38,9 @@ class List extends Component{
                                 <h6><a>{title}</a></h6>
                             </div>
                             <div className="pro-add">
-                                <a><img alt="" src={require("../imgs/ca.png")}/></a>
+                                <a
+                                    onClick = {this.addcart}
+                                ><img alt="" src={require("../imgs/ca.png")}/></a>
                             </div>
                         </div>
                         <div className="txt-btm clearfix">
