@@ -2245,6 +2245,7 @@ i2.wljnj.com
 i8.chinanews.com
 iad.g.163.com
 iadctest.qwapi.com
+iadmatvideo.nosdn.127.net
 iafp.pptv
 ias816.ujikdd041o.cn
 ib.adnxs.com
