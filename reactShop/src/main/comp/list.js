@@ -5,14 +5,28 @@ class List extends Component{
         super(props);
         this.state = {}
     }
+    zoom = ()=>{
+
+    }
+    detail = ()=>{
+
+    }
     render(){
         let {id,sex,title,price,sale,img,count,send } = this.props;
-        console.log(`${img}`)
+
         return (
             <li>
                 <div>
                     <div className="pro-img">
-                        <img alt="" src={img}/>
+                        <img alt="" src={require(`../${img}`)}/>
+                        <div>
+                            <a
+                                onClick = {this.zoom}
+                            ><img src={require("../imgs/zoom.png")}/></a>
+                            <a
+                                onClick = {this.detail}
+                            ><img src={require("../imgs/detail.png")}/></a>
+                        </div>
                     </div>
                     <div className="pro-txt">
                         <div className="txt-top clearfix">

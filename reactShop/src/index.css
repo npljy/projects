@@ -416,8 +416,27 @@ label{
 }
 .pro-img,.pro-txt{
 	padding: 10px;
+	position: relative;
 }
-
+.pro-img a {
+	cursor: pointer;
+}
+.pro-img div{
+	position: absolute;
+	width: 92%;
+	height: 182px;
+	top: 0;
+	opacity: 0;
+	transition: .3s;
+	text-align: center;
+}
+.pro-img:hover div{
+	top: 43%;
+	opacity: 1;
+}
+.pro-img div a{
+	margin: .5em;
+}
 .sex-style{
 	text-align: left;
 	float: left;
