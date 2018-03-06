@@ -31,8 +31,8 @@ let data = [
     },
     {
         id : 4,
-        sex : "man",
-        title:"男款短袖",
+        sex : "kid",
+        title:"儿童短袖",
         price : 89,
         sale : 67,
         img : "imgs/pc3.jpg",
