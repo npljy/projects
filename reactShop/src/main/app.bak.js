@@ -62,7 +62,12 @@ class App extends Component{
                 </div>
                 {/* head ↑ */}
                 {/* banner ↓ */}
-
+                <Route path="/" component={Home}/>
+                {/* <Route path="/women" component={Women}/>
+                <Route path="/man" component={Man}/>
+                <Route path="/kid" component={Kid}/>
+                <Route path="/hot" component={Hot}/>
+                <Route path="/contact" component={Contact}/> */}
                 {/* footer ↓ */}
                 <div className = "footer"></div>
                 {/* footer ↑ */}
