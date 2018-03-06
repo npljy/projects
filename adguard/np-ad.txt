@@ -1,11 +1,4 @@
-[niepeng adfilter]
-! Version: 201803061202
-! Title: niepeng adfilter
-! Homepage: https://niepengsmile.github.io/adguard/np-ad.txt
-! Please report any unblocked adverts or problems
-! via e-mail (niepengsmile@gmail.com).
 
-!--------------------------------------------------------------
 ##*live_barrage.js
 ##.dating
 ##.fenxiang
@@ -41,6 +34,7 @@
 ##iframe[id*="google_ads_"]
 $third-party,app=com.miui.video
 *&product=adpublish&*
+*.*/1*^$script,domain=du1du.org
 *.adsense.*.js
 *.biz5.kankan.com
 *.cn/adv/ad/*
@@ -131,6 +125,7 @@ $third-party,app=com.miui.video
 */js/ad.*.js
 */js/ads.*
 */js/ads_*.js
+*/js/jads.js
 */js/tc.js
 */json/ad/*
 */json/advertise_list.*
@@ -149,10 +144,12 @@ $third-party,app=com.miui.video
 */wapAdversApi?*
 */www/delivery/*
 *?adslot=*
+*^adsbygoogle.js
 *_advert.js
 *_advertise_cpc_*
 *_advertise_list.*
 *_advertise_native_*
+*51y5.*^
 *7pulxu.com2.z0.glb.qiniucdn.com*
 *8112d.365xs.org/*
 *a.applovin.com*
@@ -197,6 +194,7 @@ $third-party,app=com.miui.video
 *googleads.g.doubleclick.net*
 *googleads.g.doubleclick.net:80/mads/gma*
 *googlesyndication.com*
+*googlesyndication.com/pagead/js/adsbygoogle.js
 *i.w.inmobi.com/showad.asm*
 *iface.iqiyi.com/api/get2UserInfo*
 *img.fd7c.com/html/click.*
@@ -231,6 +229,7 @@ $third-party,app=com.miui.video
 *pgdt.gtimg.cn/gdt*
 *pos.baidu.com*dai*
 *pub.funshion.com/interface/deliver*
+*push.xiaomi.com
 *r3.adwo.com/adweb*
 *req.startappservice.com*
 *sandbox.adapter.opendsp.tanx.com
@@ -238,20 +237,15 @@ $third-party,app=com.miui.video
 *sdkapp.mobile.sina.cn/interface/sdk/sdkad.php
 *service.cocounion.com/core/ssp/bid/chance*
 *service/advertising/*
+*shu.cn
 *ssl.google-analytics.com*
 *staticimg.yidianzixun.com/s/ad*
 *w.m.taobao.com/sdk/*banner*
 *www.sf-express.com/app/cn/sc*
 *www.wyxokokok.com/pub/readpubxml*
 *www.xwctw.com:8888/lxmService/lxmPosition*
-||*.*/1*^$script,domain=du1du.org
-||*/js/jads.js
-||*^adsbygoogle.js
-||*51y5.*^
-||*push.xiaomi.com
 ||*shu*.*##iframe
 ||*shu*.*$script
-||*shu.cn
 ||*xs*.*^$third-party
 ||*zw*.*^$script
 ||*zw*.*^$third-party
@@ -285,23 +279,12 @@ $third-party,app=com.miui.video
 ||3dmgame.com##iframe
 ||52pk.com###piaofu
 ||52pk.com##.chang
-||53kf.com
 ||58pic.com##div[class*="login-model"]
-||88shu.cn
 ||9yaocn.com##.m-rel-apps
 ||a.market.xiaomi.com$important
-||ad.xiaomi.com
-||ad.ximalaya.com
 ||adapi.9187.cn^$script
 ||adapi.9187.cn^$third-party
-||adjust.com
-||admin*.com
-||admin60.com
-||aicdn.com
 ||analytics3.starschina.com^
-||app.market.xiaomi.com/apm/download*ads_video*
-||app.market.xiaomi.com/apm/statistics/downloadinstallresult*
-||app.market.xiaomi.com^$third-psrty,app=com.xiaomi.market
 ||b5200.*##div[id*="_cnt"]
 ||b5200.*##iframe
 ||b5200.net^$script
@@ -350,25 +333,15 @@ $third-party,app=com.miui.video
 ||duowan.com##.dw-mini-popup-wrap 
 ||duowan.com##.dw-nav-dalist
 ||duowan.com##a[rsid*="tonglan"]
-||dwnews.com##.adbox-top
-||file.market.xiaomi.com
-||film.qq.com/vip/act^
-||flurry.com
 ||gamecenter.iqiyi.com^
-||getprize.v.qq.com
-||go2yd.com
-||googlesyndication.com/pagead/js/adsbygoogle.js
 ||gxwztv.com^$script
 ||gxwztv.com^$third-party
 ||haoqu.net##.bx-sya
 ||haoqu.net##.pinglun-sya
 ||haoqu.net##iframe[id*="iframeu"]
-||hm.baidu.com/hm.js
-||hmma.baidu.com/app.gif
 ||hot.browser.miui.com^
 ||http://datoporn.co###center-ad
 ||huichuan.sm.cn^
-||hz.netease.com
 ||i.b5200.*^$script
 ||i.biquge5200.*##iframe
 ||i.biquge5200.*^$script
@@ -376,22 +349,17 @@ $third-party,app=com.miui.video
 ||i3.go2yd.com^
 ||ifeng.com##iframe
 ||ifeng.com$script
-||img.cdn.mvideo.mgslb.com
-||img.cdn.mvideo.xiaomi.com.chuangcdn.com
 ||inews.gtimg.com^
 ||iwan.qq.com^
-||iyouxi.vip.qq.com
 ||k.sogou.com##.banner-img
 ||k.sogou.com##.bn-dark
 ||kong.so^$script
-||kuaibao.qq.com
 ||kuaixs.com##iframe
 ||kuaixs.com^$third-party
 ||kugoou.com##.fangxinAd
 ||lewen*.*^$script
 ||liewen*.*^$script
 ||liewen.cc^$third-party
-||log.*.sm.cn
 ||log.s.sm.cn^
 ||log.tbs.qq.com^
 ||m.*qu*.*^$third-party,script
@@ -414,25 +382,14 @@ $third-party,app=com.miui.video
 ||m.wxguan.com^$script
 ||m.xiangcunxiaoshuo.*^$script
 ||m.zhuishu.*^$script
-||mbai.cn
-||meidav.com
 ||mgtv.com##.c-player-paytips-aside
-||mistat.xiaomi.com
 ||ml.51xumei.com^
 ||ml.51youz.com^
-||mnews.gw.com.cn
-||mnews.gw.com.cn/wap/data/individualconfig/images/advertisementItem
-||mnews.gw.com.cn/wap/data/individualconfig/images/advertisementItem/*
-||music.163.com/eapi/ad*
-||music.163.com/eapi/ad^
 ||nstool.netease.com^
-||openacs4uc.m.taobao.com
-||openjmacs4uc.m.taobao.com
 ||pan.baidu.com###activateGuidePopupOuter
 ||pan.baidu.com##iframe
 ||pansoso.com##iframe
 ||pansoso.com^$script,third-party,domain=pansoso.com
-||paopao3.qiyipic.com
 ||pptv.com##div[class*="main-adv"]
 ||pptv.com##div[class*="ppdownload"]
 ||qihoo.com###QIHOO360COMMENT
@@ -481,7 +438,6 @@ $third-party,app=com.miui.video
 ||so.com##li[class*="cmclk"]
 ||so.com##li[class*="recommend-cell"]
 ||sohu.com###sohu-remend
-||stargame.com
 ||static.yidianzixun.com^
 ||suimeng.la^$script
 ||suimeng.la^$third-party
@@ -492,7 +448,6 @@ $third-party,app=com.miui.video
 ||tedu.cn##ins
 ||tedu.cn$script
 ||tedu.cn^tongji.js
-||ticketapi.video.qq.com
 ||tieba.baidu.com##div[data-field=""]
 ||tieba.baidu.com##li[data-field=""]
 ||tvmao.*##iframe
@@ -507,8 +462,6 @@ $third-party,app=com.miui.video
 ||uczzd.cn##div[class*="ad-wolong"]
 ||uczzd.cn##div[class*="relate–item"]
 ||ufanw.com##.changyan
-||umeng.com
-||umengcloud.com
 ||uuxs.net##iframe
 ||uuxs.net$script,third-party
 ||vuejs.org###id
@@ -520,7 +473,6 @@ $third-party,app=com.miui.video
 ||w3school.com.cn^##div[id*="google_ads_"]
 ||w3school.com.cn^##iframe[id*="google_ads_"]
 ||w3school.com.cn^&script,domain=w3school.com.cn
-||webcollect.kugou.com
 ||wenxuemi.com##iframe
 ||wenxuemi.com^$script
 ||wenxuemi.com^$third-party
@@ -535,7 +487,6 @@ $third-party,app=com.miui.video
 ||xiaoxiaoshuwu.com##iframe
 ||xiaoxiaoshuwu.com^$script
 ||xiaoxiaoshuwu.com^$third-party
-||xmpush.xiaomi.com
 ||xs.*##p[class*="ReadAd"]
 ||xs.la##.con_ad
 ||xs.la##p[class*="ReadAd"]
@@ -545,7 +496,6 @@ $third-party,app=com.miui.video
 ||ybdu.com^$third-party
 ||yibige.com^$script
 ||yidianzixun.com^$important
-||zhibo.v.baidu.com
 ||zhihu.com##.AppBanner
 ||zhihu.com##.Banner
 ||zhihu.com##.HitQrcode
@@ -697,6 +647,7 @@ $third-party,app=com.miui.video
 51vipedu.com
 526d.uunice.com
 526dimg.uunice.com
+53kf.com
 55336.5ip9.com
 58.xgo.com.cn
 5wcf9lws.njylyljg.com
@@ -726,6 +677,7 @@ $third-party,app=com.miui.video
 86log.joy.cn
 86log.joy.cn 
 888.tv.sohu.com
+88shu.cn
 89.8ox.cn
 8b6dfa.v.admaster.com.cn
 8dcyqu.c.admaster.com.cn
@@ -896,6 +848,7 @@ ad.toutiao.com
 ad.turn.com
 ad.unimhk.com
 ad.winrar.com.cn
+ad.xiaomi.com
 ad.ximalaya.com
 ad.yixin.im
 ad.zhangyue.com
@@ -972,8 +925,10 @@ admicro1.vcmedia.vn
 admicro4.vcmedia.vn
 admicro5.vcmedia.vn
 admicro6.vcmedia.vn
+admin*.com
 admin.louxia.org
 admin5.com
+admin60.com
 admob.com
 adn.agrantsem.com
 adn.atdmt.com
@@ -1106,6 +1061,7 @@ agoodm.m.taobao.com
 agoodm.wapa.taobao.com
 agr.voiceads.cn
 ai.taobao.com
+aicdn.com
 aid.video.qq
 aim.yoyi.com.cn
 aimqohgndu5qlgty.hbhlq.com
@@ -1152,6 +1108,7 @@ analytics.wanmei.com
 analytics.ws.126.net
 analytics.xunlei.com
 analytics3.dopool.com
+analytics3.starschina.com^
 analytics-union.xunlei.com
 android.push.126.net
 android.rqd.qq.com
@@ -1215,6 +1172,9 @@ apollo.caixin.com
 app.50bang.org
 app.5211game.com
 app.chnhtp.com
+app.market.xiaomi.com/apm/download*ads_video*
+app.market.xiaomi.com/apm/statistics/downloadinstallresult*
+app.market.xiaomi.com^$third-psrty,app=com.xiaomi.market
 app.ptleju.com
 app.wapx.cn
 appcdn.wapx.cn
@@ -1354,6 +1314,7 @@ bshare.optimix.asia
 bsiet.husky.sogou.com
 btn.onlylady.com
 bttt.qucaigg.com
+buluo.qq.com^
 bw.scupio.com
 bx.optimix.asia
 bz.cnjianzhan.net
@@ -1509,6 +1470,7 @@ cfg.adsmogo.net
 cfg.adsmogo.org
 cfg-md.gridsumdissector.com
 cfg-vd.gridsumdissector.com
+chong.qq.com^
 cimage.gw.com.cn
 cip6.czpush.com
 cj.qidian.com
@@ -1889,6 +1851,7 @@ dvsour.china.com
 dw.cbsi.com
 dw.cbsi.com.cn
 dw.xcar.com.cn
+dwnews.com##.adbox-top
 dwtn.nuion.cn
 dwtrack.qidian.com
 dx.crsky.com
@@ -1974,8 +1937,11 @@ feedback.whalecloud.com
 fengche.cpv6.com
 ff.win.taobao.com
 ffwap.com
+file.market.xiaomi.com
+film.qq.com/vip/act^
 finead.cn
 float.sandai.net
+flurry.com
 flv.res.hunantv
 flv.res.hunantv.com
 fm.p0y.cn
@@ -2055,6 +2021,7 @@ game.res.meizu.com
 game.rising.cn
 game.weibo.cn
 gamecenter.iqiyi.com
+gamecenter.iqiyi.com^
 games.ifeng.com
 ganjituiguang.ganji.com
 gas.data.pplive.com
@@ -2062,6 +2029,7 @@ gclick.cn
 gen.alicdn.com
 geo.gridsumdissector
 geo.gridsumdissector.com
+getprize.v.qq.com
 gg.5173.com
 gg.blueidea.com
 gg.btnk024.com
@@ -2093,6 +2061,7 @@ go.onclasrv.com
 go.padsdel.com
 go.padstm.com
 go.util.zlibs.com
+go2yd.com
 good.ta80.com
 googleads.g.doubleclick.net
 googleadsserving.cn
@@ -2160,8 +2129,10 @@ hljdnserror5.wo.com.cn
 hlrcv.stage.adobe.com
 hls01.ott.disp.cibntv.net
 hm.baidu.com
+hm.baidu.com/hm.js
 hm2.cnzz.com
 hm3.cnzz.com
+hmma.baidu.com/app.gif
 hndnserror1.wo.com.cn
 hndnserror2.wo.com.cn
 hndnserror3.wo.com.cn
@@ -2171,6 +2142,7 @@ hndnserror6.wo.com.cn
 hndnserror7.wo.com.cn
 hndnserror8.wo.com.cn
 hoplink.ksosoft.com
+hot.browser.miui.com^
 hot.m.shouji.360tpcdn.com
 hotav*.szjtcg.com
 hotav05.szjtcg.com
@@ -2207,6 +2179,7 @@ http://x.jd.com/exsites?spread_type=*
 hudong.pl.youku.com
 hui.sohu.com
 huichuan.sm.cn
+huichuan.sm.cn^
 huid.ad.360.cn
 hunantv.m.cn.miaozhen
 hunantv.m.cn.miaozhen*
@@ -2214,6 +2187,7 @@ hunantv.m.cn.miaozhen.com
 hv.code.tanwanyx.com
 hxsame.hexun.com
 hyssp.haiyunx.com
+hz.netease.com
 hzs12.cnzz.com
 hzs14.cnzz.com
 hzs17.cnzz.com
@@ -2242,6 +2216,7 @@ i.uzhiv.com
 i.w.inmobi.com
 i.zt-dq.com
 i2.wljnj.com
+i3.go2yd.com^
 i8.chinanews.com
 iad.g.163.com
 iadctest.qwapi.com
@@ -2321,6 +2296,8 @@ img.applovin.com
 img.balaiyani.com
 img.baotoushanghui.com
 img.cbs99.com
+img.cdn.mvideo.mgslb.com
+img.cdn.mvideo.xiaomi.com.chuangcdn.com
 img.chengruide.com
 img.cnsjx.com.cn
 img.contx.cn
@@ -2429,6 +2406,7 @@ impservice.union.youdao.com
 impservice2.youdao.com
 impservice-test.dictapp.youdao.com
 im-x.jd.com
+inews.gtimg.com^
 info.gomlab.com
 info.static.startappservice.com
 info.stockstar.com
@@ -2471,10 +2449,12 @@ ivy.pcauto.com.cn
 ivy.pcbaby.com.cn
 ivy.pclady.com.cn
 ivy.pconline.com.cn
+iwan.qq.com^
 iwstat.tudou
 iwstat.tudou.com
 iwstat.tudou.com 
 iyes.youku.com
+iyouxi.vip.qq.com
 j.jiawen88.com
 j.mainbx.com
 j.microad.net
@@ -2651,6 +2631,7 @@ ku6.allyes.com
 ku6.allyes.com 
 ku6afp.allyes.com
 ku6afp.allyes.com 
+kuaibao.qq.com
 kuaikaiapp.com
 kwcdn.000dn.com
 kwcscdn.000dn.com
@@ -2709,6 +2690,7 @@ lndnserror6.wo.com.cn
 lndnserror7.wo.com.cn
 lndnserror8.wo.com.cn
 loading.baofeng5.baofeng.net
+log.*.sm.cn
 log.120ask.com
 log.adtimaserver.vn
 log.advertise.1mobile.com
@@ -2730,9 +2712,11 @@ log.mmstat.com
 log.molitv.cn
 log.nvwa.baofeng.com
 log.rc.hunantv.com
+log.s.sm.cn^
 log.so.hunantv.com
 log.spotify.com
 log.stat.kugou.com
+log.tbs.qq.com^
 log.tiexue.net
 log.tv.moliv.cn
 log.v2.hunantv
@@ -2826,6 +2810,7 @@ max-l.mediav.com
 mb.atm.youku.com
 mb.hd.sohu.cn
 mb.hd.sohu.com.cn
+mbai.cn
 mbdapp.iqiyi.com
 mbdlog.iqiyi.com
 mc.yandex.ru
@@ -2847,6 +2832,7 @@ media.trafficjunky.net
 media.zgc66.com
 mediapro.pro.cn
 media-static.jointreport-switch.com
+meidav.com
 mengmob.com
 mf.atm.youku
 mf.atm.youku.com
@@ -2877,9 +2863,12 @@ minidcsc.kugou.com
 minisite.acs86.com
 minisite.vidown.cn
 mis.g.mi.com
+mistat.xiaomi.com
 mixer.cupid.ptqy.gitv.tv
 mixpanel.com
 mjs.lzmmil.cn
+ml.51xumei.com^
+ml.51youz.com^
 mlog.aipai.com
 mlog.search.xiaomi.net
 mlt01.com
@@ -2888,6 +2877,9 @@ mmae.qtmojo.com
 mmg.aty.cp45.ott.cibntv.net
 mmg.aty.sohu
 mmg.aty.sohu.com
+mnews.gw.com.cn
+mnews.gw.com.cn/wap/data/individualconfig/images/advertisementItem
+mnews.gw.com.cn/wap/data/individualconfig/images/advertisementItem/*
 mo.atm.youku.com
 mo.kugou.com
 mob.coolnay.com
@@ -2937,6 +2929,8 @@ msn.wrating.com
 msnclick.wrating.com
 msphoneclick.kuwo.cn
 muban.dodounion.com
+music.163.com/eapi/ad*
+music.163.com/eapi/ad^
 mvads.kugou.com
 mvip.zhuba8.com
 mvp.mediav.com
@@ -3002,6 +2996,7 @@ ns.apyuelang.com
 nstat.tudou
 nstat.tudou.com
 nstat.tudou.com 
+nstool.netease.com^
 o.go2yd.com
 o.if.qidian.com
 o.xywy.com
@@ -3018,9 +3013,11 @@ olstats.onlylady.com
 onlinetips.baofeng5.baofeng.net
 ope.tanx.com
 open.spotify.com
+openacs4uc.m.taobao.com
 openapi.particlenews.com
 openbox.mobilem.360.cn
 opendsp.tanx.com
+openjmacs4uc.m.taobao.com
 ops.zibov.com
 optimized-by.rubiconproject.com
 osfota.cdn.aliyun.com
@@ -3710,6 +3707,7 @@ sta.ganji.com
 sta.haloall.com
 stadig.ifeng.com
 staging.admin.e.mi.com
+stargame.com
 stat*.888.ku6*
 stat*.888.ku6.com
 stat*.corp.56.com
@@ -3814,6 +3812,7 @@ static.t.agrantsem.com
 static.tv508.com
 static.uuzu.com
 static.wauee.com
+static.yidianzixun.com^
 static.youmi.net
 static1.baifendian.com
 static1.bfdcdn.com
@@ -3966,6 +3965,7 @@ themis.ykimg.com
 theta.sogoucdn.com
 thunder.365sky.com
 thunderqtypv.union.xunlei.com
+ticketapi.video.qq.com
 tinydrag.t.cp61.ott.cibntv.net
 tips.logger.baofeng.com
 tips.passport.pptv
@@ -4302,6 +4302,7 @@ web.ali213.net
 web.houyi.baofeng.net
 web1.51.la
 web2.51.la
+webcollect.kugou.com
 webd.home.news.cn
 weblb-wg.gslb.spotify.com
 webstat.kuwo.cn
@@ -4409,6 +4410,7 @@ www.ok365.com
 www.ooniu.com
 www.optimix.cn
 www.qchannel01.cn
+www.qchannel01.cn^
 www.qdhongyushun.com
 www.startappexchange.com
 www.statcounter.com
@@ -4456,6 +4458,7 @@ xiangchaokankan.m.cn.miaozhen.com
 xiazai.cdren.com
 xiciim.qtmojo.com
 xk.xk2012.com
+xmpush.xiaomi.com
 xray.jebe.renren.com
 xs.houyi.baofeng.net
 xt.xxwkjl.com
@@ -4501,6 +4504,7 @@ z8.cnzz.com
 z9.cnzz.com
 zdw.w8.com.cn
 zgwchim.qtmojo.com
+zhibo.v.baidu.com
 zixuncooperation.html5.qq.com
 zjs.55bbs.com
 zjs.roowap.com
