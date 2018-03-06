@@ -2,11 +2,10 @@
 ! Version: 201803061202
 ! Title: niepeng adfilter
 ! Homepage: https://niepengsmile.github.io/adguard/np-ad.txt
-! Licence: https://niepengsmile.github.io/adguard/np-ad.txt
 ! Please report any unblocked adverts or problems
 ! via e-mail (niepengsmile@gmail.com).
-###banne
-###swtleft
+
+!--------------------------------------------------------------
 ##*live_barrage.js
 ##.dating
 ##.fenxiang
