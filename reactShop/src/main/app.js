@@ -2,7 +2,6 @@ import React, {Component} from "react"
 import {Route,Link} from "react-router-dom"
 import Ad from "./comp/ad"
 import Nav from "./comp/nav"
-
 import Home from './comp/home'
 class App extends Component{
     constructor(){
