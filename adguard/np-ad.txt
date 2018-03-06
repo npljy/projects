@@ -1,3 +1,10 @@
+[niepeng adfilter]
+! Version: 201803061202
+! Title: niepeng adfilter
+! Homepage: https://niepengsmile.github.io/adguard/np-ad.txt
+! Licence: https://niepengsmile.github.io/adguard/np-ad.txt
+! Please report any unblocked adverts or problems
+! via e-mail (niepengsmile@gmail.com).
 ###banne
 ###swtleft
 ##*live_barrage.js
@@ -238,9 +245,6 @@ $third-party,app=com.miui.video
 *www.sf-express.com/app/cn/sc*
 *www.wyxokokok.com/pub/readpubxml*
 *www.xwctw.com:8888/lxmService/lxmPosition*
-@@||126.com
-@@||adv.sec.miui.com
-@@||niepengsmile.github.io
 ||*.*/1*^$script,domain=du1du.org
 ||*/js/jads.js
 ||*^adsbygoogle.js
@@ -1996,6 +2000,7 @@ g.6sfg.com
 g.ad8.cc
 g.adnxs.com
 g.ads.cn.miaozhen.com
+g.alicdn.com
 g.b.twyxi.com
 g.bitauto.com
 g.buka9.com
