@@ -308,11 +308,7 @@ http://pomelocdn.beautyplus.com/iphone*
 http://us-ads.*
 http://x.jd.com/exsites?spread_type=*
 
-||www.16ckck.com##.m980[style*="margin-top:5px;"]
-||www.16ckck.com##.topad
-||www.16ckck.com###topad
-||www.16ckck.com##img[src*="sinaimg"]
-||www.16ckck.com^/*/tongji.js
+
 da.mgtv.com
 ||getprize.v.qq.com
 ||ticketapi.video.qq.com
@@ -330,15 +326,7 @@ da.mgtv.com
 @@||adv.sec.miui.com
 ||baidu.com##div[class*="-related-"]
 ||baidu.com##div[class*="tab_news"]
-||*ckck.com##.m980[style*="margin-top:5px;"]
-||*ckck.com##.topad
-||*ckck.com###topad
-||*ckck.com##div[id*="piao_div"]
-||*ckck.com###download_dibu
-||*ckck.com##img[src*="sinaimg"]
-||*ckck.com##section[id*="download_"]
-||*ckck.com^/*/tongji.js
-||*ckck.com##.listok
+
 ||log.s.sm.cn^
 $third-party,app=com.miui.video
 ||xmpush.xiaomi.com
