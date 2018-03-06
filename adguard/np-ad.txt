@@ -420,6 +420,7 @@ $third-party,app=com.miui.video
 ||mistat.xiaomi.com
 ||ml.51xumei.com^
 ||ml.51youz.com^
+||mnews.gw.com.cn
 ||mnews.gw.com.cn/wap/data/individualconfig/images/advertisementItem
 ||mnews.gw.com.cn/wap/data/individualconfig/images/advertisementItem/*
 ||music.163.com/eapi/ad*
