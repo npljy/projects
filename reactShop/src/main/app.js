@@ -1,25 +1,54 @@
 import React, {Component} from "react"
+import data from "./data/data"
+import Ad from "./comp/ad"
+import Nav from "./comp/nav"
+import List from "./comp/list"
 
 class App extends Component{
     constructor(){
         super();
-        this.state = {};
+        this.state = {
+            data:data
+        };
     }
     render(){
+        let {data} = this.state;
+        let list = data.map((e,i)=>{
+            return (
+                <List {...{
+                    key:i,
+                    id : e.id,
+                    sex : e.sex,
+                    title : e.title,
+                    price : e.price,
+                    sale : e.sale,
+                    img : e.img,
+                    count : e.count,
+                    send : e.send
+                }}/>
+            )
+        })
         return (
             <div>
-                {/* ad ↓ */}
-                <div className = "adcenter">
-                    <div className="adlogo">
-                        <a target="_blank" href="/" mars_sead="home_header_vip_logo">
-                            <img src={require("./imgs/ad.gif")}  alt="全球精选_正品特卖" id="J-vipLogo" height="90"/>
-                        </a>
-                    </div>
-                    <div className="adtop">
-                        <img src={require("./imgs/top.png")}  alt="全球精选_正品特卖" id="J-vipLogo" height="90"/>
+                <div className = "adcenter clearfix">
+                    {/* ad ↓ */}
+                    <Ad />
+                    {/* ad ↑ */}
+                    <div className="ad-right">
+                        <div>
+                            <a>
+                                <h3>
+                                    <div className="total">RMB：<span className="t-count">588888</span></div>
+                                    <img alt="cart" src={require("./imgs/cart.png")}/>
+                                </h3>
+                            </a>
+                            <p>
+                                <a>清空购物车</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                {/* ad ↑ */}
+               
                 {/* head ↓ */}
                 <div className = "header">
                     <div className = "container">
@@ -43,17 +72,9 @@ class App extends Component{
                     </div>
                     <div className = "head-btm">
                         <div className = "container">
-                            <div className = "head-btm-l clearfix">
-                                <ul>
-                                    <li><a className="" >首页</a></li>
-                                    <li><a className="" >女装</a></li>
-                                    <li><a className="" >男装</a></li>
-                                    <li><a className="" >儿童装</a></li>
-                                    <li><a className="" >热卖</a></li>
-                                    <li><a className="" >联系我们</a></li>
-                                </ul>
-                                <a className="search" href="./comp/search.html">分类</a>
-                            </div>
+                            {/* nav ↓ */}
+                            <Nav />
+                            {/* nav ↑ */}
                         </div>
                     </div>
                 </div>
@@ -86,12 +107,70 @@ class App extends Component{
                     <div className="container">
                         <div className="cont-top clearfix">
                             <div className = "cont-t-lt">
-                                <div className="top"></div>
-                                <div className="btm"></div>
+                                <div className="top">
+                                    <div className="top-img">
+                                        <a>
+                                            <img src={require("./imgs/pi.jpg")} alt=""/>
+                                            <div className="top-fly">
+                                                <p className="b-animate">商品详情</p>
+                                                <label className="b-animate"></label>
+                                                <h2 className="b-animate">潮流热款</h2>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="btm">
+                                    <span>热卖款式</span>
+                                    <h2><a>Luxurious & Trendy</a></h2>
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
+                                    <a className="buy">购 买</a>
+                                </div>
                             </div>
-                            <div className = "cont-t-rt"></div>
+                            <div className = "cont-t-rt">
+                                <div className="rt-col">
+                                    <a>
+                                        <img alt="" src={require("./imgs/pi1.jpg")}/>
+                                        <div>
+                                            <p>商品详情</p>
+                                            <label></label>
+                                            <h3>男 式</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="rt-col">
+                                    <a>
+                                        <img alt="" src={require("./imgs/pi2.jpg")}/>
+                                        <div>
+                                            <p>商品详情</p>
+                                            <label></label>
+                                            <h3>儿 童</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="rt-col">
+                                    <a>
+                                        <img alt="" src={require("./imgs/pi3.jpg")}/>
+                                        <div>
+                                            <p>商品详情</p>
+                                            <label></label>
+                                            <h3>女 式</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div className="cont-mid">
+                            <div className="container">
+                                <h2>流行款式</h2>
+                                <label></label>
+                                <div className="box">
+                                    <ul>
+                                        {/* list ↓ */}
+                                        {list}
+                                        {/* list ↑ */}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div className="cont-btm">
                         </div>
