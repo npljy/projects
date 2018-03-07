@@ -82,7 +82,7 @@ $third-party,app=com.miui.video
 */ad_show.js
 */ad1.js
 */ad2.js
-*/ad3.js
+*/ad*.js
 */adbox.asp*
 */adfile/*.js
 */ads_images/*.js
@@ -90,6 +90,7 @@ $third-party,app=com.miui.video
 */ads2.js
 */ads3.js
 */ads4.js
+*/ads*.js
 */adscpv/i.*
 */adsense/*
 */adShow.*?id=*
@@ -157,12 +158,12 @@ $third-party,app=com.miui.video
 *a.applovin.com*
 *a1.go2yd.com/Website/contents/recommend-ads*
 *ad*.ximalaya.com/subapp*
+*ad*.ximalaya.com^*
 *ad.api.3g.tudou.com/adv.*
 *ad.qingting.fm/api/ad*
 *admgr.qingting.fm/adxconfig*
-*ads.mopub.com/m/ad*
-*ads.mopub.com/m/open
-*ads.service.kugou.com/v1/mobile*
+*ads.mopub.com
+*ads.service.kugou.com*
 *adsdk.gao7.com*Ad*
 *adv.madserving.com/material*
 *afp.csbew.com/s.htm
@@ -209,8 +210,7 @@ $third-party,app=com.miui.video
 *js.users.51.la/*js
 *jt.rsscc.com/trainnet/advertisement*
 *lf.snssdk.com/2/article/information*
-*lives.l.qq.com/livemsg*
-*livew.l.qq.com/livemsg*
+*l.qq.com/livemsg*
 *m2.qiushibaike.com/banner*
 *mads/gma*
 *med.heyzap.com*
