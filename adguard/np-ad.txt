@@ -4,7 +4,6 @@
 ! Homepage: https://niepengsmile.github.io/adguard/np-ad.txt
 ! Please report any unblocked adverts or problems
 ! via e-mail (niepengsmile@gmail.com).
-
 !--------------------------------------------------------------
 ##*live_barrage.js
 ##.dating
@@ -842,9 +841,7 @@ ad.1111cpc.com
 ad.51wnl.com
 ad.7simage.com
 ad.adfurikun.jp
-
 ad.atdmt.com
-
 ad.beihai365.com
 ad.btba.com.cn
 ad.caiyunapp.com
@@ -974,7 +971,6 @@ admob.com
 adn.agrantsem.com
 adn.atdmt.com
 adnetpub.yaolan.com
-
 adp.cnool.net
 adp.s8bbs.com
 adp1.cnool.net
@@ -1176,7 +1172,6 @@ api.domob.cn
 api.dreamfull.cn
 api.g1.junfull.com
 api.game.letvstore.com
-
 api.goulegu.com
 api.iimedia.cn
 api.itaoxiaoshuo.com
@@ -1247,7 +1242,6 @@ at-img2.tdimg.com
 at-img2.tdimg.com 
 at-img3.tdimg.com
 at-img3.tdimg.com 
-
 atm.yoyi.com.cn
 attach.s8bbs.com
 aty.tv.sohu
@@ -1275,7 +1269,6 @@ b.code.tanwanyx.com
 b.photobucket.com
 b.polkoa.com
 b.scorecardresearch.com
-
 b.ukeiae.com
 b.yunfanlm.net
 backup.lumion3d.com
@@ -1376,7 +1369,6 @@ c.jk2h.com
 c.l.qq
 c.l.qq*
 c.l.qq.com
-
 c.mnet-ad.net
 c.msltzer.cn
 c.msn.com
@@ -1627,7 +1619,6 @@ corp.hunantv*
 count*.51yes.com
 count*.pconline.com.cn
 count.612.com
-
 count.chanet.com.cn
 count.cpm.cm.kankan.com
 count.crsky.com
@@ -1784,7 +1775,6 @@ dev.dc.letv.com
 dev.tg.wan.360.cn
 dev.tg.youxi.com
 dev.umeng.com
-
 dex.advg.jp
 df.tanx.com
 dfnews.rdtuijian.com
@@ -1803,10 +1793,8 @@ dl.2345.com
 dl.37wan.cn
 dl.8ox.cn
 dl.fly086.com
-
 dl.img80.net
 dl.kinbest.cn
-
 dl.union.ijinshan.com
 dl.xyymall.net
 dl4.vas.pptv
@@ -1898,7 +1886,6 @@ e.hpg.cn.miaozhen.com
 e.lndjj.com
 e.qq.com
 e.stat.ykimg.com
-
 e.tf.360.cn
 e4.6dad.com
 eap.enorth.com.cn
@@ -1975,7 +1962,6 @@ fp.fraudmetrix.cn
 frame.enet.com.cn
 freespace.juchaojie.com
 fun.adx.admaster.com.cn
-
 fx.worldqueen.org.cn
 fz.letv
 fz.letv*
@@ -1985,7 +1971,6 @@ g.6sfg.com
 g.ad8.cc
 g.adnxs.com
 g.ads.cn.miaozhen.com
-g.alicdn.com
 g.b.twyxi.com
 g.bitauto.com
 g.buka9.com
@@ -2113,7 +2098,6 @@ h09.hxsame.hexun.com
 h10.hxsame.hexun.com
 h5.holalauncher.com
 ha.pro-market.net
-
 haitaoad.nosdn.127.net
 hao.1235k.com
 hao.qquu8.com
@@ -2165,7 +2149,6 @@ hp.smiler-ad.com
 hqs7.cnzz.com
 hs.qhupdate.com
 ht.www.sogou.com
-
 html.cnzzj.com.cn
 http://ad.*.js
 http://ads.*.js
@@ -2453,7 +2436,6 @@ ivy.pcauto.com.cn
 ivy.pcbaby.com.cn
 ivy.pclady.com.cn
 ivy.pconline.com.cn
-
 iyes.youku.com
 j.jiawen88.com
 j.mainbx.com
@@ -2733,7 +2715,6 @@ lottery.kuaiya.cn
 love.66san.com
 love.chushoushijian.cn
 lrcet.cnzz.kld666.com
-
 luckstatic.v1.cn
 lynn.zgsemi.cn
 m.1680go.com
@@ -2764,7 +2745,6 @@ m.qianka.com
 m.reachmax.cn
 m.wrating.com
 m.xc0429.com
-
 m.yoyi.com.cn
 m.zhuashouji.com
 m1.dx1200.com
@@ -2801,7 +2781,6 @@ material.ssp.xunlei.com
 material-ssl.mediav.com
 max.mediav.com
 max-l.mediav.com
-
 mb.hd.sohu.cn
 mb.hd.sohu.com.cn
 mbdapp.iqiyi.com
@@ -2826,16 +2805,13 @@ media.zgc66.com
 mediapro.pro.cn
 media-static.jointreport-switch.com
 mengmob.com
-
 mfan.iclick.com.cn
 mfp.deliver.ifeng.com
 mg.dt07.net
 mg.games.sina.com.cn
 mgid.com
 mhuodong.elong.com
-
 mi.gdt.qq.com
-
 miaozhen.com
 mid.houyi.baofeng.net
 midinfo.baofeng.com
@@ -2864,7 +2840,6 @@ mmae.qtmojo.com
 mmg.aty.cp45.ott.cibntv.net
 mmg.aty.sohu
 mmg.aty.sohu.com
-
 mo.kugou.com
 mob.coolnay.com
 mobile.log.hunantv
@@ -2876,7 +2851,6 @@ mon.xtgreat.com
 monitor.yigao.com
 motu.p4p.sina.com.cn
 moupdate10332052.wps.cn
-
 mp4ba.qucaigg.com
 mpush.cn
 mpv.sandai.net
@@ -2920,7 +2894,6 @@ n.amoad.com
 n.gemini.yahoo.com
 n.ma.social-touch.com
 n.mark.letv.com
-
 na.ads.yahoo.com
 na1r.services.adobe.com
 na2m-pr.licenses.adobe.com
@@ -3127,7 +3100,6 @@ pl139095.puhtml.com
 pl4790.puhtml.com
 platform.wondershare.com
 player.log.hunantv.com
-
 player.pb.ops.tudou
 playinfo.gomlab.com
 plog.dc.letv
@@ -3550,13 +3522,11 @@ sdk.data.cp61.ott.cibntv.net
 sdk.e.qq.com
 sdk.game.kugou.com
 sdk.m.cp31.ott.cibntv.net
-
 sdk.open.amp.igexin.com
 sdk.open.inc2.igexin.com
 sdk.open.lbs.igexin.com
 sdk.open.phone.igexin.com
 sdk.open.talk.igexin.com
-
 sdkapp.mobile.sina.cn
 sdkclick.mobile.sina.cn
 sdkconfig.ad.xiaomi.com
@@ -3626,7 +3596,6 @@ slides.discovery.tom.com
 slog.sina.cn
 slog.sina.com.cn
 sm.domob.cn
-sm01.alicdn.com
 smart.789.image.mucang.cn
 smart.789.kakamobi.cn
 smt.admaster.com.cn
@@ -3725,7 +3694,6 @@ stat.v-56
 stat.v-56*
 stat.xgo.com.cn
 stat.xywy.com
-
 stat.zbii.com
 stat.zdnet.com.cn
 stat.zol.com.cn
@@ -3754,7 +3722,6 @@ static.adtimaserver.vn
 static.adwo.com
 static.anquan.org
 static.app.m.letv.com
-
 static.awempire.com
 static.baifendian.com
 static.bshare.cn
@@ -3902,7 +3869,6 @@ tc.ci123.com
 tcad.wedolook.com
 tcr.tynt.com
 tcss.qq.com
-
 td.mpush.cn
 tdap.tudou
 tdcm.tudou
@@ -3913,16 +3879,12 @@ temai.taobao.com
 tenmax-static.cacafly.net
 terren.cntv.cn
 ad.starschina.com
-
 test.adapi.starschina.com
 test.api.xlmc.sandai.net
 test.ark.letv.com
 .ad.xiaomi.com
-
 test.log.ttpod.com
 test.new.api.ad.xiaomi.com
-
-
 test.sdk.m.youku.com
 test2014.adview.cn
 tf.360.cn
@@ -4147,7 +4109,6 @@ v2.res.log.hunantv.com
 v2.stat.ku6
 v2.stat.ku6.com
 v2.stat.ku6.com 
-
 v3.jiathis.com
 v3.stat.ku6
 v3.stat.ku6.com
@@ -4159,9 +4120,7 @@ v6.cnzz.com
 v6.stat.ku6
 v8.cnzz.com
 val.atm.cp31.ott.cibntv.net
-
 valf.atm.cp31.ott.cibntv.net
-
 vamaker.cm.admaster.com.cn
 vas.aplus.pptv
 vda.17173.com
@@ -4170,10 +4129,8 @@ vdinfo.baofeng.com
 verystat.xinmin.cn
 vg.aty.sohu
 vg.aty.sohu.com
-
 vi2ishae.xhamster.com
 vid.applovin.com
-
 video.mpush.qq
 video-ad-stats.googlesyndication.com
 video-va.g1d.net
@@ -4235,7 +4192,6 @@ w6061.move7.com
 wa.gtimg.com
 wa.kuwo.cn
 wafp.pptv
-
 wan.rising.cn
 wan.youku.com
 wangmeng.sogou.com
@@ -4461,3 +4417,4 @@ zz.bdstatic.com
 zz.m.sohu.com
 zzrv1uha.njylyljg.com
 zzzkxx.com
+aaaaa
