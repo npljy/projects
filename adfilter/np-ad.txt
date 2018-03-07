@@ -725,6 +725,7 @@ $third-party,app=com.miui.video
 86get.joy.cn 
 86log.joy.cn
 86log.joy.cn 
+888.ku6.com
 888.tv.sohu.com
 89.8ox.cn
 8b6dfa.v.admaster.com.cn
@@ -856,6 +857,7 @@ ad.dokrmob.com
 ad.dopool.com
 ad.doubleclick.net
 ad.duapps.com
+ad.duomi.com
 ad.dzwindows.com
 ad.dzwww.com
 ad.egou.com
@@ -880,6 +882,7 @@ ad.qingting.fm
 ad.rednet.cn
 ad.seeyouyima.com
 ad.sitemaji.com
+ad.starschina.com
 ad.tatatimes.com
 ad.test.ximalaya.com
 ad.thepaper.cn
@@ -889,6 +892,7 @@ ad.toutiao.com
 ad.turn.com
 ad.unimhk.com
 ad.winrar.com.cn
+ad.xiaomi.com
 ad.ximalaya.com
 ad.yixin.im
 ad.zhangyue.com
@@ -979,6 +983,7 @@ adplay.tudou
 adplay.tudou.com
 adplay.tudou.com 
 adplexmedia.adk2.co
+adpolestar.net 
 adpro.cn
 adpub.yaolan.com
 adpubs.yaolan.com
@@ -1155,7 +1160,6 @@ aos.gw.youmi.net
 aos.prf.hn
 aos.wall.youmi.net
 apas.aipai.com
-api.ad.xiaomi.com
 api.adfurikun.jp
 api.ad-locus.com
 api.adtimaserver.vn
@@ -1432,9 +1436,7 @@ cc.yfi052.pw
 ccg51.win
 cctv.adsunion
 cctv.adsunion.com
-cctv.adsunion.com 
 cdn.a9377j.com
-cdn.ad.xiaomi.com
 cdn.adikteev.com
 cdn.adinall.com
 cdn.adnxs.com
@@ -1614,8 +1616,10 @@ conversion.adpro.cn
 cooperation.html5.qq.com
 cop.my.xunlei.com
 corner.houyi.baofeng.net
+corp.56.com
 corp.hunantv
 corp.hunantv*
+corp.v-56
 count*.51yes.com
 count*.pconline.com.cn
 count.612.com
@@ -1873,7 +1877,6 @@ dz.njq.net
 e.0313413.com
 e.70e.com
 e.a907907.com
-e.ad.xiaomi.com
 e.ads.cn.miaozhen.com
 e.cn.miaozhen.com
 e.crashlytics.com
@@ -2026,6 +2029,7 @@ game.rising.cn
 game.weibo.cn
 gamecenter.iqiyi.com
 games.ifeng.com
+gamex.mobile.youku.com
 ganjituiguang.ganji.com
 gas.data.pplive.com
 gclick.cn
@@ -2902,7 +2906,6 @@ nba.goodemc.com
 nc004x.corp.youdao.com
 nc045x.corp.youdao.com
 nclog.mars.baofeng.net
-new.api.ad.xiaomi.com
 new.yokaunion.com
 news.766ba.net
 news.b9377h.com
@@ -3516,7 +3519,6 @@ sddnserror7.wo.com.cn
 sddnserror8.wo.com.cn
 sddnserror9.wo.com.cn
 sdjs.5442.com
-gamex.mobile.youku.com
 sdk.conf.igexin.com
 sdk.data.cp61.ott.cibntv.net
 sdk.e.qq.com
@@ -3529,7 +3531,6 @@ sdk.open.phone.igexin.com
 sdk.open.talk.igexin.com
 sdkapp.mobile.sina.cn
 sdkclick.mobile.sina.cn
-sdkconfig.ad.xiaomi.com
 sdkconfig.play.aiseet.atianqi.com
 sdkconfig.play.cp81.ott.cibntv.net
 sdkm.w.inmobi.com
@@ -3552,9 +3553,6 @@ select.brealtime.com
 serial.alcohol-soft.com
 serve.popads.net
 servedby.adsfactor.net
-server1.adpolestar.net
-server1.adpolestar.net 
-service.ad.duomi.com
 service.cocounion.com
 service.jiagu.360.cn
 servicegetbook.net
@@ -3655,15 +3653,8 @@ sta.ganji.com
 sta.haloall.com
 stadig.ifeng.com
 staging.admin.e.mi.com
-stat*.888.ku6*
-stat*.888.ku6.com
-stat*.corp.56.com
-stat*.corp.v-56*
-stat*.stat.v-56*
-stat*.stat.v-56.com
 stat.55bbs.com
 stat.56.com
-stat.56.com 
 stat.baike.com
 stat.cbsi.com.cn
 stat.chinaso.com
@@ -3691,7 +3682,7 @@ stat.tudou
 stat.tudou.com
 stat.tudou.com 
 stat.v-56
-stat.v-56*
+stat.v-56.com
 stat.xgo.com.cn
 stat.xywy.com
 stat.zbii.com
@@ -3734,7 +3725,6 @@ static.front.xywy.com
 static.g.iqiyi.com
 static.g.ppstream.com
 static.g.pptv
-static.g.pptv*
 static.g.pptv.com
 static.gg.uuu9.com
 static.googleadsserving.cn
@@ -3772,9 +3762,6 @@ stats.g.doubleclick.net
 stats.ipinyou.com
 stats.jpush.cn
 stats.liuliguo.com
-stats.tudou
-stats.tudou.com
-stats.tudou.com 
 stats.wp.com
 stat-y.xywy.com
 stat-z.xywy.com
@@ -3878,13 +3865,10 @@ techweb.iv.adsame.com
 temai.taobao.com
 tenmax-static.cacafly.net
 terren.cntv.cn
-ad.starschina.com
 test.adapi.starschina.com
 test.api.xlmc.sandai.net
 test.ark.letv.com
-.ad.xiaomi.com
 test.log.ttpod.com
-test.new.api.ad.xiaomi.com
 test.sdk.m.youku.com
 test2014.adview.cn
 tf.360.cn
