@@ -5,6 +5,7 @@
 ! Please report any unblocked adverts or problems
 ! via e-mail (niepengsmile@gmail.com).
 !--------------------------------------------------------------
+
 ##*live_barrage.js
 ##.dating
 ##.fenxiang
@@ -71,6 +72,7 @@ $third-party,app=com.miui.video
 *.popunder.js
 *.snssdk.com/service/13/app_ad*
 */?op=adv&*
+*/ad*.js
 */ad/AdSale/*
 */ad/Adv/*
 */ad/files/*
@@ -82,15 +84,14 @@ $third-party,app=com.miui.video
 */ad_show.js
 */ad1.js
 */ad2.js
-*/ad*.js
 */adbox.asp*
 */adfile/*.js
+*/ads*.js
 */ads_images/*.js
 */ads1.js
 */ads2.js
 */ads3.js
 */ads4.js
-*/ads*.js
 */adscpv/i.*
 */adsense/*
 */adShow.*?id=*
@@ -209,8 +210,8 @@ $third-party,app=com.miui.video
 *ios.win007.com*JsonAd.txt*
 *js.users.51.la/*js
 *jt.rsscc.com/trainnet/advertisement*
-*lf.snssdk.com/2/article/information*
 *l.qq.com/livemsg*
+*lf.snssdk.com/2/article/information*
 *m2.qiushibaike.com/banner*
 *mads/gma*
 *med.heyzap.com*
@@ -472,7 +473,6 @@ $third-party,app=com.miui.video
 ||sm.cn##div[class*="oab-ball-wrap"]
 ||sm.cn##div[id*="cards"]
 ||sm.cn##iframe
-||sm.cn*^reset*.js
 ||so.com###msocomBottomBanner
 ||so.com###news-list
 ||so.com##div[class*="lb_recommend"]
@@ -551,6 +551,7 @@ $third-party,app=com.miui.video
 ||zhihu.com##.HitQrcode
 ||zwdu.com^$script
 0.up.qingdaonews.com
+0033.com
 09yzupmj.njylyljg.com
 0inlkjxp.njylyljg.com
 1.allyes.com.cn
@@ -1168,9 +1169,7 @@ api.appodeal.com
 api.appsflyer.com
 api.baifendian.com
 api.coolguang.com
-api.cupid.iqiyi.com
 api.cupid.ptqy.gitv.tv
-api.cupid.qiyi.com
 api.dewmobile.net
 api.domob.cn
 api.dreamfull.cn
@@ -1372,7 +1371,6 @@ c.gj.qq.com
 c.jk2h.com
 c.l.qq
 c.l.qq*
-c.l.qq.com
 c.mnet-ad.net
 c.msltzer.cn
 c.msn.com
@@ -1568,7 +1566,6 @@ cm.g.doubleclick.net
 cm.gtags.net
 cm.he2d.com
 cm.ipinyou.com
-cm.l.qq.com
 cm.lianmeng.360.cn
 cm.masky.biddingx.com
 cm.mediav.com
@@ -1915,7 +1912,6 @@ embed.xinhuanet.com
 emoticon.sns.iqiyi.com
 erebor.douban.com
 ereg.adobe.com
-err.da.hunantv.com
 erreport.tudou
 et.emarbox.com
 e-vcdn.anthill.vn
@@ -2102,7 +2098,6 @@ h09.hxsame.hexun.com
 h10.hxsame.hexun.com
 h5.holalauncher.com
 ha.pro-market.net
-haitaoad.nosdn.127.net
 hao.1235k.com
 hao.qquu8.com
 hao123.xywy.com
@@ -2263,7 +2258,6 @@ images.sohu.com
 images.startappservice.com
 images.taboola.com
 images.xibei70.com
-imc.l.qq.com
 img.0563d.com
 img.21kas.com
 img.22122766.com
@@ -2647,19 +2641,15 @@ link.00oo00.com
 link.jiduan.cc
 live.chartboost.com
 live.v2.pplive
-livec.l.qq.com
 livep.l.aiseet.atianqi.com
 livep.l.cp81.ott.cibntv.net
 livep.l.qq
 livep.l.qq*
-livep.l.qq.com
 lives.l.aiseet.atianqi.com
 lives.l.cp81.ott.cibntv.net
 lives.l.qq
-lives.l.qq.com
 livew.l.qq
 livew.l.qq*
-livew.l.qq.com
 llqjs.gucheng.com
 llsp.gfd80.com
 lm.admin5.com
@@ -2680,7 +2670,6 @@ log.adtimaserver.vn
 log.advertise.1mobile.com
 log.bitauto.com
 log.coolguang.com
-log.da.hunantv.com
 log.elk.hunantv.com
 log.event.cnool.net
 log.event.hunantv.com
@@ -2740,7 +2729,6 @@ m.game.weibo.cn
 m.irs01.com
 m.kejet.net
 m.kt0731.com
-m.l.qq.com
 m.lu.sogou.com
 m.madthumbs.com
 m.openv.tv
@@ -2844,6 +2832,7 @@ mmae.qtmojo.com
 mmg.aty.cp45.ott.cibntv.net
 mmg.aty.sohu
 mmg.aty.sohu.com
+mnews.hexin.com
 mo.kugou.com
 mob.coolnay.com
 mobile.log.hunantv
@@ -2882,7 +2871,6 @@ msg.video.qiyi.com
 msg2.video.ptqy.gitv.tv
 msg2.video.qiyi.com
 msga.71.am
-msga.cupid.iqiyi.com
 msga.ptqy.gitv.tv
 mshow.fang.com
 msn.qtmojo.com
@@ -2911,7 +2899,6 @@ news.766ba.net
 news.b9377h.com
 news.docer.com
 news.l.qq
-news.l.qq.com
 news.op.wpscdn.cn
 news.poxi5.com
 news.push.126.net
@@ -2946,6 +2933,7 @@ njs.myyage.com
 njs.reliancevalve.com
 nl.notice.iqiyi.com
 nl.rcd.ptqy.gitv.tv
+nosdn.127.net
 notice.game.xiaomi.com
 notice.iqiyi.com
 novelsns.html5.qq.com
@@ -2998,7 +2986,6 @@ p.inte.sogou.com
 p.kugou.com
 p.l.qq
 p.l.qq*
-p.l.qq.com
 p.l.youku.com
 p.lu.sogou.com
 p.m5bn.com
@@ -3839,7 +3826,6 @@ t4.51maiwanju.com
 t4.agrantsem.com
 t4u.stat.v-56
 t6.51maiwanju.com
-t7z.cupid.iqiyi.com
 ta.qq.com
 tag.crsspxl.com
 tags.crwdcntrl.net
@@ -3880,6 +3866,7 @@ tga.acs86.com
 tga.csbew.com
 themis.ykimg.com
 theta.sogoucdn.com
+thsi.cn
 thunder.365sky.com
 thunderqtypv.union.xunlei.com
 tinydrag.t.cp61.ott.cibntv.net
@@ -3973,7 +3960,6 @@ tvupgrade.yunos.com
 tw13b093.sandai.net
 twbill.xyz
 twoaaa.168wangluo.com
-tx.da.hunantv.com
 txt.go.sohu.com
 txtad.jijiplayer.com
 tyaqy.m.cn.miaozhen.com
@@ -4153,6 +4139,7 @@ vm.aty.sohu
 vm.aty.sohu.com
 vmat.gtimg.com
 vodlog.m1905.cn
+vote.10jqka.com
 vpie.net
 vqq.admaster.com.cn
 vs6.gzct.uc.ucweb.com
@@ -4166,7 +4153,6 @@ w.3big.net
 w.banlaa.com
 w.cnzz.com
 w.efo.cc
-w.l.qq.com
 w.m.taobao.com
 w.whydqy.cn
 w2.3big.net
@@ -4336,10 +4322,8 @@ x.55peixun.com
 x.892155.com
 x.adpro.cn
 x.da.hunantv
-x.da.hunantv.com
 x.infzm.com
 x.jd.com
-x.l.qq.com
 xc.macd.cn
 xd.code.tanwanyx.com
 xiangchaokankan.m.cn.miaozhen.com
