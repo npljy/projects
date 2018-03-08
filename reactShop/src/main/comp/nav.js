@@ -1,109 +1,44 @@
 import React ,{Component} from 'react'
-import {Route,Link} from "react-router-dom"
-import Home from './home'
+import {Link,NavLink} from "react-router-dom"
 class Nav extends Component {
     constructor(props){
         super(props);
-        this.state={
-            wlist:false,
-            mlist:false,
-            kid:false,
-            hot:false,
-            contact:false
-        }
+        this.state={}
     }
-    hmclick = ()=>{
-        this.setState({
-            wlist:false,
-            mlist:false,
-            kid:false,
-            hot:false,
-            contact:false
-        })
-    }
-    wclick = ()=>{
-        let {wlist} = this.state;
-        wlist = !wlist;
-        this.setState({
-            wlist,
-            mlist:false,
-            kid:false,
-            hot:false,
-            contact:false
-        })
-    }
-    mclick = ()=>{
-        let {mlist} = this.state;
-        mlist = !mlist;
-        this.setState({
-            wlist:false,
-            mlist,
-            kid:false,
-            hot:false,
-            contact:false
-        })
-    }
-    kclick = ()=>{
-        this.setState({
-            wlist:false,
-            mlist:false,
-            kid:true,
-            hot:false,
-            contact:false
-        })
-    }
-    hoclick = ()=>{
-        this.setState({
-            wlist:false,
-            mlist:false,
-            kid:false,
-            hot:true,
-            contact:false
-        })
-    }
-    ctclick = ()=>{
-        this.setState({
-            wlist:false,
-            mlist:false,
-            kid:false,
-            hot:false,
-            contact:true
-        })
-    }
+   
     render(){
-        let {wlist,mlist,kid,hot,contact} = this.state;
         return (
             <div className = "head-btm-l clearfix">
                 <ul>
-                    <li><a 
-                        onClick = {this.hmclick}
+                    <li><NavLink
+                        
                         to="/"
-                    >首页</a></li>
-                    <li><Link 
-                            className={ wlist ? "act" : ""}
-                            onClick = {this.wclick}
+                    >首 页</NavLink></li>
+                    <li><NavLink 
+                            activeClassName="act"
+                            
                             to="/women"
-                    >女装</Link></li>
-                    <li><Link 
-                            className={ mlist ? "act" : ""}
-                            onClick = {this.mclick} 
+                    >女 装</NavLink></li>
+                    <li><NavLink 
+                            activeClassName="act"
+                           
                             to="/man"
-                    >男装</Link></li>
-                    <li><Link 
-                            className={ kid ? "act" : ""}
-                            onClick = {this.kclick}
+                    >男 装</NavLink></li>
+                    <li><NavLink 
+                            activeClassName="act"
+                           
                             to="/kid"
-                    >儿童装</Link></li>
-                    <li><Link 
-                            className={ hot ? "act" : ""}
-                            onClick = {this.hoclick}
+                    >儿 童 装</NavLink></li>
+                    <li><NavLink 
+                            activeClassName="act"
+                           
                             to="/hot"
-                    >热卖</Link></li>
-                    <li><Link 
-                            className={ contact ? "act" : ""}
-                            onClick = {this.ctclick}
+                    >热 卖</NavLink></li>
+                    <li><NavLink 
+                            activeClassName="act"
+                            
                             to="/contact"
-                    >联系我们</Link></li>
+                    >联系我们</NavLink></li>
                 </ul>
                 <Link 
                     className="search"

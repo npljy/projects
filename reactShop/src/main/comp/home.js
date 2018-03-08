@@ -1,15 +1,21 @@
 import React , {Component} from "react"
+import {Link} from 'react-router-dom'
 import data from "../data/data"
 import List from "./list"
 class Home extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state={
             cont:data
         }
     }
+    togmaskH = (id)=>{
+        let {togfn} = this.props;
+        togfn(id);
+    }
     
     render(){
+        
         let {cont} = this.state;
         let list = cont.map((e,i)=>{
             return (
@@ -22,12 +28,15 @@ class Home extends Component{
                     sale : e.sale,
                     img : e.img,
                     count : e.count,
-                    send : e.send
+                    send : e.send,
+                    togH:this.togmaskH
                 }}/>
             )
         })
+        list.length = 8;
         return (
                 <div className="replace">
+                    {/* banner ↓ */}
                     <div className = "banner">
                         <div className = "container" >
                             <h1>
@@ -57,53 +66,53 @@ class Home extends Component{
                                 <div className = "cont-t-lt">
                                     <div className="top">
                                         <div className="top-img">
-                                            <a>
+                                            <Link to="/detail?id=1" >
                                                 <img src={require("../imgs/pi.jpg")} alt=""/>
                                                 <div className="top-fly">
                                                     <p className="b-animate">商品详情</p>
                                                     <label className="b-animate"></label>
                                                     <h2 className="b-animate">潮流热款</h2>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="btm">
                                         <span>热卖款式</span>
-                                        <h2><a>Luxurious & Trendy</a></h2>
+                                        <h2><Link  to="/detail?id=1">Luxurious & Trendy</Link></h2>
                                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-                                        <a className="buy">购 买</a>
+                                        <Link  to="/detail" className="buy">购 买</Link>
                                     </div>
                                 </div>
                                 <div className = "cont-t-rt">
                                     <div className="rt-col">
-                                        <a>
+                                        <Link to="/detail?id=2" >
                                             <img alt="" src={require("../imgs/pi1.jpg")}/>
                                             <div>
                                                 <p>商品详情</p>
                                                 <label></label>
                                                 <h3>男 式</h3>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="rt-col">
-                                        <a>
+                                        <Link to="/detail?id=4" >
                                             <img alt="" src={require("../imgs/pi2.jpg")}/>
                                             <div>
                                                 <p>商品详情</p>
                                                 <label></label>
                                                 <h3>儿 童</h3>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="rt-col">
-                                        <a>
+                                        <Link to="/detail?id=3" >
                                             <img alt="" src={require("../imgs/pi3.jpg")}/>
                                             <div>
                                                 <p>商品详情</p>
                                                 <label></label>
                                                 <h3>女 式</h3>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -126,8 +135,6 @@ class Home extends Component{
                     </div>
                     {/* content ↑ */}
                 </div>
-
-
 
         )
     }

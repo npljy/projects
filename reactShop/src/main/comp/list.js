@@ -1,19 +1,24 @@
 import React , {Component} from "react"
-
+import {Link} from 'react-router-dom' 
+import data from '../data/data'
 class List extends Component{
     constructor(props){
         super(props);
-        this.state = {}
+        this.state = {
+            cont:data,
+            zimg:''
+        }
     }
-    zoom = ()=>{
+    zoom = (id)=>{
+        let {togS,togH} = this.props;
+        togS && togS(id);
+        togH && togH(id);
+    }
 
-    }
-    detail = ()=>{
-
-    }
     addcart=()=>{
         
     }
+
     render(){
         let {id,sex,title,price,sale,img,count,send } = this.props;
 
@@ -24,18 +29,16 @@ class List extends Component{
                         <img alt="" src={require(`../${img}`)}/>
                         <div>
                             <a
-                                onClick = {this.zoom}
-                            ><img src={require("../imgs/zoom.png")}/></a>
-                            <a
-                                onClick = {this.detail}
-                            ><img src={require("../imgs/detail.png")}/></a>
+                                onClick = {this.zoom.bind(this,id)}
+                            ><img  alt="" src={require("../imgs/zoom.png")}/></a>
+                            <Link to={`/detail?id=${id}`} ><img  alt="" src={require("../imgs/detail.png")}/></Link>
                         </div>
                     </div>
                     <div className="pro-txt">
                         <div className="txt-top clearfix">
                             <div className="sex-style">
                                 <span>{sex}</span>
-                                <h6><a>{title}</a></h6>
+                                <h6><Link to={`/detail?id=${id}`} >{title}</Link></h6>
                             </div>
                             <div className="pro-add">
                                 <a

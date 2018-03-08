@@ -110,10 +110,10 @@ img{
 	color: #f67777;
 }
 .head-top ul{
-	margin-left: 200px;
+	margin-left: 190px;
 }
 .head-top li{
-	width: 60px;
+	margin: 0 10px;
 }
 .head-btm ul{
 	margin-left: 170px;
@@ -236,17 +236,8 @@ h1>span:first-child{
 	perspective: 800px;
 	white-space: nowrap;
 }
-.rw-words-1 span{
-	animation: rotateWords1 18s linear infinite 0s;
-	font-size: 1.6em;
-	line-height: 2em;
-}
-.rw-words-2 span{
-	animation: rotateWords2 18s linear infinite 0s;
-	font-size: 3em;
-	color: #f67777;
-	font-style: italic; 
-}
+
+
 .rw-words span:nth-child(2){
 	animation-delay: 3s;
 }
@@ -259,6 +250,18 @@ h1>span:first-child{
 .rw-words span:nth-child(5){
 	animation-delay: 12s;
 }
+.rw-words-1 span{
+	animation: rotateWords1 15s linear infinite 0s;
+	font-size: 1.6em;
+	line-height: 2em;
+}
+.rw-words-2 span{
+	animation: rotateWords2 15s linear infinite 0s;
+	font-size: 3em;
+	color: #f67777;
+	font-style: italic; 
+}
+
 @keyframes rotateWords1 {
     0% { opacity: 0; animation-timing-function: ease-in; width: 0px;}
     5% { opacity: 1; animation-timing-function: ease-out; width: 100%;}
@@ -273,6 +276,7 @@ h1>span:first-child{
     25% { opacity: 0; }
     100% { opacity: 0; }
 }
+
 
 .cont-t-lt{
 	float: left;
@@ -481,8 +485,39 @@ label{
 .pro-count span{
 	text-decoration: line-through;
 }
+.mask{
+	position: fixed;
+	z-index: 90;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	display: none;
+}
+.mask div{
+	margin: 10% auto 0;
+	width: 426px;
+	height: 590px;	
+	position: relative;
+}
+.mask .close{
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 30px;
+	font-size: 20px;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	background: red;
+	color: #fff;
+	cursor: pointer;
+}
 
-
+/* 清除浮动 */
 .clearfix{
   zoom:1
 }
@@ -493,4 +528,163 @@ label{
   display: block;
   visibility: hidden;
   clear: both;
+}
+/* 列表页面 ↓ */
+.l-banner{
+	text-align: center;
+    width: 100%;
+    height: 250px;
+    display: block;
+    background: url(./main/imgs/back.jpg) no-repeat;
+    padding: 5em 0;
+	background-size: cover;
+	color:#fff;
+}
+.l-banner h2{
+	font-size:2em;
+}
+.w-mid-l{
+	float: left;
+	width: 75%;
+}
+.cont-mid{
+	padding-top: 5em;
+}
+.de-top {
+	float: left;
+	margin: 0 15px;
+	width: 120%;
+
+}
+.de-t-l{
+	float: left;
+	width: 40%;
+	padding: 0 15px;
+}
+.de-btm{
+	float: right;
+	width: 33%;
+}
+.img-big{
+	border: 1px solid #d1cfcf;
+}
+.img-small{
+	margin: 5px;
+	width: 100%;
+}
+.img-small ul{
+	margin-left: -5px;
+}
+.img-small li{
+	float: left;
+	width: 32.2%;
+	margin-right: 1%;
+	border: 1px solid #d1cfcf;
+	cursor: pointer;
+}
+.img-small img{
+	opacity: .7;
+	transition: 1s ease;
+}
+.img-small img:hover{
+	opacity: 1;
+}
+.de-t-r{
+	padding: 0 15px;
+	float: right;
+	width: 58%;
+}
+.de-t-r h3{
+	font-size: 2em;
+}
+.de-jj{
+	font-size: 1em;
+	color: #b3b3b3;
+	line-height: 2em;
+	margin: 1em 0;
+	border-bottom: 1px solid #f0f0f0;
+    border-top: 3px double #f0f0f0;
+    padding: 1em 0;word-break: break-all;
+	overflow: hidden;
+    text-overflow: ellipsis;
+}
+.de-sale{
+	color: #F67777;
+	font-size: 1.5em;
+	text-align: left;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.de-t-r h4{
+	color: #000;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+.div-ms{
+	height: 250px;
+	border-bottom: 1px solid #f0f0f0;
+}
+.de-ms{
+	max-height: 130px;
+	color: #B3B3B3;
+    font-size: 0.9em;
+    line-height: 2em;
+	margin: 1em 0 2em;
+	word-wrap: break-word;
+	word-break: break-all;
+	overflow: hidden;
+    text-overflow: ellipsis;
+}
+.addpro{
+	padding: 1.5em 0;
+}
+.addmin , .addmax , .enval{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 5px;
+	float: left;
+}
+.addmin,.addmax{
+	border: 1px solid #b2b2b2;
+	cursor: pointer;
+}
+.addmin::before,.addmax::before{
+	content : "";
+	display : "inline-block";
+	height: 2px;
+	width: 40%;
+	background: #000;
+	position: absolute;
+	top: 50%;
+	left: 30%;
+}
+
+.addmax::after{
+	content : "";
+	display : "inline-block";
+	height: 40%;
+	width: 2px;
+	background: #000;
+	position: absolute;
+	top: 33%;
+	left: 47%;
+}
+
+.enval{
+	cursor: default;
+    color: #A9A9A9;
+    border: 1px solid #E5E5E5;
+    background-color: #E5E5E5;
+    text-align: center;
+}
+.addcart{
+	background-color: #F67777;
+    color: #fff;
+    padding: 0.5em 1em;
+	font-size: 1em;
+	float: right;
+	cursor: pointer;
 }
