@@ -1,7 +1,7 @@
 [niepeng adfilter]
 ! Version: 201803061202
 ! Title: niepeng adfilter
-! Homepage: https://niepengsmile.github.io/adguard/np-ad.txt
+! Homepage: https://niepengsmile.github.io/adfilter/np-ad.txt
 ! Please report any unblocked adverts or problems
 ! via e-mail (niepengsmile@gmail.com)
 !--------------------------------------------------------------
@@ -1494,6 +1494,7 @@ cpro.baidustatic.com
 cpro.cr173.com
 cpv.czpush.com
 cr.m.liebao.cn
+crash.163.com
 crashdump.spotify.com
 crashlytics.163.com
 creatim.allyes.com.cn
@@ -3548,6 +3549,7 @@ tl.771tao.com
 tl.nmbtedu.com
 t-l.play.aiseet.atianqi.com
 t-l.play.cp81.ott.cibntv.net
+tl88.net
 tns.simba.taobao.com
 tongji.eastday.com
 tongji.home.soufun.com
@@ -4000,3 +4002,4 @@ zz.bdstatic.com
 zz.m.sohu.com
 zzrv1uha.njylyljg.com
 zzzkxx.com
+
