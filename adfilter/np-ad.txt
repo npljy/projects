@@ -376,6 +376,7 @@ $third-party,app=com.miui.video
 ||dwnews.com##.cent-box-ad
 ||dwnews.com##.left-ad
 ||dwnews.com##.wuxu
+||dwnews.com##div[id*="gpt-ad"]
 ||dwnews.com##iframe
 ||file.market.xiaomi.com
 ||film.qq.com/vip/act^
@@ -4007,6 +4008,7 @@ zz.bdstatic.com
 zz.m.sohu.com
 zzrv1uha.njylyljg.com
 zzzkxx.com
+
 
 
 
