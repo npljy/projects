@@ -373,6 +373,10 @@ $third-party,app=com.miui.video
 ||duowan.com##.dw-nav-dalist
 ||duowan.com##a[rsid*="tonglan"]
 ||dwnews.com##.adbox-top
+||dwnews.com##.cent-box-ad
+||dwnews.com##.left-ad
+||dwnews.com##.wuxu
+||dwnews.com##iframe
 ||file.market.xiaomi.com
 ||film.qq.com/vip/act^
 ||flurry.com
@@ -1638,6 +1642,7 @@ dolphin.deliver.ifeng.com
 dolphin.ftimg.net
 domob.cn
 domob.com.cn
+dotomi.com
 doubleclick.com
 doubleclick.net
 dougou88.com
@@ -4002,4 +4007,6 @@ zz.bdstatic.com
 zz.m.sohu.com
 zzrv1uha.njylyljg.com
 zzzkxx.com
+
+
 
