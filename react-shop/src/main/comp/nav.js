@@ -11,7 +11,6 @@ class Nav extends Component {
             <div className = "head-btm-l clearfix">
                 <ul>
                     <li><NavLink
-                        
                         to="/"
                     >首 页</NavLink></li>
                     <li><NavLink 

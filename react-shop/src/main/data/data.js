@@ -16,7 +16,7 @@ let data = [
     },
     {
         id : 2,
-        sex : "man",
+        sex : "women",
         title:"女款短袖",
         type:"shirt",
         img : "imgs/pc1.jpg",
@@ -136,7 +136,7 @@ let data = [
     },
     {
         id : 10,
-        sex : "man",
+        sex : "women",
         title:"女款短袖",
         type:"shirt",
         img : "imgs/pc1.jpg",
@@ -256,7 +256,7 @@ let data = [
     },
     {
         id : 18,
-        sex : "man",
+        sex : "women",
         title:"女款短袖",
         type:"shirt",
         img : "imgs/pc1.jpg",

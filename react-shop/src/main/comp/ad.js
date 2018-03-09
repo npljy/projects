@@ -1,5 +1,4 @@
 import React ,{Component} from "react"
-
 class Ad extends Component{
     constructor(props){
         super();
