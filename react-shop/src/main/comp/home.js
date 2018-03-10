@@ -80,7 +80,7 @@ class Home extends Component{
                                         <span>热卖款式</span>
                                         <h2><Link  to="/detail?id=1">Luxurious & Trendy</Link></h2>
                                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-                                        <Link  to="/detail" className="buy">购 买</Link>
+                                        <Link  to="/detail" className="buy">购 买(错误示例)</Link>
                                     </div>
                                 </div>
                                 <div className = "cont-t-rt">

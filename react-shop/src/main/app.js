@@ -7,6 +7,10 @@ import Home from './comp/home'
 import Sex from './comp/sex'
 import Form from './comp/form'
 import Detail from './comp/detail'
+import Login from './comp/login'
+import Reg from './comp/reg'
+import Foot from './comp/foot'
+
 class App extends Component{
     constructor(){
         super();
@@ -95,12 +99,19 @@ class App extends Component{
                 <Route path="/:name" render={(props)=>{
                     if(props.match.url === '/contact') 
                         return <Form />
+                    else if(props.match.url === '/login')  
+                        return <Login />
+                    else if(props.match.url === '/reg')  
+                        return <Reg />
                     else if(props.match.url === '/detail')  
                         return <Detail oid={props.location.search.substring(1).split("=")[1]}/>
                     else 
                         return <Sex  sex={props.match.url.substring(1)}  togfn={this.togmask} />
+                    
                 }}/>
-                {/* 遮罩 ↓ */}
+                
+                {/* 路由 填充部分 ↑ */}
+                {/* list遮罩 ↓ */}
                 <div className="mask" style={{display:mask?'block':'none'}}>
                     <div>
                         {/* 图片初始值为空的话，会导致require报错 */}
@@ -110,10 +121,12 @@ class App extends Component{
                         >X</a>
                     </div>
                 </div>
-                {/* 遮罩 ↑ */}
-                {/* 路由 填充部分 ↑ */}
+                {/* list遮罩 ↑ */}
+                
                 {/* footer ↓ */}
-                <div className = "footer"></div>
+                
+                <Foot />
+                
                 {/* footer ↑ */}
             </div>
         )
