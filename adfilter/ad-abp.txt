@@ -574,3 +574,6 @@ ___id___.c.mystat-in.net
 ||zhihu.com##.Banner
 ||zhihu.com##.HitQrcode
 ||zwdu.com^$script
+||m.baidu.com##.bottomOperateTop
+||m.baidu.com##.recommend_content
+||m.baidu.com##..providerBanner
