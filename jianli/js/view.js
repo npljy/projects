@@ -4,18 +4,21 @@ window.onload = function(){
     var onoff = false;
     var papers = Array.from(document.querySelectorAll(".paper"));
     var navs = Array.from(document.querySelectorAll(".nav li"));
+    var myaudio = document.getElementById("myaudio") ;
+    var playBtn = document.querySelector(".music");
+    myaudio.volume=0.001;
+    playBtn.onclick = function(){
+        myaudio.paused ? myaudio.play() : myaudio.pause();
+        myaudio.paused ? playBtn.classList.remove("play") : playBtn.classList.add("play");
+    }
+
     papers.forEach((e,i)=>{
         e.style.zIndex = papers.length-1-i;
         e.onclick = function(){
             turnPage(e,i);
         }
     });
-    // navs.forEach((e,i)=>{
-    //     // if(i==0)return;
-    //     e.onclick = function(){
 
-    //     }
-    // })
     function turnPage(e,i){
         var timer = null;
         var timer2 = null;

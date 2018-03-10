@@ -3,6 +3,26 @@
     padding: 0;
     color: #797979;
 }
+.music{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    border-radius: 60px;
+    cursor: pointer;
+}
+.music img{
+    width: 60px;
+    height: 60px;   
+}
+.play{
+    animation: play 5s linear infinite;
+}
+@keyframes play{
+    from {transform:rotate(0);}
+    to {transform:rotate(360deg);}
+}
 ul,li{
     list-style: none;
 }
