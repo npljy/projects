@@ -139,7 +139,6 @@ ad-data.starschina.com
 addl.easetuner.com
 addl.logger.baofeng.com
 adeventtracker.spotify.com
-adextensioncontrol.tudou
 adextensioncontrol.tudou.com
 adf.dahe.cn
 adfarm.mediaplex.com
@@ -148,7 +147,6 @@ adfuri.socdm.com
 adfuture.cn
 ad-gb.mgid.com
 adgeo.163.com
-adguanggao.eee114
 adguanggao.eee114.com
 adhome.1fangchan.com
 adi.cnool.net
@@ -176,7 +174,6 @@ adm.zbinfo.net
 admarket.21cn.com
 admaster.com
 admaster.com.cn
-admaster.mobi
 admgr.qingting.fm
 admin.louxia.org
 admin5.com
@@ -188,7 +185,6 @@ adp.cnool.net
 adp.s8bbs.com
 adp1.cnool.net
 adpic.chinadaily.com.cn
-adplay.tudou
 adplay.tudou.com
 adplexmedia.adk2.co
 adpolestar.net
@@ -442,7 +438,6 @@ imtt.qq.com
 im-x.jd.com
 info.wps.cn
 inmobi.com
-ins.pplive
 ins.pplive.com
 inside.bitcomet.com
 install.kugou.com
@@ -457,7 +452,6 @@ jpush.html5.qq.com
 jqmt.qq.com
 jrj.com
 jsqmt.qq.com
-kakamobi.cn
 l.qq.com
 l.youku.com
 lianmeng.360.cn
