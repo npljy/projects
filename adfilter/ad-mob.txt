@@ -310,6 +310,7 @@ cr.m.liebao.cn
 crash.163.com
 crashdump.spotify.com
 crashlytics.163.com
+cupid.iqiyi.com
 cvda.17173.com
 d.cntv.cn
 d.elong.cn
