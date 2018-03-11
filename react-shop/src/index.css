@@ -483,7 +483,10 @@ label{
 	color: #b8b8b8;
 }
 .pro-count span{
-	text-decoration: line-through;
+	text-decoration: none ;
+}
+.pro-price strong , .pro-count strong{
+	color: rgb(123, 184, 88);
 }
 .mask{
 	position: fixed;
@@ -824,4 +827,30 @@ label{
 }
 .col-first{
 	margin-left: 5em;
+}
+.w-mid-r{
+	width: 25%;
+	overflow: hidden;
+	float: right;
+	padding-top: 1em;
+}
+.w-mid-r>div{
+	border-top: 1px solid #E9E9E9;
+	padding-top: 1em;
+	overflow: hidden;
+}
+.w-mid-r h5{
+	font-size: 1.7em;
+	color: #F67777;
+	padding-left: 15px;
+}
+.w-mid-r li{
+	width: 100%;
+	text-align: left;
+	color: #000;
+}
+.w-mid-r input{
+	margin-right: 1em;
+	border: none;
+	vertical-align: middle;
 }

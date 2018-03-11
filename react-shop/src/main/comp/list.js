@@ -20,7 +20,7 @@ class List extends Component{
     }
 
     render(){
-        let {id,sex,title,price,sale,img,count,send } = this.props;
+        let {id,sex,title,type,price,sale,img,count,send } = this.props;
 
         return (
             <li>
@@ -38,7 +38,7 @@ class List extends Component{
                         <div className="txt-top clearfix">
                             <div className="sex-style">
                                 <span>{sex}</span>
-                                <h6><Link to={`/detail?id=${id}`} >{title}</Link></h6>
+                                <h6><Link to={`/detail?id=${id}`} >{title}/{type}</Link></h6>
                             </div>
                             <div className="pro-add">
                                 <a
@@ -53,9 +53,9 @@ class List extends Component{
                                 <strong>RMB：{sale}</strong>
                             </div>
                             <div className="pro-count">
-                                <span>{count-send}</span>
+                                <strong>{count-send}</strong>
                                 &nbsp;/&nbsp;
-                                <strong>88</strong>
+                                <span>{count}</span>
                             </div>
                         </div>
                     </div>

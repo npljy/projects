@@ -9,7 +9,7 @@ class Error extends Component {
         return (
             <div>
                 <div className="container">
-                    <img src={require("../imgs/err.png")}/>
+                    <img alt="404" src={require("../imgs/err.png")}/>
                 </div>
             </div>
         )
