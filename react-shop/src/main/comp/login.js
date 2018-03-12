@@ -35,8 +35,12 @@ class Login extends Component{
         })
         if(onoff){
             this.refs.userTip.style.color = this.refs.pwdTip.style.color = "#999";
-            window.location.href='/';
             // 登录成功，写入cookie
+            let t = new Date();
+            t.setDate(t.getDate()+1);
+            document.cookie = 'u='+userval+';expires='+t;
+            // 跳转至上一页
+            window.history.back(-1);
         }
         else{
             this.refs.userTip.value = this.refs.pwdTip.value = "用户名或密码错误";

@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import {Route,Link} from "react-router-dom"
 import data from './data/data'
+import users from './data/user'
 import Ad from "./comp/ad"
 import Nav from "./comp/nav"
 import Home from './comp/home'
@@ -10,6 +11,8 @@ import Detail from './comp/detail'
 import Login from './comp/login'
 import Reg from './comp/reg'
 import Foot from './comp/foot'
+import IsLogin from './comp/islogin'
+import NotLogin from './comp/notlogin'
 
 class App extends Component{
     constructor(){
@@ -18,6 +21,7 @@ class App extends Component{
             cont:data,
             mask:false,
             imgurl:'imgs/pc0.jpg',
+            islog:false
         };
     }
     // 弹出 遮罩层，图片放大
@@ -38,8 +42,22 @@ class App extends Component{
             imgurl:"imgs/pc0.jpg"
         });
     }
+    logout = ()=>{
+        this.setState({
+            islog:false
+        })
+    }
     render(){
-        let {mask,imgurl} = this.state;
+        let {mask,imgurl,islog} = this.state;
+        let ck = document.cookie;
+        let user = ck.split("=")[1];
+
+        users.forEach(e=>{
+            if(e.user === user){
+                islog = true;
+            }
+        })
+
         return (
             <div>
                 <div className = "adcenter clearfix">
@@ -73,12 +91,7 @@ class App extends Component{
                     <div className = "head-top">
                         <div className = "container">
                             <div className = "head-top-l clearfix">
-                                <ul>
-                                    {/* 登录的时候判断 事都有cookie 登录信息 */}
-                                    <li><Link to="/login">登 录</Link></li>
-                                    <li><Link to="/reg">注 册</Link></li>
-                                    <li><Link to="/checkout">我的订单</Link></li>
-                                </ul>
+                                {islog ? <IsLogin logout={this.logout}/> : <NotLogin />}
                             </div>
                             <div className = "head-top-r"></div>
                         </div>

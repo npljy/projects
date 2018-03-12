@@ -103,11 +103,12 @@ img{
 	background: #2e2e2e;
 	padding: 0.6em 0;  
 }
-.head-top a {
+.head-top a ,.head-top span {
 	color: #fff;
 }
 .head-top a:hover{
 	color: #f67777;
+	cursor: pointer;
 }
 .head-top ul{
 	margin-left: 190px;
