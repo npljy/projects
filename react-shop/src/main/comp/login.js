@@ -40,6 +40,7 @@ class Login extends Component{
             t.setDate(t.getDate()+1);
             document.cookie = 'u='+userval+';expires='+t;
             // 跳转至上一页
+            console.log(window.history)
             window.history.back(-1);
         }
         else{

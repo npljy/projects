@@ -49,14 +49,24 @@ class App extends Component{
     }
     render(){
         let {mask,imgurl,islog} = this.state;
-        let ck = document.cookie;
-        let user = ck.split("=")[1];
-
-        users.forEach(e=>{
-            if(e.user === user){
-                islog = true;
-            }
-        })
+        let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
+        let user = ck ? ck.split("=")[1]:null;
+        
+        // let user = []
+        // let tmp = ck.split("; ");
+        // tmp.forEach(e=>{
+        //     let obj = e.split("=")[0];
+        //     let attr = e.split("=")[1];
+        //     user.push( "{ "+obj+" :"+attr+"}" )
+        // })
+        
+        if(user){
+            users.forEach(e=>{
+                if(e.user === user){
+                    islog = true;
+                }
+            })
+        }
 
         return (
             <div>

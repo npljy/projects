@@ -11,8 +11,8 @@ class IsLogin extends Component{
         logout();
     }
     render(){
-        let ck = document.cookie;
-        let user = ck.split("=")[1];
+        let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
+        let user = ck ? ck.split("=")[1]:null;
         return(
             <ul>
                 <li><span>你好，{user}</span></li>
