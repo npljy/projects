@@ -246,7 +246,7 @@ class Sex extends Component{
         })
 
     }
-
+    // 监听 路由变化，解决 切换路由 list 值不变的问题
     componentWillReceiveProps(nextProps) {
         if (nextProps.sex !== this.props.sex) {
             this.setState({
