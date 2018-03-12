@@ -36,47 +36,85 @@ class Sex extends Component{
         if(stys.some(e=>e.checked) ){
             list = [...new Set(styarr.map(e=>e))];
         }
-        
-        let dis0 = list.filter(e=>{
-            return e.sale/e.price >= 0.9 && e.sale/e.price < 1;
-        })
-        let dis1 = list.filter(e=>{
-            return e.sale/e.price >= 0.8 && e.sale/e.price < 0.9;
-        })
-        let dis2 = list.filter(e=>{
-            return e.sale/e.price >= 0.7 && e.sale/e.price < 0.8;
-        })
-        let dis3 = list.filter(e=>{
-            return e.sale/e.price >= 0.6 && e.sale/e.price < 0.7;
-        })
-        let dis4 = list.filter(e=>{
-            return e.sale/e.price >= 0.5 && e.sale/e.price < 0.6;
-        })
+        if(diss.every(e=>!e.checked)){
+            list = cont.filter(e=>{
+                if(sex==='hot')return e.hot;
+                else return e.sex === sex;
+            })
 
-        diss.forEach((e,i)=>{
-            if(e.checked ){
-                switch(i){
-                    case 0 :
-                        tmp = tmp.concat(dis0);
-                        break;
-                    case 1 :
-                        tmp = tmp.concat(dis1);
-                        break;
-                    case 2 :
-                        tmp = tmp.concat(dis2);
-                        break;
-                    case 3 :
-                        tmp = tmp.concat(dis3);
-                        break;
-                    case 4 :
-                        tmp = tmp.concat(dis4);
-                        break;
-                    default:
-                        tmp = list.map(e=>e);
-                        break;
+            let sty0 = list.filter(e=>{
+                return e.type === 'jean';
+            })
+            let sty1 = list.filter(e=>{
+                return e.type === 'coat';
+            })
+            let sty2 = list.filter(e=>{
+                return e.type === 'shirt';
+            })
+    
+            stys.forEach((e,i)=>{
+                if(e.checked){
+                    switch(i){
+                        case 0 :
+                            tmp = tmp.concat(sty0);
+                            break;
+                        case 1 :
+                            tmp = tmp.concat(sty1);
+                            break;
+                        case 2 :
+                            tmp = tmp.concat(sty2);
+                            break; 
+                        default :
+                            tmp = list.map(e=>e);
+                            break;
+                    }
                 }
-            }   
-        })
+            })
+
+        }
+        else{
+            let dis0 = list.filter(e=>{
+                return e.sale/e.price >= 0.9 && e.sale/e.price < 1;
+            })
+            let dis1 = list.filter(e=>{
+                return e.sale/e.price >= 0.8 && e.sale/e.price < 0.9;
+            })
+            let dis2 = list.filter(e=>{
+                return e.sale/e.price >= 0.7 && e.sale/e.price < 0.8;
+            })
+            let dis3 = list.filter(e=>{
+                return e.sale/e.price >= 0.6 && e.sale/e.price < 0.7;
+            })
+            let dis4 = list.filter(e=>{
+                return e.sale/e.price >= 0.5 && e.sale/e.price < 0.6;
+            })
+    
+            diss.forEach((e,i)=>{
+                if(e.checked ){
+                    switch(i){
+                        case 0 :
+                            tmp = tmp.concat(dis0);
+                            break;
+                        case 1 :
+                            tmp = tmp.concat(dis1);
+                            break;
+                        case 2 :
+                            tmp = tmp.concat(dis2);
+                            break;
+                        case 3 :
+                            tmp = tmp.concat(dis3);
+                            break;
+                        case 4 :
+                            tmp = tmp.concat(dis4);
+                            break;
+                        default:
+                            tmp = list.map(e=>e);
+                            break;
+                    }
+                }   
+            })
+        }
+       
         if(tmp.length === 0 && !ev.target.checked )tmp = [...new Set(styarr.map(e=>e))];
         if(flts.every(e=>!e.checked)){
             tmp = cont.filter(e=>{
@@ -111,35 +149,84 @@ class Sex extends Component{
         if(diss.some(e=>e.checked)){
             list = [...new Set(disarr.map(e=>e))];
         }
+        if(stys.every(e=>!e.checked)){
+            list = cont.filter(e=>{
+                if(sex==='hot')return e.hot;
+                else return e.sex === sex;
+            })
+             let dis0 = list.filter(e=>{
+                return e.sale/e.price >= 0.9 && e.sale/e.price < 1;
+            })
+            let dis1 = list.filter(e=>{
+                return e.sale/e.price >= 0.8 && e.sale/e.price < 0.9;
+            })
+            let dis2 = list.filter(e=>{
+                return e.sale/e.price >= 0.7 && e.sale/e.price < 0.8;
+            })
+            let dis3 = list.filter(e=>{
+                return e.sale/e.price >= 0.6 && e.sale/e.price < 0.7;
+            })
+            let dis4 = list.filter(e=>{
+                return e.sale/e.price >= 0.5 && e.sale/e.price < 0.6;
+            })
 
-        let sty0 = list.filter(e=>{
-            return e.type === 'jean';
-        })
-        let sty1 = list.filter(e=>{
-            return e.type === 'coat';
-        })
-        let sty2 = list.filter(e=>{
-            return e.type === 'shirt';
-        })
-
-        stys.forEach((e,i)=>{
-            if(e.checked){
-                switch(i){
-                    case 0 :
-                        tmp = tmp.concat(sty0);
-                        break;
-                    case 1 :
-                        tmp = tmp.concat(sty1);
-                        break;
-                    case 2 :
-                        tmp = tmp.concat(sty2);
-                        break; 
-                    default :
-                        tmp = list.map(e=>e);
-                        break;
+            diss.forEach((e,i)=>{
+                if(e.checked ){
+                    switch(i){
+                        case 0 :
+                            tmp = tmp.concat(dis0);
+                            break;
+                        case 1 :
+                            tmp = tmp.concat(dis1);
+                            break;
+                        case 2 :
+                            tmp = tmp.concat(dis2);
+                            break;
+                        case 3 :
+                            tmp = tmp.concat(dis3);
+                            break;
+                        case 4 :
+                            tmp = tmp.concat(dis4);
+                            break;
+                        default:
+                            tmp = list.map(e=>e);
+                            break;
+                    }
+                }   
+            })
+        }
+        else {
+            let sty0 = list.filter(e=>{
+                return e.type === 'jean';
+            })
+            let sty1 = list.filter(e=>{
+                return e.type === 'coat';
+            })
+            let sty2 = list.filter(e=>{
+                return e.type === 'shirt';
+            })
+    
+            stys.forEach((e,i)=>{
+                if(e.checked){
+                    switch(i){
+                        case 0 :
+                            tmp = tmp.concat(sty0);
+                            break;
+                        case 1 :
+                            tmp = tmp.concat(sty1);
+                            break;
+                        case 2 :
+                            tmp = tmp.concat(sty2);
+                            break; 
+                        default :
+                            tmp = list.map(e=>e);
+                            break;
+                    }
                 }
-            }
-        })
+            })
+
+        }
+
         if(tmp.length === 0 && !ev.target.checked)tmp = [...new Set(disarr.map(e=>e))];
         if(flts.every(e=>!e.checked)){
             tmp = cont.filter(e=>{
