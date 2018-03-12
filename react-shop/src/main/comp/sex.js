@@ -77,7 +77,13 @@ class Sex extends Component{
                 }
             }   
         })
-        if(tmp.length === 0  && !ev.target.checked )tmp = [...new Set(styarr.map(e=>e))];
+        if(tmp.length === 0 && !ev.target.checked )tmp = [...new Set(styarr.map(e=>e))];
+        if(flts.every(e=>!e.checked)){
+            tmp = cont.filter(e=>{
+                if(sex==='hot')return e.hot;
+                else return e.sex === sex;
+            })
+        }
         this.setState({
             list:[...new Set(tmp.map(e=>e))],
             disarr:[...new Set(tmp.map(e=>e))],
@@ -135,6 +141,12 @@ class Sex extends Component{
             }
         })
         if(tmp.length === 0 && !ev.target.checked)tmp = [...new Set(disarr.map(e=>e))];
+        if(flts.every(e=>!e.checked)){
+            tmp = cont.filter(e=>{
+                if(sex==='hot')return e.hot;
+                else return e.sex === sex;
+            })
+        }
         this.setState({
             list:[...new Set(tmp.map(e=>e))],
             styarr:[...new Set(tmp.map(e=>e))],

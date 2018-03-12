@@ -74,6 +74,7 @@ class App extends Component{
                         <div className = "container">
                             <div className = "head-top-l clearfix">
                                 <ul>
+                                    {/* 登录的时候判断 事都有cookie 登录信息 */}
                                     <li><Link to="/login">登 录</Link></li>
                                     <li><Link to="/reg">注 册</Link></li>
                                     <li><Link to="/checkout">我的订单</Link></li>
@@ -99,15 +100,16 @@ class App extends Component{
                 <Route path="/:name" render={(props)=>{
                     if(props.match.url === '/contact') 
                         return <Form />
-                    else if(props.match.url === '/login')  
+                    else if(props.match.url === '/login'){
+                        // 判断是否有登录的cookie信息，没有则跳转到登录页面
                         return <Login />
+                    }  
                     else if(props.match.url === '/reg')  
                         return <Reg />
                     else if(props.match.url === '/detail')  
                         return <Detail oid={props.location.search.substring(1).split("=")[1]}/>
                     else 
                         return <Sex  sex={props.match.url.substring(1)}  togfn={this.togmask} />
-                    
                 }}/>
                 
                 {/* 路由 填充部分 ↑ */}

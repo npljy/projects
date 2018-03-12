@@ -1,13 +1,50 @@
 import React , {Component} from "react"
 import {Link} from 'react-router-dom'
+import users from '../data/user'
 
 class Login extends Component{
     constructor(){
         super()
-        this.state={}
+        this.state={
+            userval:'',
+            pwdval:''
+        }
     }
-
+    changeUser = (ev)=>{
+        let val = ev.target.value;
+        this.setState({
+            userval:val
+        })
+    }
+    changePwd = (ev)=>{
+        let val = ev.target.value;
+        this.setState({
+            pwdval:val
+        })
+    }
+    login = ()=>{
+        let {userval,pwdval} = this.state;
+        let onoff = false;
+        users.forEach(e=>{
+            if(e.user === userval){
+                if(e.pwd === pwdval){
+                    onoff = true;
+                    return;
+                }
+            }
+        })
+        if(onoff){
+            this.refs.userTip.style.color = this.refs.pwdTip.style.color = "#999";
+            window.location.href='/';
+            // 登录成功，写入cookie
+        }
+        else{
+            this.refs.userTip.value = this.refs.pwdTip.value = "用户名或密码错误";
+            this.refs.userTip.style.color = this.refs.pwdTip.style.color = "red";
+        }
+    }
     render(){
+        let {userval,pwdval} = this.state;
         return(
             <div className="replace">
                 <div className="l-banner">
@@ -22,23 +59,31 @@ class Login extends Component{
                         <div className="login clearfix">
                             <div className="login-form">
                                 <div className="login-user">
-                                    <input placeholder="请输入用户名"/>
+                                    <input type="text" ref="user" placeholder="请输入用户名"
+                                        value = {userval}
+                                        onChange = {this.changeUser}
+                                    />
                                 </div>
                                 <div className="login-pwd">
-                                    <input placeholder="请输入密码"/>
+                                    <input type="password" ref="pwd" placeholder="请输入密码"
+                                        value = {pwdval}
+                                        onChange = {this.changePwd}
+                                    />
                                 </div>
                                 <div className="login-sub">
-                                    <span>登 录</span>
+                                    <span
+                                        onClick = {this.login}
+                                    >登 录</span>
                                     <Link to="/forget">忘记密码？</Link>
                                     <Link to="/reg">还没有账号？立即免费注册</Link>
                                 </div>
                             </div>
                             <div className="login-form login-info">
                                 <div className="login-user">
-                                    <input placeholder="请输入用户名" disabled />
+                                    <input placeholder="请输入用户名" disabled ref="userTip"/>
                                 </div>
                                 <div className="login-pwd">
-                                    <input placeholder="请输入密码" disabled />
+                                    <input placeholder="请输入密码" disabled ref="pwdTip" />
                                 </div>
                             </div>
                             
