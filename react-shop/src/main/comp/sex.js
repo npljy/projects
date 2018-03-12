@@ -10,7 +10,8 @@ class Sex extends Component{
             disarr:[],
             styarr:[],
             tmp:[],
-            onoff:false
+            onoff:false,
+            hc:false
         }
     }
     togmaskS = (id)=>{
@@ -24,7 +25,9 @@ class Sex extends Component{
         let stys = Array.from(document.getElementById('sty').getElementsByTagName('input'));
         let {cont,list,styarr,tmp,onoff} = this.state;
         let {sex} = this.props;
-
+        this.setState({
+            hc:false
+        })
         onoff = true;
         if(flts.every(e=>!e.checked))onoff = false;
         if(stys.every(e=>!e.checked)){
@@ -136,7 +139,9 @@ class Sex extends Component{
         let stys = Array.from(document.getElementById('sty').getElementsByTagName('input'));
         let {cont,list,disarr,tmp,onoff} = this.state;
         let {sex} = this.props;
-
+        this.setState({
+            hc:false
+        })
         onoff = true;
         if(flts.every(e=>!e.checked))onoff = false;
         if(diss.every(e=>!e.checked)){
@@ -227,7 +232,7 @@ class Sex extends Component{
 
         }
 
-        if(tmp.length === 0 && !ev.target.checked)tmp = [...new Set(disarr.map(e=>e))];
+        if(tmp.length === 0 && ev.target.checked === false)tmp = [...new Set(disarr.map(e=>e))];
         if(flts.every(e=>!e.checked)){
             tmp = cont.filter(e=>{
                 if(sex==='hot')return e.hot;
@@ -242,12 +247,19 @@ class Sex extends Component{
 
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.sex !== this.props.sex) {
+            this.setState({
+                hc:true
+            })
+        }
+    }
 
     render(){
-        let {cont,list,onoff} = this.state;
+        let {cont,list,onoff,hc} = this.state;
         let {sex} = this.props;
         let str = '';
-
+   
         switch (sex){
             case 'women' :  
                 str = '女 装' ; break ;
@@ -259,13 +271,20 @@ class Sex extends Component{
                 str = '热 卖' ; break ;
             default : break;
         }
-        if(list.length === 0 && !onoff){
+        if(list.length === 0 && !onoff ){
             list = cont.filter(e=>{
                 if(sex==='hot')return e.hot
                 else return e.sex === sex
             })
         }
-        
+        if(hc){
+            list = cont.filter(e=>{
+                if(sex==='hot')return e.hot
+                else return e.sex === sex
+            })
+            let flts = Array.from(document.getElementById('filter').getElementsByTagName('input'));
+            flts.forEach(e=>e.checked=false)
+        }
         let divlist = list.map((e,i)=>{
             return (
                 <List {...{

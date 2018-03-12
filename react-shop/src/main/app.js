@@ -15,8 +15,8 @@ import IsLogin from './comp/islogin'
 import NotLogin from './comp/notlogin'
 
 class App extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             cont:data,
             mask:false,
@@ -59,7 +59,7 @@ class App extends Component{
         //     let attr = e.split("=")[1];
         //     user.push( "{ "+obj+" :"+attr+"}" )
         // })
-        
+
         if(user){
             users.forEach(e=>{
                 if(e.user === user){
@@ -132,7 +132,7 @@ class App extends Component{
                     else if(props.match.url === '/detail')  
                         return <Detail oid={props.location.search.substring(1).split("=")[1]}/>
                     else 
-                        return <Sex  sex={props.match.url.substring(1)}  togfn={this.togmask} />
+                        return <Sex  sex={props.match.url.substring(1)} togfn={this.togmask} />
                 }}/>
                 
                 {/* 路由 填充部分 ↑ */}
