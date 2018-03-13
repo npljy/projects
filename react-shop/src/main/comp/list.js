@@ -18,40 +18,44 @@ class List extends Component{
 
     addcart=()=>{
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
-        let user = ck ? ck.split("=")[1]:null;
+        let user = ck ? ck.split("=")[1].replace(/((^"*)|("*$))|((^\s*)|(\s*$))/g,""):null;
         let {id,sale,addcart2} = this.props; // 传过来的 商品 id
         
-        // 添加到 用户的购物车数据中,并将用户和物品信息存入storage
-        let st = localStorage.getItem(user);
-        st = JSON.parse(st);
-        if(st){
-            let idx = st.findIndex(es=>{
-                return Number(es.id) === Number(id)
-            });
+        if(user){
+            // 添加到 用户的购物车数据中,并将用户和物品信息存入storage
+            let st = localStorage.getItem(user);
+            st = JSON.parse(st);
+            if(st){
+                let idx = st.findIndex(es=>{
+                    return Number(es.id) === Number(id)
+                });
 
-            if(idx>=0){
-                let obj = {id:id,sum:++st[idx].sum,pri:sale}
-                st.splice(idx,1,obj)
+                if(idx>=0){
+                    let obj = {id:id,sum:++st[idx].sum,pri:sale}
+                    st.splice(idx,1,obj)
+                }
+                else{
+                    st.push({id:id,sum:1,pri:sale}); 
+                }
+                localStorage.setItem(user,JSON.stringify(st));
             }
             else{
-                st.push({id:id,sum:1,pri:sale}); 
+                localStorage.setItem(user,JSON.stringify([{id:id,sum:1,pri:sale}]));
             }
-            localStorage.setItem(user,JSON.stringify(st));
+            let carts =JSON.parse( localStorage.getItem(user) );
+            let num = 0;
+            carts.forEach(e=>{
+                num += e.sum * e.pri;
+            })
+            addcart2(num);
+        }else{
+            alert("您还没有登录")
         }
-        else{
-            localStorage.setItem(user,JSON.stringify([{id:id,sum:1,pri:sale}]));
-        }
-        let carts =JSON.parse( localStorage.getItem(user) );
-        let num = 0;
-        carts.forEach(e=>{
-            num += e.sum * e.pri;
-        })
-        addcart2(num);
     }
 
     render(){
         let {id,sex,title,type,price,sale,img,count,send} = this.props;
-
+        
         return (
             <li>
                 <div>
@@ -92,6 +96,7 @@ class List extends Component{
                 </div>
             </li>
         )
+
     }
 }
 

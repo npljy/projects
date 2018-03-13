@@ -161,7 +161,7 @@ class App extends Component{
                         return <Login initCart={this.initCart}/>
                     }  
                     else if(props.match.url === '/reg')  
-                        return <Reg />
+                        return <Reg initCart={this.initCart}  togfn={this.togmask} addcart1={this.addcart1}/>
                     else if(props.match.url === '/detail')  
                         return <Detail oid={props.location.search.substring(1).split("=")[1]} addcart1={this.addcart1}/>
                     else 
