@@ -855,3 +855,49 @@ label{
 	border: none;
 	vertical-align: middle;
 }
+.cart{
+	padding-top: 3em;
+}
+.cart-title{
+	margin-bottom: 1em;
+}
+.cart-title ul{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #f67777;
+}
+.cart-title li, .cart-list li{
+	text-align: left;
+	width: 12%;
+	
+}
+.cart-title li{
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.5em;
+}
+.cart-list ul{
+	height: 130px;
+	margin-bottom: 1em;
+	box-sizing: border-box;
+	border-bottom: 1px solid #f67777;
+}
+.cart-list li{
+	height: 92px;
+}
+.cart-title li:nth-child(1), .cart-list li:nth-child(1){
+	width: 40%;
+}
+
+.cart-list a{
+	float: left;
+	width: 20%;
+}
+.cart-list p{
+	float: left;
+	width: 80%;
+	padding: 0 1em 1em 2em;
+}
+.cart-num{
+	line-height: 92px;
+}

@@ -13,6 +13,8 @@ import Reg from './comp/reg'
 import Foot from './comp/foot'
 import IsLogin from './comp/islogin'
 import NotLogin from './comp/notlogin'
+import Cart from './comp/cart'
+
 
 class App extends Component{
     constructor(props){
@@ -107,7 +109,7 @@ class App extends Component{
                     {/* ad ↑ */}
                     <div className="ad-right">
                         <div>
-                            <Link to="/checkout">
+                            <Link to="/cart">
                                 <h3>
                                     <div className="total">RMB：<span className="t-count">{cart?cart:0}</span></div>
                                     <img alt="cart" src={require("./imgs/cart.png")}/>
@@ -162,6 +164,8 @@ class App extends Component{
                     }  
                     else if(props.match.url === '/reg')  
                         return <Reg initCart={this.initCart}  togfn={this.togmask} addcart1={this.addcart1}/>
+                    else if(props.match.url === '/cart')
+                        return <Cart />
                     else if(props.match.url === '/detail')  
                         return <Detail oid={props.location.search.substring(1).split("=")[1]} addcart1={this.addcart1}/>
                     else 
