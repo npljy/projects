@@ -6,8 +6,9 @@ class IsLogin extends Component{
         this.state={}
     }
     quit =()=>{
-        let {logout} = this.props;
+        let {logout,initCart} = this.props;
         document.cookie = 'u="";expires="-1"';
+        initCart();
         logout();
     }
     render(){

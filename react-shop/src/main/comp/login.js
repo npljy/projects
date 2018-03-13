@@ -24,6 +24,7 @@ class Login extends Component{
     }
     login = ()=>{
         let {userval,pwdval} = this.state;
+        let {initCart} = this.props;
         let onoff = false;
         users.forEach(e=>{
             if(e.user === userval){
@@ -39,8 +40,8 @@ class Login extends Component{
             let t = new Date();
             t.setDate(t.getDate()+1);
             document.cookie = 'u='+userval+';expires='+t;
+            initCart();
             // 跳转至上一页
-            console.log(window.history)
             window.history.back(-1);
         }
         else{

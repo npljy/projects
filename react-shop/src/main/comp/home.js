@@ -13,9 +13,11 @@ class Home extends Component{
         let {togfn} = this.props;
         togfn(id);
     }
-    
-    render(){
-        
+    addcart2=(num)=>{
+        let {addcart1} = this.props;
+        addcart1(num)
+    }
+    render(){      
         let {cont} = this.state;
         let list = cont.map((e,i)=>{
             return (
@@ -29,7 +31,8 @@ class Home extends Component{
                     img : e.img,
                     count : e.count,
                     send : e.send,
-                    togH:this.togmaskH
+                    togH:this.togmaskH,
+                    addcart2:this.addcart2
                 }}/>
             )
         })

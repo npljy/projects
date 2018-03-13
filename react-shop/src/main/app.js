@@ -21,7 +21,8 @@ class App extends Component{
             cont:data,
             mask:false,
             imgurl:'imgs/pc0.jpg',
-            islog:false
+            islog:false,
+            cart:0
         };
     }
     // 弹出 遮罩层，图片放大
@@ -47,8 +48,38 @@ class App extends Component{
             islog:false
         })
     }
+    initCart=()=>{
+        let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
+        let user = ck ? ck.split("=")[1]:null;
+        let carts =JSON.parse(localStorage.getItem(user));
+        let num = 0;
+        if(carts){
+            carts.forEach(e=>{
+                num += Number(e.sum) * Number(e.pri);
+            })
+        }
+        this.addcart1(num);
+    }
+    addcart1 = (num)=>{
+        this.setState({
+            cart:num
+        })
+    }
+    clearCart = ()=>{
+        let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
+        let user = ck ? ck.split("=")[1]:null;
+        localStorage.removeItem(user);
+        this.setState({
+            cart:0
+        })
+    }
+
+    componentDidMount(){
+        this.initCart();
+    }
+
     render(){
-        let {mask,imgurl,islog} = this.state;
+        let {mask,imgurl,islog,cart} = this.state;
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
         let user = ck ? ck.split("=")[1]:null;
         
@@ -78,12 +109,14 @@ class App extends Component{
                         <div>
                             <Link to="/checkout">
                                 <h3>
-                                    <div className="total">RMB：<span className="t-count">588888</span></div>
+                                    <div className="total">RMB：<span className="t-count">{cart?cart:0}</span></div>
                                     <img alt="cart" src={require("./imgs/cart.png")}/>
                                 </h3>
                             </Link>
                             <p>
-                                <a>清空购物车</a>
+                                <a
+                                    onClick = {this.clearCart}
+                                >清空购物车</a>
                             </p>
                         </div>
                     </div>
@@ -101,7 +134,7 @@ class App extends Component{
                     <div className = "head-top">
                         <div className = "container">
                             <div className = "head-top-l clearfix">
-                                {islog ? <IsLogin logout={this.logout}/> : <NotLogin />}
+                                {islog ? <IsLogin logout={this.logout} initCart={this.initCart}/> : <NotLogin />}
                             </div>
                             <div className = "head-top-r"></div>
                         </div>
@@ -118,21 +151,21 @@ class App extends Component{
                 {/* banner ↓ */}
                 {/* 路由 填充部分 ↓ */}
                 <Route path="/" exact render={(props)=>{
-                    return <Home togfn={this.togmask} />
+                    return <Home togfn={this.togmask} addcart1={this.addcart1}/>
                 }}/>
                 <Route path="/:name" render={(props)=>{
                     if(props.match.url === '/contact') 
                         return <Form />
                     else if(props.match.url === '/login'){
                         // 判断是否有登录的cookie信息，没有则跳转到登录页面
-                        return <Login />
+                        return <Login initCart={this.initCart}/>
                     }  
                     else if(props.match.url === '/reg')  
                         return <Reg />
                     else if(props.match.url === '/detail')  
-                        return <Detail oid={props.location.search.substring(1).split("=")[1]}/>
+                        return <Detail oid={props.location.search.substring(1).split("=")[1]} addcart1={this.addcart1}/>
                     else 
-                        return <Sex  sex={props.match.url.substring(1)} togfn={this.togmask} />
+                        return <Sex  sex={props.match.url.substring(1)} togfn={this.togmask} addcart1={this.addcart1}/>
                 }}/>
                 
                 {/* 路由 填充部分 ↑ */}

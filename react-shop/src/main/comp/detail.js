@@ -69,6 +69,47 @@ class Detail extends Component{
             })
         }    
     }
+    addcart=()=>{
+
+        let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
+        let user = ck ? ck.split("=")[1].replace(/((^"*)|("*$))|((^\s*)|(\s*$))/g,""):null;
+        if(user){
+            let {cont} = this.state;
+            let {oid,addcart1} = this.props;
+            let pro = cont.find(e=>e.id===Number(oid));
+            let st = localStorage.getItem(user);
+            st = JSON.parse(st);
+            if(st){
+                let idx = st.findIndex(es=>{
+                    return Number(es.id) === Number(oid)
+                });
+
+                if(idx>=0){
+                    let obj = {id:oid,sum:++st[idx].sum,pri:pro.sale}
+                    st.splice(idx,1,obj)
+                }
+                else{
+                    st.push({id:oid,sum:1,pri:pro.sale}); 
+                }
+
+                localStorage.setItem(user,JSON.stringify(st));
+            }
+            else{
+                localStorage.setItem(user,JSON.stringify([{id:oid,sum:1,pri:pro.sale}]));
+            }
+            let carts =JSON.parse( localStorage.getItem(user) );
+            let num = 0;
+            carts.forEach(e=>{
+                num += Number(e.sum)* Number(e.pri);
+            })
+            
+            addcart1(num);
+        }
+        else{
+            alert("您没有登录");
+            return false;
+        }
+    }
     render(){
         let {cont,addnum,one,two,three} = this.state;
         let {oid} = this.props;
@@ -133,7 +174,9 @@ class Detail extends Component{
                                                 onClick={this.max}
                                             ></div>
                                         </div>
-                                        <a className="addcart">加入购物车</a>
+                                        <a className="addcart"
+                                            onClick = {this.addcart}
+                                        >加入购物车</a>
                                     </div>
                                 </div>
                             </div>

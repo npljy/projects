@@ -255,6 +255,11 @@ class Sex extends Component{
         }
     }
 
+    addcart2=(num)=>{
+        let {addcart1} = this.props;
+        addcart1(num)
+    }
+
     render(){
         let {cont,list,onoff,hc} = this.state;
         let {sex} = this.props;
@@ -298,7 +303,8 @@ class Sex extends Component{
                     img : e.img,
                     count : e.count,
                     send : e.send,
-                    togS : this.togmaskS
+                    togS : this.togmaskS,
+                    addcart2:this.addcart2
                 }}/>
             )
         })
