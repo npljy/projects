@@ -900,4 +900,28 @@ label{
 }
 .cart-num{
 	line-height: 92px;
+	text-align: center !important;
+}
+.checkout span{
+	width: 40%;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.3em;
+	text-align: center;
+	color: #333;
+}
+.checkout a{
+	float: right;
+	width: 10%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.5em;
+	text-align: center;
+	background: #f67777;
+	color: #fff;
+	cursor: pointer;
+}
+.checkout a:hover{
+	color: rgb(182, 88, 88);
 }

@@ -1,30 +1,44 @@
 import React , {Component} from 'react'
+import data from "../data/data"
 
 class CartList extends Component{
-    constructor(){
-        super();
-        this.state={}
+    constructor(props){
+        super(props);
+        this.state={
+            cont:data
+        }
+    }
+    findinfo = (num)=>{
+        let {cont} = this.state;
+        let arr = [];
+        cont.forEach(e=>{
+            if(e.id ===num){
+                arr=[e.img,e.title,e.abs]
+            }
+        })
+        return arr;
     }
     render(){
+        let {id,sum,pri} = this.props;
         return (
-            <ul>
+            <ul pid={id}>
                 <li>
                     <a>
-                        <img src={require("../imgs/pi.jpg")} width="98" height="115"/>
+                        <img alt="" src={require("../"+this.findinfo(id)[0])} width="98" height="115"/>
                     </a>
-                    <p>accusamus</p>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus </p>
+                    <p>{this.findinfo(id)[1]}</p>
+                    <p>{this.findinfo(id)[2]}</p>
                 </li>
                 <li className="cart-num">
-                    RMB：99
+                    RMB：{pri}
                 </li>
                 <li className="cart-num">
-                    5
+                   {sum}
                 </li>
                 <li className="cart-num">
-                RMB：495
+                    RMB：{pri*sum}
                 </li>
-                <li><span className="del"></span></li>
+                <li className="cart-num" ><span className="del">删除</span></li>
             </ul>
         )
     }

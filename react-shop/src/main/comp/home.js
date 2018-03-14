@@ -2,6 +2,7 @@ import React , {Component} from "react"
 import {Link} from 'react-router-dom'
 import data from "../data/data"
 import List from "./list"
+
 class Home extends Component{
     constructor(props){
         super(props)
