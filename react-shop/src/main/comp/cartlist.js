@@ -8,6 +8,7 @@ class CartList extends Component{
             cont:data
         }
     }
+    // 找到id为num的商品的图片链接，标题，简介
     findinfo = (num)=>{
         let {cont} = this.state;
         let arr = [];

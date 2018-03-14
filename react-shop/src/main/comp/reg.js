@@ -16,10 +16,12 @@ class Reg extends Component{
             success:false //是否直接跳转登录
         }
     }
+    // 传给 登录组件的方法
     initCart2=()=>{
         let {initCart} = this.props;
         initCart();
     }
+    // 输入用户名及用户名格式验证，是否存在相同用户名的验证
     changeUser = (ev)=>{
         let {pass} = this.state;
         this.setState({
@@ -46,6 +48,7 @@ class Reg extends Component{
         })
         if(ev.target.value==="")this.refs["reg-user-tip"].value = ev.target.value;
     }
+    // 输入电话及其格式验证
     changePhone = (ev)=>{
         let {pass} = this.state;
         this.setState({
@@ -66,6 +69,7 @@ class Reg extends Component{
         })
         if(ev.target.value==="")this.refs["reg-phone-tip"].value = ev.target.value;
     }
+    // 输入邮箱及其格式验证
     changeEmail = (ev)=>{
         let {pass} = this.state;
         this.setState({
@@ -86,6 +90,7 @@ class Reg extends Component{
         })
         if(ev.target.value==="")this.refs["reg-email-tip"].value = ev.target.value;
     }
+     // 输入密码及其格式验证
     changePwd1 = (ev)=>{
         let {pass} = this.state;
         this.setState({
@@ -106,6 +111,7 @@ class Reg extends Component{
         })
         if(ev.target.value==="")this.refs["reg-pwd-tip1"].value = ev.target.value;
     }
+     // 确认密码及其格式验证
     changePwd2= (ev)=>{
         let {pwd1,pass} = this.state;
         this.setState({
@@ -126,7 +132,7 @@ class Reg extends Component{
         })
         if(ev.target.value==="")this.refs["reg-pwd-tip2"].value = ev.target.value;
     }
-
+    // 验证通过之后，点击注册按钮，将注册信息存入记录用户信息的user.js的数组中
     regUser =()=>{
         let {user,phone,email,pwd1,pass} = this.state;
         if(pass.every(e=>e===true)){

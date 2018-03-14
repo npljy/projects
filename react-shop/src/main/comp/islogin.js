@@ -1,5 +1,5 @@
+// 判断已经登录，则 导航条处 加载此组件
 import React , {Component} from 'react'
-
 class IsLogin extends Component{
     constructor(props){
         super(props);

@@ -25,20 +25,23 @@ class List extends Component{
             // 添加到 用户的购物车数据中,并将用户和物品信息存入storage
             let st = localStorage.getItem(user);
             st = JSON.parse(st);
+            // 如果此用户购物车中有商品数据
             if(st){
                 let idx = st.findIndex(es=>{
                     return Number(es.id) === Number(id)
                 });
-
+                // 如果购物车数据中有点击的这个商品
                 if(idx>=0){
                     let obj = {id:id,sum:++st[idx].sum,pri:sale}
                     st.splice(idx,1,obj)
                 }
+                // 没有此商品
                 else{
                     st.push({id:id,sum:1,pri:sale}); 
                 }
                 localStorage.setItem(user,JSON.stringify(st));
             }
+            // 购物车为空
             else{
                 localStorage.setItem(user,JSON.stringify([{id:id,sum:1,pri:sale}]));
             }

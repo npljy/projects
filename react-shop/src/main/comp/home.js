@@ -10,10 +10,12 @@ class Home extends Component{
             cont:data
         }
     }
+     // 传过来的方法：弹出 遮罩层，图片放大
     togmaskH = (id)=>{
         let {togfn} = this.props;
         togfn(id);
     }
+    // 传过来的方法：计算购物车 总价格
     addcart2=(num)=>{
         let {addcart1} = this.props;
         addcart1(num)
@@ -84,7 +86,7 @@ class Home extends Component{
                                         <span>热卖款式</span>
                                         <h2><Link  to="/detail?id=1">Luxurious & Trendy</Link></h2>
                                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-                                        <Link  to="/detail" className="buy">购 买(错误示例)</Link>
+                                        <Link  to="/detail" className="buy">购 买(错误示例，没有传参)</Link>
                                     </div>
                                 </div>
                                 <div className = "cont-t-rt">
@@ -126,7 +128,7 @@ class Home extends Component{
                                     <label></label>
                                     <div className="box">
                                         <ul>
-                                            {/* list ↓ */}
+                                            {/* 解构 list ↓ */}
                                             {list}
                                             {/* list ↑ */}
                                         </ul>

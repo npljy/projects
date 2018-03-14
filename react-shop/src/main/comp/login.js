@@ -27,29 +27,32 @@ class Login extends Component{
     login = ()=>{
         let {userval,pwdval} = this.state;
         let {initCart,from} = this.props;
-        let onoff = false;
+        let onoff = false; //false代表默认没登陆
         users.forEach(e=>{
-            if(e.user === userval){
-                if(e.pwd === pwdval){
-                    onoff = true;
+            if(e.user === userval){//如果用户名正确
+                if(e.pwd === pwdval){//如果密码正确
+                    onoff = true;//true代登录成功
                     return;
                 }
             }
         })
+        // 如果登录验证成功
         if(onoff){
-            console.log(this.props)
             this.refs.userTip.style.color = this.refs.pwdTip.style.color = "#999";
             // 登录成功，写入cookie
             let t = new Date();
             t.setDate(t.getDate()+1);
             document.cookie = 'u='+userval+';expires='+t;
             initCart(); // 初始化购物车
-            // 登录成功 跳转到之前的页面
+            
+            // 如果是在注册页面跳转到登录页，登录成功后跳转到主页
             if(from && from === "reg"){
                 this.setState({
                     success:true
                 })
-            }else{
+            }
+            // 登录成功 跳转到之前的页面
+            else{
                window.history.back(-1);
             }
         }
@@ -58,11 +61,12 @@ class Login extends Component{
             this.refs.userTip.style.color = this.refs.pwdTip.style.color = "red";
         }
     }
-
+    // 跳转回主页时，传的方法
     togfn1 = ()=>{
         let {togfn} = this.props;
         togfn();
     }
+    // 跳转回主页时，传的方法
     addcart2 = ()=>{
         let {addcart1} = this.props;
         addcart1();

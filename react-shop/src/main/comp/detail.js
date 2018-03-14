@@ -70,35 +70,43 @@ class Detail extends Component{
         }    
     }
     addcart=()=>{
-
+        let {addnum} = this.state;// 加入购物车的商品数量
+        // 获取cookie中的 用户
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
         let user = ck ? ck.split("=")[1].replace(/((^"*)|("*$))|((^\s*)|(\s*$))/g,""):null;
         if(user){
             let {cont} = this.state;
             let {oid,addcart1} = this.props;
+            // 获取到id等于oid的商品对象
             let pro = cont.find(e=>e.id===Number(oid));
+            // 获取user用户的购物车信息
             let st = localStorage.getItem(user);
+            // 获取到的信息为JSON格式，此处转换为js字符串
             st = JSON.parse(st);
+            // 如果localstorage中有此用户的商品
             if(st){
                 let idx = st.findIndex(es=>{
                     return Number(es.id) === Number(oid)
                 });
-
-                if(idx>=0){
-                    let obj = {id:oid,sum:++st[idx].sum,pri:pro.sale}
+                // 如果有这个商品
+                if(idx > -1){
+                    let obj = {id:oid,sum:(addnum+st[idx].sum),pri:pro.sale}
                     st.splice(idx,1,obj)
                 }
+                // 没有这个商品
                 else{
-                    st.push({id:oid,sum:1,pri:pro.sale}); 
+                    st.push({id:oid,sum:addnum,pri:pro.sale}); 
                 }
 
                 localStorage.setItem(user,JSON.stringify(st));
             }
+            // 如果localstorage中没有此用户的商品
             else{
-                localStorage.setItem(user,JSON.stringify([{id:oid,sum:1,pri:pro.sale}]));
+                localStorage.setItem(user,JSON.stringify([{id:oid,sum:addnum,pri:pro.sale}]));
             }
             let carts =JSON.parse( localStorage.getItem(user) );
             let num = 0;
+            // 算出 总价格
             carts.forEach(e=>{
                 num += Number(e.sum)* Number(e.pri);
             })

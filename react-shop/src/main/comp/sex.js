@@ -1,3 +1,5 @@
+// 分类页面，根据路由分别加载不同的种类商品
+
 import React , {Component} from "react"
 import data from "../data/data"
 import List from "./list"
@@ -14,11 +16,13 @@ class Sex extends Component{
             hc:false
         }
     }
+    // 图片放大
     togmaskS = (id)=>{
         let {togfn} = this.props;
         togfn(id);
     }
  
+    // 筛选方法
     dis = (ev)=>{
         let flts = Array.from(document.getElementById('filter').getElementsByTagName('input'));
         let diss = Array.from(document.getElementById('dis').getElementsByTagName('input'));
