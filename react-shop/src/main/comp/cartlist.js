@@ -2,6 +2,7 @@ import React , {Component} from 'react'
 import data from "../data/data"
 import Error from './error'
 import {Link} from 'react-router-dom'
+
 class CartList extends Component{
     constructor(props){
         super(props);

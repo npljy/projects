@@ -116,9 +116,9 @@ class App extends Component{
                                 </h3>
                             </Link>
                             <p>
-                                <a
-                                    onClick = {this.clearCart}
-                                >清空购物车</a>
+                            <a
+                                onClick = {this.clearCart}
+                            >清空购物车</a>
                             </p>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ class App extends Component{
                     </div>
                 </div>
                 {/* head ↑ */}
-                {/* banner ↓ */}
+                {/* banner 在 Home 中 */}
                 {/* 路由 填充部分 ↓ */}
                 <Route path="/" exact render={(props)=>{
                     return <Home togfn={this.togmask} addcart1={this.addcart1}/>

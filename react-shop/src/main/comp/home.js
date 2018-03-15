@@ -7,7 +7,8 @@ class Home extends Component{
     constructor(props){
         super(props)
         this.state={
-            cont:data
+            cont:data,
+            timer:null
         }
     }
      // 传过来的方法：弹出 遮罩层，图片放大
@@ -19,6 +20,35 @@ class Home extends Component{
     addcart2=(num)=>{
         let {addcart1} = this.props;
         addcart1(num)
+    }
+    loop=()=>{
+        let {timer} = this.state;
+        let num = 1;
+        let _this = this;
+        let dotlis = Array.from(_this.refs.uldot.getElementsByTagName("li"));
+        timer = setInterval(function(){
+            _this.refs.ul.style.marginLeft = - num * 100 +"%" ;
+            if(num === 4){
+                setTimeout(function(){
+                    _this.refs.ul.style.transition = "none";
+                    _this.refs.ul.style.marginLeft = 0 ;
+                    setTimeout(function(){
+                        _this.refs.ul.style.transition = "1s";
+                    },50)
+                },1000)
+            }
+            num = num%4;
+            dotlis.forEach((e,i)=>{
+                i === num ? e.style.background = "red" : e.style.background = "greenyellow";
+            })
+            num++;
+        },3000)
+        this.setState({
+            timer
+        }) 
+    }
+    componentDidMount(){
+        this.loop();
     }
     render(){      
         let {cont} = this.state;
@@ -39,31 +69,45 @@ class Home extends Component{
                 }}/>
             )
         })
-        list.length = 8;
+        list.length = 8; // 限制首页数量
         return (
                 <div className="replace">
                     {/* banner ↓ */}
-                    <div className = "banner">
-                        <div className = "container" >
-                            <h1>
-                                <span>时 尚 & 美 丽</span>
-                                <div className="rw-words rw-words-1">
-                                    <span>傲 娇 的 品 牌 傲 娇 的 品 牌</span>
-                                    <span>呆 萌 的 价 格 呆 萌 的 价 格</span>
-                                    <span>全 球 精 选 全 球 精 选</span>
-                                    <span>正 品 特 卖 正 品 特 卖</span>
-                                    <span>限 时 抢 购 限 时 抢 购</span>
-                                </div>
-                                <div className="rw-words rw-words-2">
-                                    <span>我 们 郑 重 声 明 我 们 郑 重 声 明</span>
-                                    <span>本 站 所 有 商 品 本 站 所 有 商 品</span>
-                                    <span>官 方 渠 道 进 货 官 方 渠 道 进 货</span>
-                                    <span>百 分 百 正 品 百 分 百 正 品</span>
-                                    <span>请 放 心 购 买 请 放 心 购 买</span>
-                                </div>
-                            </h1>
-                        </div>
+                    <div className = "container bannerfix" >
+                        <h1>
+                            <span>Fashion & Beauty</span>
+                            <div className="rw-words rw-words-1">
+                                <span>1傲 娇 的 品 牌 傲 娇 的 品 牌</span>
+                                <span>1呆 萌 的 价 格 呆 萌 的 价 格</span>
+                                <span>1全 球 精 选 全 球 精 选</span>
+                                <span>1正 品 特 卖 正 品 特 卖</span>
+                                <span>1限 时 抢 购 限 时 抢 购</span>
+                            </div>
+                            <div className="rw-words rw-words-2">
+                                <span>1我 们 郑 重 声 明 我 们 郑 重 声 明</span>
+                                <span>1本 站 所 有 商 品 本 站 所 有 商 品</span>
+                                <span>1官 方 渠 道 进 货 官 方 渠 道 进 货</span>
+                                <span>1百 分 百 正 品 百 分 百 正 品</span>
+                                <span>1请 放 心 购 买 请 放 心 购 买</span>
+                            </div>
+                        </h1>
                     </div>
+                    <div className="banner-dot">
+                        <ul ref="uldot">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                        </ul>
+                    </div>
+                    <ul ref="ul">
+                        <li className = "banner banner1"></li>
+                        <li className = "banner banner2"></li>
+                        <li className = "banner banner3"></li>
+                        <li className = "banner banner4"></li>
+                        <li className = "banner banner1"></li>
+                    </ul>
+
                     {/* banner ↑ */}
                     {/* content ↓ */}
                     <div className = "content">

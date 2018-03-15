@@ -98,6 +98,7 @@ img{
 	width: 1170px;
 	margin: 0 auto;
 }
+
 .head-top{
 	width: 100%;
 	background: #2e2e2e;
@@ -208,13 +209,71 @@ img{
 	float: left;
 	text-align: center;
 }
-.banner{
+.bannerfix {
+	position: absolute;
+	top: 8%;
+	left: 20%;
+	z-index: 999;
+}
+.banner-dot{
+	position: absolute;
+	top: 25%;
+	left: 45%;
+	z-index: 999;
+}
+
+.banner-dot li{
+	float: left;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 20px;
+	background: greenyellow;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.banner-dot li:nth-child(1){
+	background:red;
+}
+.replace{
+	position: relative;
 	width: 100%;
+	overflow: hidden;
+}
+.replace ul{
+	position: relative;
+	width: 500%;
+	overflow: hidden;
+	transition: 1s;
+}
+.banner{
+	width: 20%;
 	height: 700px;
+	overflow-x: hidden;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+
+.banner1{
 	background: url(./main/imgs/ba11.jpg) no-repeat right top;
 	background-size: cover;
-	overflow-x: hidden;
-	font-family: "Microsoft YaHei"
+}
+.banner2{
+	background: url(./main/imgs/ba12.jpg) no-repeat right top;
+	background-size: cover;
+}
+.banner3{
+	background: url(./main/imgs/ba13.jpg) no-repeat right top;
+	background-size: cover;
+}
+.banner4{
+	background: url(./main/imgs/ba14.jpg) no-repeat right top;
+	background-size: cover;
+}
+.banner5{
+	background: url(./main/imgs/ba15.jpg) no-repeat right top;
+	background-size: cover;
 }
 
 .banner .container{
@@ -925,3 +984,4 @@ label{
 .checkout a:hover{
 	color: rgb(182, 88, 88);
 }
+
