@@ -77,6 +77,7 @@ class Detail extends Component{
         if(user){
             let {cont} = this.state;
             let {oid,addcart1} = this.props;
+            oid = Number(oid);//如果不转换为数字，则存入localstorage中的id值为字符串
             // 获取到id等于oid的商品对象
             let pro = cont.find(e=>e.id===Number(oid));
             // 获取user用户的购物车信息
