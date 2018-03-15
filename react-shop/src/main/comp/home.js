@@ -50,6 +50,14 @@ class Home extends Component{
     componentDidMount(){
         this.loop();
     }
+    componentWillUnmount(){
+        let {timer} = this.state;
+        clearInterval(timer);
+        this.setState({
+            timer
+        }) 
+        this.loop = null;
+    }
     render(){      
         let {cont} = this.state;
         let list = cont.map((e,i)=>{
