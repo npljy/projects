@@ -77,18 +77,18 @@ class Home extends Component{
                         <h1>
                             <span>Fashion & Beauty</span>
                             <div className="rw-words rw-words-1">
-                                <span>1傲 娇 的 品 牌 傲 娇 的 品 牌</span>
-                                <span>1呆 萌 的 价 格 呆 萌 的 价 格</span>
-                                <span>1全 球 精 选 全 球 精 选</span>
-                                <span>1正 品 特 卖 正 品 特 卖</span>
-                                <span>1限 时 抢 购 限 时 抢 购</span>
+                                <span>傲 娇 的 品 牌 傲 娇 的 品 牌</span>
+                                <span>呆 萌 的 价 格 呆 萌 的 价 格</span>
+                                <span>全 球 精 选 全 球 精 选</span>
+                                <span>正 品 特 卖 正 品 特 卖</span>
+                                <span>限 时 抢 购 限 时 抢 购</span>
                             </div>
                             <div className="rw-words rw-words-2">
-                                <span>1我 们 郑 重 声 明 我 们 郑 重 声 明</span>
-                                <span>1本 站 所 有 商 品 本 站 所 有 商 品</span>
-                                <span>1官 方 渠 道 进 货 官 方 渠 道 进 货</span>
-                                <span>1百 分 百 正 品 百 分 百 正 品</span>
-                                <span>1请 放 心 购 买 请 放 心 购 买</span>
+                                <span>我 们 郑 重 声 明 我 们 郑 重 声 明</span>
+                                <span>本 站 所 有 商 品 本 站 所 有 商 品</span>
+                                <span>官 方 渠 道 进 货 官 方 渠 道 进 货</span>
+                                <span>百 分 百 正 品 百 分 百 正 品</span>
+                                <span>请 放 心 购 买 请 放 心 购 买</span>
                             </div>
                         </h1>
                     </div>
