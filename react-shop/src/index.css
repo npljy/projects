@@ -217,7 +217,7 @@ img{
 }
 .banner-dot{
 	position: absolute;
-	top: 25%;
+	top: 22%;
 	left: 45%;
 	z-index: 999;
 }
@@ -241,11 +241,14 @@ img{
 	width: 100%;
 	overflow: hidden;
 }
-.bannerfix ul{
+.replace ul{
 	position: relative;
 	width: 500%;
 	overflow: hidden;
 	transition: 1s;
+}
+.container ul{
+	width: 100%;
 }
 .banner{
 	width: 20%;
