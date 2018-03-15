@@ -11,6 +11,8 @@
     right: 50px;
     border-radius: 60px;
     cursor: pointer;
+    z-index: 999;
+    overflow: hidden;
 }
 .music img{
     width: 60px;
