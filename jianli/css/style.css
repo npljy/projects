@@ -85,6 +85,7 @@ a{
     min-width: 300px;
     height: 100%;
     overflow: hidden;
+    cursor: pointer;
 }
 .prev{
     transform: rotateY(180deg) skewY(0deg);
@@ -223,6 +224,9 @@ a{
 .sch-info li{
     height: 70px;
 }
+.sch-info a{
+    text-decoration: underline;
+}
 .clear::after{
     content: ".";
     display: block;
@@ -234,4 +238,14 @@ a{
 }
 .clear{
     zoom: 1;
+}
+.demo img{
+    width: 60% !important;
+    height: 50% !important;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+.demo a{
+    width: auto;
+    text-decoration: underline;
 }

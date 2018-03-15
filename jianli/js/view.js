@@ -6,6 +6,12 @@ window.onload = function(){
     var navs = Array.from(document.querySelectorAll(".nav li"));
     var myaudio = document.getElementById("myaudio") ;
     var playBtn = document.querySelector(".music");
+    var as = Array.from(document.getElementsByTagName("a"));
+    as.forEach(e=>{
+        e.onclick = function(ev){
+            ev.stopPropagation ? ev.stopPropagation() : ev.cancelable = true;
+        }
+    })
     myaudio.volume=0.001;
     playBtn.onclick = function(){
         myaudio.paused ? myaudio.play() : myaudio.pause();
