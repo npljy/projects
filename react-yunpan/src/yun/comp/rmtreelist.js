@@ -18,6 +18,7 @@ class RmTreeList extends Component{
         });
 
         rmlist = rmlist.map((e,i)=>{
+            // 递归，返回自己
             return <RmTreeList {...{
                 key:i,
                 oid:e.id,

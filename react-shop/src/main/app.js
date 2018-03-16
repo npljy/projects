@@ -66,7 +66,6 @@ class App extends Component{
         this.addcart1(num,count);
     }
     addcart1 = (num,count)=>{
-        console.log(num,count)
         this.setState({
             cart:count,
             pros:num
@@ -117,8 +116,9 @@ class App extends Component{
                         <div>
                             <Link to="/cart">
                                 <h3>
-                                    <div className="total">RMB：<span className="t-count">{cart?cart:0}|{pros?pros:0}</span></div>
+                                    <div className="total">RMB：<span className="t-count">{cart?cart:0}</span></div>
                                     <img alt="cart" src={require("./imgs/cart.png")}/>
+                                    <span className="num">{pros?pros:0}</span>
                                 </h3>
                             </Link>
                             <p>

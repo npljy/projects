@@ -69,6 +69,23 @@ img{
 }
 .ad-right>div{
 	padding-top: 1.6em;
+	position: relative;
+}
+.ad-right .num{
+	display: inline-block;
+    position: absolute;
+    top: 1.5em;
+    right: -15px;
+    z-index: 10;
+    background: red;
+    border-radius: 10px;
+    color: #fff;
+    width: auto;
+	height: auto;
+	text-align: center;
+	font-weight: 600;
+	padding: 2px;
+	font-size: 12px;
 }
 .ad-right img{
 	vertical-align: middle;
@@ -963,6 +980,7 @@ label{
 .cart-num{
 	line-height: 92px;
 	text-align: center !important;
+	cursor: pointer;
 }
 .checkout span{
 	width: 40%;

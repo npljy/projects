@@ -16,9 +16,9 @@ let cssExtract = new ExtractTextPlugin({
 
 const wp = {
     mode: 'development' ,
-    mode: 'production',
+
     entry:{
-        app:'./src/index.js'
+        index:'./src/index.js'
     },
     output:{
         filename:'[name].js',

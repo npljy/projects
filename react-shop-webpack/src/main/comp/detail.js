@@ -106,13 +106,15 @@ class Detail extends Component{
                 localStorage.setItem(user,JSON.stringify([{id:oid,sum:addnum,pri:pro.sale}]));
             }
             let carts =JSON.parse( localStorage.getItem(user) );
+            let count = 0;
             let num = 0;
             // 算出 总价格
             carts.forEach(e=>{
-                num += Number(e.sum)* Number(e.pri);
+                num += Number(e.sum);
+                count += Number(e.sum)* Number(e.pri);
             })
             
-            addcart1(num);
+            addcart1(num,count);
         }
         else{
             alert("您还没有登录")

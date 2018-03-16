@@ -75,7 +75,7 @@ class Reg extends Component{
         this.setState({
             email:ev.target.value
         })
-        if((/^[a-z][\w|\.-]{3,11}@[a-z0-9]{2,8}(\.[a-z]{2,3}){1,2}$/).test(ev.target.value)){
+        if((/^[a-z][\w|\.|-]{3,11}@[a-z0-9]{2,8}(\.[a-z]{2,3}){1,2}$/).test(ev.target.value)){
             this.refs["reg-email-tip"].value = "√ 恭喜，邮箱可用";
             this.refs["reg-email-tip"].style.color = "#000";
             pass[2]=true;
