@@ -963,6 +963,7 @@ label{
 .cart-num{
 	line-height: 92px;
 	text-align: center !important;
+	cursor: pointer;
 }
 .checkout span{
 	width: 40%;

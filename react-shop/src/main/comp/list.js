@@ -47,10 +47,12 @@ class List extends Component{
             }
             let carts =JSON.parse( localStorage.getItem(user) );
             let num = 0;
+            let count = 0;
             carts.forEach(e=>{
-                num += e.sum * e.pri;
+                num += Number(e.sum);
+                count += Number(e.sum) * Number(e.pri);
             })
-            addcart2(num);
+            addcart2(num,count);
         }else{
             alert("您还没有登录")
         }

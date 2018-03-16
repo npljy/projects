@@ -259,9 +259,9 @@ class Sex extends Component{
         }
     }
 
-    addcart2=(num)=>{
+    addcart2=(num,count)=>{
         let {addcart1} = this.props;
-        addcart1(num)
+        addcart1(num,count)
     }
 
     render(){

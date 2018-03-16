@@ -7,6 +7,10 @@ class Cart extends Component{
         super();
         this.state = {}
     }
+    initCart1 = ()=>{
+        let {initCart} = this.props;
+        initCart();
+    }
     render(){
         // 获取cookie中的 u=* 
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
@@ -31,7 +35,8 @@ class Cart extends Component{
                             key:i,
                             id:e.id,
                             sum:e.sum,
-                            pri:e.pri
+                            pri:e.pri,
+                            initCart : this.initCart1
                         }}/>
                     )
                 })

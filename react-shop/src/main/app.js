@@ -24,7 +24,8 @@ class App extends Component{
             mask:false,
             imgurl:'imgs/pc0.jpg',
             islog:false,
-            cart:0
+            cart:0, // 购物车 总价
+            pros:0 // 品类 数量，几种商品
         };
     }
     // 弹出 遮罩层，图片放大
@@ -54,17 +55,21 @@ class App extends Component{
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
         let user = ck ? ck.split("=")[1]:null;
         let carts =JSON.parse(localStorage.getItem(user));
+        let count = 0;
         let num = 0;
         if(carts){
             carts.forEach(e=>{
-                num += Number(e.sum) * Number(e.pri);
+                num += Number(e.sum);
+                count += Number(e.sum) * Number(e.pri);
             })
         }
-        this.addcart1(num);
+        this.addcart1(num,count);
     }
-    addcart1 = (num)=>{
+    addcart1 = (num,count)=>{
+        console.log(num,count)
         this.setState({
-            cart:num
+            cart:count,
+            pros:num
         })
     }
     clearCart = ()=>{
@@ -72,7 +77,8 @@ class App extends Component{
         let user = ck ? ck.split("=")[1]:null;
         localStorage.removeItem(user);
         this.setState({
-            cart:0
+            cart:0,
+            pros:0
         })
     }
 
@@ -81,7 +87,7 @@ class App extends Component{
     }
 
     render(){
-        let {mask,imgurl,islog,cart} = this.state;
+        let {mask,imgurl,islog,cart,pros} = this.state;
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
         let user = ck ? ck.split("=")[1]:null;
         
@@ -111,7 +117,7 @@ class App extends Component{
                         <div>
                             <Link to="/cart">
                                 <h3>
-                                    <div className="total">RMB：<span className="t-count">{cart?cart:0}</span></div>
+                                    <div className="total">RMB：<span className="t-count">{cart?cart:0}|{pros?pros:0}</span></div>
                                     <img alt="cart" src={require("./imgs/cart.png")}/>
                                 </h3>
                             </Link>
@@ -165,7 +171,7 @@ class App extends Component{
                     else if(props.match.url === '/reg')  
                         return <Reg initCart={this.initCart}  togfn={this.togmask} addcart1={this.addcart1}/>
                     else if(props.match.url === '/cart')
-                        return <Cart />
+                        return <Cart initCart = {this.initCart}/>
                     else if(props.match.url === '/detail')  
                         return <Detail oid={props.location.search.substring(1).split("=")[1]} addcart1={this.addcart1}/>
                     else 

@@ -17,9 +17,9 @@ class Home extends Component{
         togfn(id);
     }
     // 传过来的方法：计算购物车 总价格
-    addcart2=(num)=>{
+    addcart2=(num,count)=>{
         let {addcart1} = this.props;
-        addcart1(num)
+        addcart1(num,count)
     }
     loop=()=>{
         let {timer} = this.state;

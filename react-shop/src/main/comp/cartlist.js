@@ -21,6 +21,21 @@ class CartList extends Component{
         })
         return arr;
     }
+    rmItem =(num)=>{
+        let {initCart} = this.props;
+        let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
+        let user = ck ? ck.split("=")[1]:null;
+        let carts =JSON.parse(localStorage.getItem(user));
+        if(carts){
+            carts.forEach((e,i)=>{
+                if(e.id === num){
+                    carts.splice(i,1);
+                }
+            })
+            localStorage.setItem(user,JSON.stringify(carts));
+            initCart();
+        }
+    }
     render(){
         let {id,sum,pri} = this.props;
         id = Number(id);// 防止取出的值为字符串
@@ -43,7 +58,9 @@ class CartList extends Component{
                     <li className="cart-num">
                         RMB：{pri*sum}
                     </li>
-                    <li className="cart-num" ><span className="del">删除</span></li>
+                    <li className="cart-num" ><span className="del"
+                        onClick = {this.rmItem.bind(this,id)}
+                    >删除</span></li>
                 </ul>
             )
         }
