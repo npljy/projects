@@ -39,7 +39,8 @@ class Home extends Component{
             }
             num = num%4;
             dotlis.forEach((e,i)=>{
-                i === num ? e.style.background = "red" : e.style.background = "greenyellow";
+                i === num ? e.style.background = "#f67777" : e.style.background = "#fff";
+                i === num ? e.style.color = "#fff" : e.style.color = "#f67777";
             })
             num++;
         },3000)
@@ -79,7 +80,7 @@ class Home extends Component{
                 }}/>
             )
         })
-        list.length = 8; // 限制首页数量
+        list.length = 12; // 限制首页数量
         return (
                 <div className="replace">
                     {/* banner ↓ */}
@@ -87,18 +88,16 @@ class Home extends Component{
                         <h1>
                             <span>Fashion & Beauty</span>
                             <div className="rw-words rw-words-1">
-                                <span>傲 娇 的 品 牌 傲 娇 的 品 牌</span>
-                                <span>呆 萌 的 价 格 呆 萌 的 价 格</span>
-                                <span>全 球 精 选 全 球 精 选</span>
-                                <span>正 品 特 卖 正 品 特 卖</span>
-                                <span>限 时 抢 购 限 时 抢 购</span>
+                                <span>时尚的设计</span>
+                                <span>精致的裁缝工艺</span>
+                                <span>静心挑选的面料</span>
+                                <span>实力保障</span>
                             </div>
                             <div className="rw-words rw-words-2">
-                                <span>我 们 郑 重 声 明 我 们 郑 重 声 明</span>
-                                <span>本 站 所 有 商 品 本 站 所 有 商 品</span>
-                                <span>官 方 渠 道 进 货 官 方 渠 道 进 货</span>
-                                <span>百 分 百 正 品 百 分 百 正 品</span>
-                                <span>请 放 心 购 买 请 放 心 购 买</span>
+                                <span>尽显时尚，优雅，气质</span>
+                                <span>让您的曲线得到更加优美的展现</span>
+                                <span>让您的身心得到更加舒适的享受</span>
+                                <span>中国乃至全球的优秀品牌</span>
                             </div>
                         </h1>
                     </div>
@@ -179,7 +178,7 @@ class Home extends Component{
                             <div className="cont-mid">
                                 <div className="container">
                                     <h2>流行款式</h2>
-                                    <label></label>
+                                    <div className="hrlab"><label></label></div>
                                     <div className="box">
                                         <ul>
                                             {/* 解构 list ↓ */}

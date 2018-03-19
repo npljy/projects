@@ -142,7 +142,6 @@ class Reg extends Component{
                 email:email,
                 pwd:pwd1
             })
-            console.log(users)
             window.confirm("注册成功，是否立即登录",
                 this.setState({
                     success:true

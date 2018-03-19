@@ -83,6 +83,7 @@ class App extends Component{
 
     componentDidMount(){
         this.initCart();
+        document.documentElement.scrollTop = "0px";
     }
 
     render(){

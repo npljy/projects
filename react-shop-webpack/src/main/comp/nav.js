@@ -49,7 +49,7 @@ class Nav extends Component {
                             to="/contact"
                     >联系我们</NavLink></li>
                 </ul>
-                <a className="search"
+                {/* <a className="search"
                     onMouseOut = {this.hide}
                     onMouseOver = {this.show}
                 >更多项目
@@ -66,7 +66,7 @@ class Nav extends Component {
                             <li><a href="/reactyunpan" target="_blank">react云盘</a></li>
                         </ul>
                     </div>
-                </a>
+                </a> */}
             </div>
         )
     }
