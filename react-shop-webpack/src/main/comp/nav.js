@@ -21,7 +21,7 @@ class Nav extends Component {
         })
     }
     render(){
-        let {more} = this.state;
+        // let {more} = this.state;
         return (
             <div className = "head-btm-l clearfix">
                 <ul>

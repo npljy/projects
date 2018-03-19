@@ -654,9 +654,7 @@ label{
 	float: left;
 	width: 75%;
 }
-.cont-mid{
-	padding-top: 5em;
-}
+
 .de-top {
 	float: left;
 	margin: 0 15px;
@@ -1039,7 +1037,7 @@ label{
 #tips{
 	position: fixed;
 	top: -3em;
-	left: 40%;
+	left: 43%;
 	height: 2em;
 	line-height: 2em;
 	color:#fff;
