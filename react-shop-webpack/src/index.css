@@ -1032,3 +1032,16 @@ label{
 	color: rgb(182, 88, 88);
 }
 
+#tips{
+	position: fixed;
+	top: -3em;
+	left: 40%;
+	height: 2em;
+	line-height: 2em;
+	color:#fff;
+	transition: .5s;
+	background: #f67777;
+	z-index: 1000;
+	width: 255px;
+	text-align: center;
+}

@@ -22,6 +22,13 @@ class List extends Component{
         let {id,sale,addcart2} = this.props; // 传过来的 商品 id
         
         if(user){
+            this.refs.tips.style.top = 0;
+            let _this = this;
+            setTimeout(function(){
+                _this.refs.tips.style.transition = "none";
+                _this.refs.tips.style.top = "-3em";
+                _this.refs.tips.style.transition = ".5s";
+            },1000)
             // 添加到 用户的购物车数据中,并将用户和物品信息存入storage
             let st = localStorage.getItem(user);
             st = JSON.parse(st);
@@ -63,6 +70,7 @@ class List extends Component{
         
         return (
             <li>
+                <div id="tips" ref="tips">成功添加到购物车</div>
                 <div>
                     <div className="pro-img">
                         <img alt="" src={require(`../${img}`)}/>

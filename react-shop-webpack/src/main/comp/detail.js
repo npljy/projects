@@ -75,6 +75,15 @@ class Detail extends Component{
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
         let user = ck ? ck.split("=")[1].replace(/((^"*)|("*$))|((^\s*)|(\s*$))/g,""):null;
         if(user){
+            
+            this.refs.tips.style.top = 0;
+            let _this = this;
+            setTimeout(function(){
+                _this.refs.tips.style.transition = "none";
+                _this.refs.tips.style.top = "-3em";
+                _this.refs.tips.style.transition = ".5s";
+            },1000)
+
             let {cont} = this.state;
             let {oid,addcart1} = this.props;
             oid = Number(oid);//如果不转换为数字，则存入localstorage中的id值为字符串
@@ -131,6 +140,7 @@ class Detail extends Component{
             
             return(
                 <div className="replace">
+                    <div id="tips" ref="tips">成功添加到购物车</div>
                     <div className="l-banner">
                         <div className="container">
                             <h2>商品详情</h2>
