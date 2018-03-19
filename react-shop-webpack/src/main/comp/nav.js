@@ -1,13 +1,27 @@
 import React ,{Component} from 'react'
-import {Link,NavLink} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 class Nav extends Component {
     constructor(props){
         super(props);
-        this.state={}
+        this.state={
+            more:false
+        }
     }
-   
+
+    hide = (ev)=>{
+        ev.stopPropagation ? ev.stopPropagation() : ev.cancelBubble = true;
+        this.setState({
+            more:false
+        })
+    }
+    show = ()=>{
+        this.setState({
+            more:true
+        })
+    }
     render(){
+        let {more} = this.state;
         return (
             <div className = "head-btm-l clearfix">
                 <ul>
@@ -35,15 +49,29 @@ class Nav extends Component {
                             to="/contact"
                     >联系我们</NavLink></li>
                 </ul>
-                <Link 
-                    className="search"
-                    to="search"    
-                >分类</Link>
-
+                <a className="search"
+                    onMouseOut = {this.hide}
+                    onMouseOver = {this.show}
+                >更多项目
+                    <div className="clearfix"
+                        style={{display:more?'block':'none'}}
+                        onMouseOut = {this.hide}
+                        onMouseOver = {this.show}
+                    >
+                        <ul>
+                            <li><a href="/jianli" target="_blank">我的简历</a></li>
+                            <li><a href="https://github.com/niepengsmile" target="_blank">我的github</a></li>
+                            <li><a href="/kugou" target="_blank">JS播放器</a></li>
+                            <li><a href="/yunpan" target="_blank">JS云盘</a></li>
+                            <li><a href="/reactyunpan" target="_blank">react云盘</a></li>
+                        </ul>
+                    </div>
+                </a>
             </div>
         )
     }
 }
+
 export default Nav
 
 

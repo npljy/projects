@@ -198,14 +198,40 @@ img{
 .search{
 	cursor: pointer;
 	display: inline-block;
-	overflow: hidden;
+	font-weight: bolder;
+	font-size: 1.2em;
+	color: red;
 	width: 96px;
-	height: 58px;
+	height: 62px;
 	line-height: 66px;
-	padding-left: 60px;
-	background: url(./main/imgs/search.jpg) no-repeat left center ;
 	background-size: 68px 68px ;
 	margin-left: 12px;
+	position: relative;
+}
+.search div{
+	position: absolute;
+	display: block;
+	z-index: 1000;
+	background: #fff;
+	top: 61px;
+	left: -12px;
+	border: 1px solid #f67777;
+
+}
+.search div ul{
+	margin-left: 0;
+	height: auto;
+}
+.search div li{
+	float: none;
+	text-align: left;
+	text-indent: .5em;
+}
+.search li a{
+	padding: 0;
+	margin: 0;
+	float: left;
+	height: auto;
 }
 .sj{
 	display: inline-block;

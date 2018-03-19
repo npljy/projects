@@ -23,7 +23,7 @@ const wp = {
     output:{
         filename:'[name].js',
         path:path.resolve(__dirname,'build'),
-        publicPath:'/'
+        publicPath:'./'
     },
     module:{
         rules:[

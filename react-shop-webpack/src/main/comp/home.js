@@ -47,9 +47,11 @@ class Home extends Component{
             timer
         }) 
     }
+    // 组件加载完,开启 轮播图 定时器
     componentDidMount(){
         this.loop();
     }
+    // 路由切换前,停掉定时器,不然报错
     componentWillUnmount(){
         let {timer} = this.state;
         clearInterval(timer);
