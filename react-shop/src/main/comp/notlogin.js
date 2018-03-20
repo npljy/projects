@@ -11,6 +11,8 @@ class NotLogin extends Component{
             <ul>
                 <li><Link to="/login">登 录</Link></li>
                 <li><Link to="/reg">注 册</Link></li>
+                <li><Link to="/forget">忘记密码</Link></li>
+                <li><Link to="/cart">我的订单</Link></li>
             </ul>
         )
     }

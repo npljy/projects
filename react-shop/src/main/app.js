@@ -14,7 +14,7 @@ import Foot from './comp/foot'
 import IsLogin from './comp/islogin'
 import NotLogin from './comp/notlogin'
 import Cart from './comp/cart'
-
+import Forget from './comp/forget'
 
 class App extends Component{
     constructor(props){
@@ -172,6 +172,8 @@ class App extends Component{
                     }  
                     else if(props.match.url === '/reg')  
                         return <Reg initCart={this.initCart}  togfn={this.togmask} addcart1={this.addcart1}/>
+                    else if(props.match.url === '/forget')  
+                        return <Forget />
                     else if(props.match.url === '/cart')
                         return <Cart initCart = {this.initCart}/>
                     else if(props.match.url === '/detail')  

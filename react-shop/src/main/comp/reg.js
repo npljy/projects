@@ -165,7 +165,7 @@ class Reg extends Component{
         }else{
         
             return(
-                <div className="replace">
+                <div className="replace login">
                     <div className="l-banner">
                         <div className="container">
                             <h2>用户登录</h2>
