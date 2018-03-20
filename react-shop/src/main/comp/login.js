@@ -48,7 +48,9 @@ class Login extends Component{
             // 如果是在注册页面跳转到登录页，登录成功后跳转到主页
             if(from && from === "reg"){
                 this.setState({
-                    success:true
+                    success:true,
+                    userval:'',
+                    pwdval:''
                 })
             }
             // 登录成功 跳转到之前的页面
@@ -78,7 +80,7 @@ class Login extends Component{
         }else{
         
             return(
-                <div className="replace">
+                <div className="replace login">
                     <div className="l-banner">
                         <div className="container">
                             <h2>用户登录</h2>

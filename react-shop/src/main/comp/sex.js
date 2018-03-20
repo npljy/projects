@@ -1,11 +1,14 @@
 // 分类页面，根据路由分别加载不同的种类商品
 
 import React , {Component} from "react"
+import {Link} from 'react-router-dom'
 import data from "../data/data"
+import users from '../data/user'
 import List from "./list"
+
 class Sex extends Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state={
             cont:data,
             list:[],
@@ -13,7 +16,11 @@ class Sex extends Component{
             styarr:[],
             tmp:[],
             onoff:false,
-            hc:false
+            hc:false,
+            userval:'',
+            pwdval:'',
+            wrong:false,
+            tolog:false
         }
     }
     // 图片放大
@@ -264,8 +271,64 @@ class Sex extends Component{
         addcart1(num,count)
     }
 
-    render(){
-        let {cont,list,onoff,hc} = this.state;
+    // 登录
+    username=(ev)=>{
+        this.setState({
+            userval:ev.target.value
+        })
+    }
+    password=(ev)=>{
+        this.setState({
+            pwdval:ev.target.value
+        })
+    }
+    login = ()=>{
+        let {userval,pwdval} = this.state;
+        let {initCart} = this.props;
+        let onoff = false; //false代表默认没登陆
+        users.forEach(e=>{
+            if(e.user === userval){//如果用户名正确
+                if(e.pwd === pwdval){//如果密码正确
+                    onoff = true;//true代登录成功
+                    return;
+                }
+            }
+        })
+        // 如果登录验证成功
+        if(onoff){
+            // 登录成功，写入cookie
+            let t = new Date();
+            t.setDate(t.getDate()+1);
+            document.cookie = 'u='+userval+';expires='+t;
+            initCart(); // 初始化购物车
+            
+            this.setState({
+                userval:'',
+                pwdval:'',
+                wrong:false,
+                tolog:false
+            })
+        }
+        else{
+            this.setState({
+                wrong:true
+            })
+        }
+    }
+    tologin=()=>{
+        this.setState({
+            tolog:true
+        })
+    }
+    closeLogin = ()=>{
+        this.setState({
+            tolog:false
+        })
+    }
+
+    render(){ 
+        
+        let {cont,list,onoff,hc,userval,pwdval,wrong,tolog} = this.state;
         let {sex} = this.props;
         let str = '';
    
@@ -294,6 +357,7 @@ class Sex extends Component{
             let flts = Array.from(document.getElementById('filter').getElementsByTagName('input'));
             flts.forEach(e=>e.checked=false)
         }
+        list.length > 12 && (list.length = 12);
         let divlist = list.map((e,i)=>{
             return (
                 <List {...{
@@ -308,13 +372,42 @@ class Sex extends Component{
                     count : e.count,
                     send : e.send,
                     togS : this.togmaskS,
-                    addcart2:this.addcart2
+                    addcart2:this.addcart2,
+                    tologin:this.tologin
+                    
                 }}/>
             )
         })
 
         return(
-            <div className="replace">
+
+            <div className="replace login">
+                <div id="tologin" className="tologin" ref="tologin" 
+                    style={{display:tolog?"block":"none"}}
+                ></div>
+                <div className="logindiv" style={{display:tolog?"block":"none"}}>
+                    <div className="close"
+                        onClick ={this.closeLogin}
+                    >X</div>
+                    <ul>
+                        <li><input placeholder="请输入用户名"
+                            value = {userval}
+                            onChange = {this.username}
+                        /></li>
+                        <li><input placeholder="请输入密码"
+                            value = {pwdval}
+                            onChange = {this.password}
+                        /></li>
+                    </ul>
+                    <div className="sure">
+                        <span
+                            onClick = {this.login}
+                        >登 录</span>
+                        <strong className="wrong" ref="wrong" style={{display:wrong?"inline-block":"none"}}>帐号或密码错误</strong>
+                        <Link to="/forget">忘记密码</Link>
+                        <Link to="/reg">免费注册</Link>
+                    </div>
+                </div>
                 <div className="l-banner">
                     <div className="container">
                         <h2>更多商品</h2>

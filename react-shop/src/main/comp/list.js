@@ -16,6 +16,11 @@ class List extends Component{
         togH && togH(id);
     }
 
+    toTop =()=>{
+        document.documentElement.scrollTop = "0";
+        document.body.scrollTop = "0";
+    }
+
     addcart=()=>{
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
         let user = ck ? ck.split("=")[1].replace(/((^"*)|("*$))|((^\s*)|(\s*$))/g,""):null;
@@ -61,7 +66,8 @@ class List extends Component{
             })
             addcart2(num,count);
         }else{
-            alert("您还没有登录")
+            let {tologin} = this.props;
+            tologin();
         }
     }
 
@@ -78,14 +84,16 @@ class List extends Component{
                             <a
                                 onClick = {this.zoom.bind(this,id)}
                             ><img  alt="" src={require("../imgs/zoom.png")}/></a>
-                            <Link to={`/detail?id=${id}`} ><img  alt="" src={require("../imgs/detail.png")}/></Link>
+                            <Link to={`/detail?id=${id}`} 
+                                onClick = {this.toTop} 
+                            ><img  alt="" src={require("../imgs/detail.png")}/></Link>
                         </div>
                     </div>
                     <div className="pro-txt">
                         <div className="txt-top clearfix">
                             <div className="sex-style">
                                 <span>{sex}</span>
-                                <h6><Link to={`/detail?id=${id}`} >{title}/{type}</Link></h6>
+                                <h6><Link to={`/detail?id=${id}`}>{title}/{type}</Link></h6>
                             </div>
                             <div className="pro-add">
                                 <a

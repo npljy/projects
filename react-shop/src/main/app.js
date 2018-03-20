@@ -84,6 +84,7 @@ class App extends Component{
     componentDidMount(){
         this.initCart();
         document.documentElement.scrollTop = "0px";
+        document.body.scrollTop = "0px";
     }
 
     render(){
@@ -160,7 +161,7 @@ class App extends Component{
                 {/* banner 在 Home 中 */}
                 {/* 路由 填充部分 ↓ */}
                 <Route path="/" exact render={(props)=>{
-                    return <Home togfn={this.togmask} addcart1={this.addcart1}/>
+                    return <Home initCart={this.initCart} togfn={this.togmask} addcart1={this.addcart1}/>
                 }}/>
                 <Route path="/:name" render={(props)=>{
                     if(props.match.url === '/contact') 
@@ -174,9 +175,16 @@ class App extends Component{
                     else if(props.match.url === '/cart')
                         return <Cart initCart = {this.initCart}/>
                     else if(props.match.url === '/detail')  
-                        return <Detail oid={props.location.search.substring(1).split("=")[1]} addcart1={this.addcart1}/>
+                        return <Detail 
+                                    oid={props.location.search.substring(1).split("=")[1]} 
+                                    addcart1={this.addcart1} 
+                                    initCart = {this.initCart}/>
                     else 
-                        return <Sex  sex={props.match.url.substring(1)} togfn={this.togmask} addcart1={this.addcart1}/>
+                        return <Sex 
+                                    initCart={this.initCart} 
+                                    sex={props.match.url.substring(1)} 
+                                    togfn={this.togmask} 
+                                    addcart1={this.addcart1}/>
                 }}/>
                 
                 {/* 路由 填充部分 ↑ */}

@@ -1,7 +1,6 @@
 import React , {Component} from 'react'
 import CartList from './cartlist'
-import LoginErr from './loginerr'
-
+import Login from './login'
 class Cart extends Component{
     constructor(){
         super();
@@ -76,7 +75,7 @@ class Cart extends Component{
             )
 
         }else{
-            return <LoginErr />
+            return <Login />
         }
     }
 }

@@ -1,5 +1,7 @@
 import React , {Component} from "react"
+import {Link} from 'react-router-dom'
 import data from "../data/data"
+import users from '../data/user'
 import Error from './error'
 
 class Detail extends Component{
@@ -10,12 +12,17 @@ class Detail extends Component{
             addnum:1,
             one:true,
             two:false,
-            three:false
+            three:false,
+            userval:'',
+            pwdval:'',
+            wrong:false,
+            tolog:false
         }
     }
 
     togimg=(url)=>{
-        this.refs.bigimg.src = require(`../${url}`);
+        this.refs.bigimg1.src = require(`../${url}`);
+        this.refs.bigimg2.src = require(`../${url}`);
     }
     min = ()=>{
         let {addnum} = this.state;
@@ -126,11 +133,85 @@ class Detail extends Component{
             addcart1(num,count);
         }
         else{
-            alert("您还没有登录")
+            this.setState({
+                tolog:true
+            })
         }
     }
+
+    move = (ev)=>{
+        this.refs.mask.style.display = "block";
+        let ls = (ev.pageX-this.refs.gettop.offsetLeft-16)/ev.target.offsetWidth;
+        let ts = (ev.pageY-this.refs.gettop.offsetTop-193)/ev.target.offsetHeight;
+        let maskWidth = this.refs.maskdiv.offsetWidth;
+        let maskHeight = this.refs.maskdiv.offsetHeight;
+        this.refs.maskdiv.style.left = -(maskWidth-432) * ls + "px";
+        this.refs.maskdiv.style.top = -(maskHeight-500) * ts + "px";
+    }
+    out=()=>{
+        this.refs.mask.style.display = "none";
+    }
+
+    // 登录
+
+    // 登录
+    username=(ev)=>{
+        this.setState({
+            userval:ev.target.value
+        })
+    }
+    password=(ev)=>{
+        this.setState({
+            pwdval:ev.target.value
+        })
+    }
+    login = ()=>{
+        let {userval,pwdval} = this.state;
+        let {initCart} = this.props;
+        let onoff = false; //false代表默认没登陆
+        users.forEach(e=>{
+            if(e.user === userval){//如果用户名正确
+                if(e.pwd === pwdval){//如果密码正确
+                    onoff = true;//true代登录成功
+                    return;
+                }
+            }
+        })
+        // 如果登录验证成功
+        if(onoff){
+            // 登录成功，写入cookie
+            let t = new Date();
+            t.setDate(t.getDate()+1);
+            document.cookie = 'u='+userval+';expires='+t;
+            initCart(); // 初始化购物车
+ 
+            this.setState({
+                userval:'',
+                pwdval:'',
+                wrong:false,
+                tolog:false
+            })
+        }
+        else{
+            this.setState({
+                wrong:true
+            })
+        }
+    }
+    tologin=()=>{
+        this.setState({
+            tolog:true
+        })
+    }
+    closeLogin = ()=>{
+        this.setState({
+            tolog:false
+        })
+    }
+
     render(){
-        let {cont,addnum,one,two,three} = this.state;
+        console.log(this.props)
+        let {cont,addnum,one,two,three,tolog,userval,pwdval,wrong} = this.state;
         let {oid} = this.props;
         let pro = cont.find(e=>e.id===Number(oid));
         if(!oid) {
@@ -139,7 +220,33 @@ class Detail extends Component{
         else{
             
             return(
-                <div className="replace">
+                <div className="replace login">
+                    <div id="tologin" className="tologin" ref="tologin" 
+                        style={{display:tolog?"block":"none"}}
+                    ></div>
+                    <div className="logindiv" style={{display:tolog?"block":"none"}}>
+                        <div className="close"
+                            onClick ={this.closeLogin}
+                        >X</div>
+                        <ul>
+                            <li><input placeholder="请输入用户名"
+                                value = {userval}
+                                onChange = {this.username}
+                            /></li>
+                            <li><input placeholder="请输入密码"
+                                value = {pwdval}
+                                onChange = {this.password}
+                            /></li>
+                        </ul>
+                        <div className="sure">
+                            <span
+                                onClick = {this.login}
+                            >登 录</span>
+                            <strong className="wrong" ref="wrong" style={{display:wrong?"inline-block":"none"}}>帐号或密码错误</strong>
+                            <Link to="/forget">忘记密码</Link>
+                            <Link to="/reg">免费注册</Link>
+                        </div>
+                    </div>
                     <div id="tips" ref="tips">成功添加到购物车</div>
                     <div className="l-banner">
                         <div className="container">
@@ -151,10 +258,20 @@ class Detail extends Component{
                     <div className="w-mid cont-mid">
                         <div className="container clearfix">
                             <div className="w-mid-l clearfix">
-                                <div className="de-top">
+                                <div className="de-top" ref="gettop">
                                     <div className="de-t-l">
                                         <div className="img-big">
-                                            <img alt="" ref="bigimg"  src={require(`../${pro.preview[0]}`)}/>
+                                            <img alt="" 
+                                                ref="bigimg1"  
+                                                src={require(`../${pro.preview[0]}`)}
+                                                onMouseMove = {this.move}
+                                                onMouseOut = {this.out}
+                                            />
+                                        </div>
+                                        <div id="mask" ref="mask">
+                                            <div ref="maskdiv">
+                                                <img alt="" ref="bigimg2" src={require(`../${pro.preview[0]}`)}/>
+                                            </div>
                                         </div>
                                         <div className="img-small clearfix">
                                             <ul>

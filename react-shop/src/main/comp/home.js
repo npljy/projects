@@ -1,6 +1,7 @@
 import React , {Component} from "react"
 import {Link} from 'react-router-dom'
 import data from "../data/data"
+import users from '../data/user'
 import List from "./list"
 
 class Home extends Component{
@@ -8,7 +9,11 @@ class Home extends Component{
         super(props)
         this.state={
             cont:data,
-            timer:null
+            timer:null,
+            userval:'',
+            pwdval:'',
+            wrong:false,
+            tolog:false
         }
     }
      // 传过来的方法：弹出 遮罩层，图片放大
@@ -61,8 +66,67 @@ class Home extends Component{
         }) 
         this.loop = null;
     }
+    toTop =()=>{
+        document.documentElement.scrollTop = "0";
+        document.body.scrollTop = "0";
+    }
+// 登录
+    username=(ev)=>{
+        this.setState({
+            userval:ev.target.value
+        })
+    }
+    password=(ev)=>{
+        this.setState({
+            pwdval:ev.target.value
+        })
+    }
+    login = ()=>{
+        let {userval,pwdval} = this.state;
+        let {initCart} = this.props;
+        let onoff = false; //false代表默认没登陆
+        users.forEach(e=>{
+            if(e.user === userval){//如果用户名正确
+                if(e.pwd === pwdval){//如果密码正确
+                    onoff = true;//true代登录成功
+                    return;
+                }
+            }
+        })
+        // 如果登录验证成功
+        if(onoff){
+            // 登录成功，写入cookie
+            let t = new Date();
+            t.setDate(t.getDate()+1);
+            document.cookie = 'u='+userval+';expires='+t;
+            initCart(); // 初始化购物车
+            
+            this.setState({
+                userval:'',
+                pwdval:'',
+                wrong:false,
+                tolog:false
+            })
+        }
+        else{
+            this.setState({
+                wrong:true
+            })
+        }
+    }
+    tologin=()=>{
+        this.setState({
+            tolog:true
+        })
+    }
+    closeLogin = ()=>{
+        this.setState({
+            tolog:false
+        })
+    }
+
     render(){      
-        let {cont} = this.state;
+        let {cont,tolog,userval,pwdval,wrong} = this.state;
         let list = cont.map((e,i)=>{
             return (
                 <List {...{
@@ -76,13 +140,40 @@ class Home extends Component{
                     count : e.count,
                     send : e.send,
                     togH:this.togmaskH,
-                    addcart2:this.addcart2
+                    addcart2:this.addcart2,
+                    tologin:this.tologin
                 }}/>
             )
         })
         list.length = 12; // 限制首页数量
         return (
                 <div className="replace">
+                    <div id="tologin" className="tologin" ref="tologin" 
+                        style={{display:tolog?"block":"none"}}
+                    ></div>
+                    <div className="logindiv" style={{display:tolog?"block":"none"}}>
+                        <div className="close"
+                            onClick ={this.closeLogin}
+                        >X</div>
+                        <ul>
+                            <li><input placeholder="请输入用户名"
+                                value = {userval}
+                                onChange = {this.username}
+                            /></li>
+                            <li><input placeholder="请输入密码"
+                                value = {pwdval}
+                                onChange = {this.password}
+                            /></li>
+                        </ul>
+                        <div className="sure">
+                            <span
+                                onClick = {this.login}
+                            >登 录</span>
+                            <strong className="wrong" ref="wrong" style={{display:wrong?"inline-block":"none"}}>帐号或密码错误</strong>
+                            <Link to="/forget">忘记密码</Link>
+                            <Link to="/reg">免费注册</Link>
+                        </div>
+                    </div>
                     {/* banner ↓ */}
                     <div className = "container bannerfix" >
                         <h1>
@@ -125,7 +216,9 @@ class Home extends Component{
                                 <div className = "cont-t-lt">
                                     <div className="top">
                                         <div className="top-img">
-                                            <Link to="/detail?id=1" >
+                                            <Link to="/detail?id=1" 
+                                                onClick = {this.toTop}
+                                            >
                                                 <img src={require("../imgs/pi.jpg")} alt=""/>
                                                 <div className="top-fly">
                                                     <p className="b-animate">商品详情</p>
@@ -137,14 +230,18 @@ class Home extends Component{
                                     </div>
                                     <div className="btm">
                                         <span>热卖款式</span>
-                                        <h2><Link  to="/detail?id=1">Luxurious & Trendy</Link></h2>
+                                        <h2><Link  to="/detail?id=1" 
+                                            onClick = {this.toTop}
+                                        >Luxurious & Trendy</Link></h2>
                                         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-                                        <Link  to="/detail" className="buy">购 买(错误示例，没有传参)</Link>
+                                        <Link  to="/detail" className="buy"
+                                            onClick = {this.toTop}
+                                        >购 买(错误示例，没有传参)</Link>
                                     </div>
                                 </div>
                                 <div className = "cont-t-rt">
                                     <div className="rt-col">
-                                        <Link to="/detail?id=2" >
+                                        <Link to="/detail?id=2" onClick = {this.toTop}>
                                             <img alt="" src={require("../imgs/pi1.jpg")}/>
                                             <div>
                                                 <p>商品详情</p>
@@ -154,7 +251,7 @@ class Home extends Component{
                                         </Link>
                                     </div>
                                     <div className="rt-col">
-                                        <Link to="/detail?id=4" >
+                                        <Link to="/detail?id=4" onClick = {this.toTop}>
                                             <img alt="" src={require("../imgs/pi2.jpg")}/>
                                             <div>
                                                 <p>商品详情</p>
@@ -164,7 +261,7 @@ class Home extends Component{
                                         </Link>
                                     </div>
                                     <div className="rt-col">
-                                        <Link to="/detail?id=3" >
+                                        <Link to="/detail?id=3" onClick = {this.toTop}>
                                             <img alt="" src={require("../imgs/pi3.jpg")}/>
                                             <div>
                                                 <p>商品详情</p>
