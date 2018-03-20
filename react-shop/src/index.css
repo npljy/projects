@@ -615,10 +615,13 @@ label{
 	display: none;
 }
 .mask div{
-	margin: 10% auto 0;
-	width: 426px;
-	height: 590px;	
+	margin: 5% auto 0;
+	width: 600px;
+	height: auto;	
 	position: relative;
+}
+.mask img{
+	width: 100%;
 }
 .mask .close,.logindiv .close{
 	height: 30px;
