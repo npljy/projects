@@ -175,39 +175,40 @@ class Home extends Component{
                         </div>
                     </div>
                     {/* banner ↓ */}
-                    <div className = "container bannerfix" >
-                        <h1>
-                            <span>Fashion & Beauty</span>
-                            <div className="rw-words rw-words-1">
-                                <span>时尚的设计</span>
-                                <span>精致的裁缝工艺</span>
-                                <span>静心挑选的面料</span>
-                                <span>实力保障</span>
-                            </div>
-                            <div className="rw-words rw-words-2">
-                                <span>尽显时尚，优雅，气质</span>
-                                <span>让您的曲线得到更加优美的展现</span>
-                                <span>让您的身心得到更加舒适的享受</span>
-                                <span>中国乃至全球的优秀品牌</span>
-                            </div>
-                        </h1>
-                    </div>
-                    <div className="banner-dot">
-                        <ul ref="uldot">
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
+                    <div className = "banners">
+                        <div className = "container bannerfix" >
+                            <h1>
+                                <span>Fashion & Beauty</span>
+                                <div className="rw-words rw-words-1">
+                                    <span>时尚的设计</span>
+                                    <span>精致的裁缝工艺</span>
+                                    <span>静心挑选的面料</span>
+                                    <span>实力保障</span>
+                                </div>
+                                <div className="rw-words rw-words-2">
+                                    <span>尽显时尚，优雅，气质</span>
+                                    <span>让您的曲线得到更加优美的展现</span>
+                                    <span>让您的身心得到更加舒适的享受</span>
+                                    <span>中国乃至全球的优秀品牌</span>
+                                </div>
+                            </h1>
+                        </div>
+                        <div className="banner-dot">
+                            <ul ref="uldot">
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                            </ul>
+                        </div>
+                        <ul ref="ul">
+                            <li className = "banner banner1"></li>
+                            <li className = "banner banner2"></li>
+                            <li className = "banner banner3"></li>
+                            <li className = "banner banner4"></li>
+                            <li className = "banner banner1"></li>
                         </ul>
                     </div>
-                    <ul ref="ul">
-                        <li className = "banner banner1"></li>
-                        <li className = "banner banner2"></li>
-                        <li className = "banner banner3"></li>
-                        <li className = "banner banner4"></li>
-                        <li className = "banner banner1"></li>
-                    </ul>
-
                     {/* banner ↑ */}
                     {/* content ↓ */}
                     <div className = "content">

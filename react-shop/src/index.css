@@ -301,6 +301,10 @@ img{
 .container ul{
 	width: 100%;
 }
+.banners{
+	width: 100%;
+	overflow: hidden;
+}
 .banner{
 	width: 20%;
 	height: 700px;
