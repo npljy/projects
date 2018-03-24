@@ -1,11 +1,46 @@
 import React , {Component} from 'react'
 import CartList from './cartlist'
-import LoginErr from './loginerr'
-
+import Login from './login'
 class Cart extends Component{
-
+    constructor(){
+        super();
+        this.state = {}
+    }
+    initCart1 = ()=>{
+        let {initCart} = this.props;
+        initCart();
+    }
     render(){
-     
+        // 获取cookie中的 u=* 
+        let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
+        // 获取 = 号后面的值，去除两端的空格 和 引号（此处的引号也属于字符串的一部分，所以去掉）
+        let user = ck ? ck.split("=")[1].replace(/((^"*)|("*$))|((^\s*)|(\s*$))/g,""):null;
+        let cartlist;
+        let num = 0;
+        // 如果获取到用户
+        if(user){
+            // 获取此用户的存在localstorage中的购物车信息
+            let carts =JSON.parse(localStorage.getItem(user));
+            // 如果有商品
+            if(carts){
+                // 循环获取到购物车中的商品总价格
+                carts.forEach(e=>{
+                    num += Number(e.sum) * Number(e.pri);
+                })
+                // 循环购物车组件
+                cartlist = carts.map((e,i)=>{
+                    return (
+                        <CartList {...{
+                            key:i,
+                            id:e.id,
+                            sum:e.sum,
+                            pri:e.pri,
+                            initCart : this.initCart1
+                        }}/>
+                    )
+                })
+            }
+
             return (
                 <div className="replace">
                     <div className="l-banner">
@@ -28,17 +63,20 @@ class Cart extends Component{
                             </div>
                             <div className="cart-list clearfix">
                                 {/* 解构出 购物车列表 ↓ */}
-                                
+                                {cartlist}
                                 {/* 购物车列表 ↑ */}
                             </div>
                             <div className="checkout">
-                                <span></span><span>总价格  RMB：5456</span><a>结 算</a>
+                                <span></span><span>总价格  RMB：{num}</span><a>结 算</a>
                             </div>
                         </div>
                     </div>
                 </div>
             )
 
+        }else{
+            return <Login />
+        }
     }
 }
 

@@ -357,7 +357,6 @@ class Sex extends Component{
             let flts = Array.from(document.getElementById('filter').getElementsByTagName('input'));
             flts.forEach(e=>e.checked=false)
         }
-        list.length > 12 && (list.length = 12);
         let divlist = list.map((e,i)=>{
             return (
                 <List {...{
@@ -378,6 +377,8 @@ class Sex extends Component{
                 }}/>
             )
         })
+
+        divlist.length > 12 && (divlist.length = 12);
 
         return(
 

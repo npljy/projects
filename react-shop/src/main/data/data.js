@@ -26,7 +26,7 @@ let data = [
         price : 100,
         sale : 82,
         count : 95,
-        send : 64,
+        send : 49,
         hot:true
     },
     {
@@ -41,7 +41,7 @@ let data = [
         price : 100,
         sale : 92,
         count : 234,
-        send : 66,
+        send : 88,
         hot:false
     },
     {
@@ -56,7 +56,7 @@ let data = [
         price : 100,
         sale : 90,
         count : 856,
-        send : 66,
+        send : 62,
         hot:true
     },
     {
@@ -71,8 +71,8 @@ let data = [
         price : 100,
         sale : 82,
         count : 123,
-        send : 66,
-        hot:false
+        send : 13,
+        hot:true
     },
     {
         id : 6,
@@ -86,7 +86,7 @@ let data = [
         price : 100,
         sale : 85,
         count : 892,
-        send : 66,
+        send : 68,
         hot:false
     },
     {
@@ -101,7 +101,7 @@ let data = [
         price : 100,
         sale : 78,
         count : 742,
-        send : 66,
+        send : 19,
         hot:false
     },
     {
@@ -116,7 +116,7 @@ let data = [
         price : 100,
         sale : 72,
         count : 241,
-        send : 66,
+        send : 59,
         hot:false
     },
     {
@@ -131,7 +131,7 @@ let data = [
         price : 100,
         sale : 55,
         count : 555,
-        send : 66,
+        send : 27,
         hot:false
     },
     {
@@ -146,7 +146,7 @@ let data = [
         price : 88,
         sale : 69,
         count : 536,
-        send : 66,
+        send : 26,
         hot:false
     },
     {
@@ -159,9 +159,9 @@ let data = [
         abs:"棉针织宽松女长袖衬衫",
         desc:"玖姿新品时尚条纹棉针织宽松韩范衬衫女长袖打底衬衣",
         price : 100,
-        sale : 66,
+        sale : 37,
         count : 521,
-        send : 66,
+        send : 16,
         hot:false
     },
     {
@@ -177,7 +177,7 @@ let data = [
         sale : 91,
         count : 9,
         send : 6,
-        hot:true
+        hot:false
     },
     {
         id : 13,
@@ -192,7 +192,7 @@ let data = [
         sale : 82,
         count : 95,
         send : 64,
-        hot:true
+        hot:false
     },
     {
         id : 14,
@@ -206,7 +206,7 @@ let data = [
         price : 100,
         sale : 92,
         count : 234,
-        send : 66,
+        send : 58,
         hot:false
     },
     {
@@ -221,22 +221,22 @@ let data = [
         price : 100,
         sale : 90,
         count : 856,
-        send : 66,
-        hot:true
+        send : 36,
+        hot:false
     },
     {
         id : 16,
         sex : "man",
         title:"休闲方领男士T恤",
         type:"coat",
-        img : "imgs/pc4.jpg",
-        preview:["imgs/pc41.jpg","imgs/pc42.jpg","imgs/pc43.jpg"],
+        img : "imgs/pc110.jpg",
+        preview:["imgs/pc111.jpg","imgs/pc112.jpg","imgs/pc113.jpg"],
         abs:"2018夏季新款简约休闲方领纯色POLO衫男士T恤",
         desc:"2018夏季新款简约休闲方领纯色POLO衫男士T恤,时尚的设计，尽显时尚，优雅，气质，精致的裁缝工艺，让您的曲线得到更加优美的展现，静心挑选的面料，让您的身心得到更加舒适的享受",
         price : 100,
         sale : 82,
         count : 123,
-        send : 66,
+        send : 34,
         hot:false
     },
     {
@@ -251,8 +251,8 @@ let data = [
         price : 100,
         sale : 85,
         count : 892,
-        send : 66,
-        hot:false
+        send : 33,
+        hot:true
     },
     {
         id : 18,
@@ -266,8 +266,8 @@ let data = [
         price : 100,
         sale : 78,
         count : 742,
-        send : 66,
-        hot:false
+        send : 40,
+        hot:true
     },
     {
         id : 19,
@@ -281,8 +281,8 @@ let data = [
         price : 100,
         sale : 72,
         count : 241,
-        send : 66,
-        hot:false
+        send : 23,
+        hot:true
     },
     {
         id : 20,
@@ -296,7 +296,7 @@ let data = [
         price : 100,
         sale : 55,
         count : 555,
-        send : 66,
+        send : 61,
         hot:false
     },
     {
@@ -311,7 +311,7 @@ let data = [
         price : 88,
         sale : 69,
         count : 536,
-        send : 66,
+        send : 21,
         hot:false
     },
     {
@@ -326,7 +326,7 @@ let data = [
         price : 100,
         sale : 66,
         count : 521,
-        send : 66,
+        send : 60,
         hot:false
     },{
         id : 23,
@@ -340,8 +340,8 @@ let data = [
         price : 88,
         sale : 69,
         count : 536,
-        send : 66,
-        hot:false
+        send : 55,
+        hot:true
     },
     {
         id : 24,
@@ -353,10 +353,25 @@ let data = [
         abs:"棉针织宽松女长袖衬衫",
         desc:"玖姿新品时尚条纹棉针织宽松韩范衬衫女长袖打底衬衣",
         price : 100,
-        sale : 66,
+        sale : 41,
         count : 521,
-        send : 66,
+        send : 6,
         hot:false
+    },
+    {
+        id : 25,
+        sex : "man",
+        title:"休闲方领男士T恤",
+        type:"coat",
+        img : "imgs/pc110.jpg",
+        preview:["imgs/pc111.jpg","imgs/pc112.jpg","imgs/pc113.jpg"],
+        abs:"2018夏季新款简约休闲方领纯色POLO衫男士T恤",
+        desc:"2018夏季新款简约休闲方领纯色POLO衫男士T恤,时尚的设计，尽显时尚，优雅，气质，精致的裁缝工艺，让您的曲线得到更加优美的展现，静心挑选的面料，让您的身心得到更加舒适的享受",
+        price : 99,
+        sale : 85,
+        count : 53,
+        send : 15,
+        hot:true
     }
     
 

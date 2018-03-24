@@ -55,7 +55,11 @@ class Login extends Component{
             }
             // 登录成功 跳转到之前的页面
             else{
-               window.history.back(-1);
+                this.setState({
+                    success:true,
+                    userval:'',
+                    pwdval:''
+                })
             }
         }
         else{

@@ -1,6 +1,9 @@
 import React ,{Component} from "react"
 class Ad extends Component{
-
+    constructor(props){
+        super();
+        this.state = {}
+    }
     render(){
         return (
             <div className="ad-left">

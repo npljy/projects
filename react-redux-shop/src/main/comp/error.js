@@ -1,7 +1,10 @@
 import React , {Component} from 'react'
 
 class Error extends Component {
-
+    constructor(){
+        super();
+        this.state = {};
+    }
     render(){
         return (
             <div>

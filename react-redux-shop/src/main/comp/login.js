@@ -1,10 +1,88 @@
 import React , {Component} from "react"
 import {Link} from 'react-router-dom'
+import { connect } from "react-redux";
 import users from '../data/user'
 import Home from './home'
 
-class Login extends Component{
-
+class LoginR extends Component{
+    constructor(props){
+        super(props)
+        this.state={
+            userval:'',
+            pwdval:'',
+            success:false
+        }
+    }
+    changeUser = (ev)=>{
+        let val = ev.target.value;
+        this.setState({
+            userval:val
+        })
+    }
+    changePwd = (ev)=>{
+        let val = ev.target.value;
+        this.setState({
+            pwdval:val
+        })
+    }
+    login = ()=>{
+        let {userval,pwdval} = this.state;
+        let {initCart,from,dispatch} = this.props;
+        let onoff = false; //false代表默认没登陆
+        users.forEach(e=>{
+            if(e.user === userval){//如果用户名正确
+                if(e.pwd === pwdval){//如果密码正确
+                    onoff = true;//true代登录成功
+                    return;
+                }
+            }
+        })
+        // 如果登录验证成功
+        if(onoff){
+            dispatch({type:'NEW_PATH'})
+            this.refs.userTip.style.color = this.refs.pwdTip.style.color = "#999";
+            // 登录成功，写入cookie
+            let t = new Date();
+            t.setDate(t.getDate()+1);
+            document.cookie = 'u='+userval+';expires='+t;
+            initCart(); // 初始化购物车
+            
+            // 如果是在注册页面跳转到登录页，登录成功后跳转到主页
+            if(from && from === "reg"){
+                this.setState({
+                    success:true,
+                    userval:'',
+                    pwdval:''
+                })
+            }
+            // 登录成功 跳转到之前的页面
+            else{
+                this.setState({
+                    success:true,
+                    userval:'',
+                    pwdval:''
+                })
+            }
+        }
+        else{
+            this.refs.userTip.value = this.refs.pwdTip.value = "用户名或密码错误";
+            this.refs.userTip.style.color = this.refs.pwdTip.style.color = "red";
+        }
+    }
+    // 跳转回主页时，传的方法
+    togfn1 = ()=>{
+        let {togfn} = this.props;
+        togfn();
+    }
+    // 跳转回主页时，传的方法
+    addcart2 = ()=>{
+        let {addcart1} = this.props;
+        addcart1();
+    }
+    newPath = ()=>{
+        let { dispatch } = this.props;
+        dispatch({ type: "NEW_PATH" });
+    }
     render(){
         let {userval,pwdval,success} = this.state;
         if(success){
@@ -12,7 +90,7 @@ class Login extends Component{
         }else{
         
             return(
-                <div className="replace">
+                <div className="replace login">
                     <div className="l-banner">
                         <div className="container">
                             <h2>用户登录</h2>
@@ -40,8 +118,8 @@ class Login extends Component{
                                         <span
                                             onClick = {this.login}
                                         >登 录</span>
-                                        <Link to="/forget">忘记密码？</Link>
-                                        <Link to="/reg">还没有账号？立即免费注册</Link>
+                                        <Link to="/forget" onClick={this.newPath} >忘记密码？</Link>
+                                        <Link to="/reg" onClick={this.newPath} >还没有账号？立即免费注册</Link>
                                     </div>
                                 </div>
                                 <div className="login-form login-info">
@@ -62,5 +140,5 @@ class Login extends Component{
         }
     }
 }
-
+const Login = connect(state=>state)(LoginR)
 export default Login;

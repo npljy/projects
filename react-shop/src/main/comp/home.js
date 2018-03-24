@@ -127,6 +127,9 @@ class Home extends Component{
 
     render(){      
         let {cont,tolog,userval,pwdval,wrong} = this.state;
+        cont = cont.sort(function(a,b){
+            return Number(b.send)-Number(a.send);
+        })
         let list = cont.map((e,i)=>{
             return (
                 <List {...{
@@ -134,6 +137,7 @@ class Home extends Component{
                     id : e.id,
                     sex : e.sex,
                     title : e.title,
+                    type:e.type,
                     price : e.price,
                     sale : e.sale,
                     img : e.img,
@@ -145,6 +149,7 @@ class Home extends Component{
                 }}/>
             )
         })
+        
         list.length = 12; // 限制首页数量
         return (
                 <div className="replace">

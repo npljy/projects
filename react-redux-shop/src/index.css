@@ -23,6 +23,7 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
+
 h1,h2,h3,h4,h5,h6,em,i {
     font-weight: 100;
     font-style: normal
@@ -38,6 +39,18 @@ a {
 a:hover {
     text-decoration: none
 }　
+/* 清除浮动 */
+.clearfix{
+	zoom:1
+}
+.clearfix::after{
+	content: ".";
+	height: 0;
+	width: 100%;
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
 /* CSS 样式重置 ↑ */
 body {
 	margin: 0;
@@ -279,7 +292,6 @@ img{
 .replace{
 	position: relative;
 	width: 100%;
-	overflow: hidden;
 }
 .replace ul{
 	position: relative;
@@ -289,6 +301,10 @@ img{
 }
 .container ul{
 	width: 100%;
+}
+.banners{
+	width: 100%;
+	overflow: hidden;
 }
 .banner{
 	width: 20%;
@@ -510,7 +526,7 @@ label{
 	padding-top: 2em;
 }
 .cont-mid li{
-	padding: 15px;
+	padding: 5px;
 	transition: .5s;
 }
 
@@ -604,12 +620,15 @@ label{
 	display: none;
 }
 .mask div{
-	margin: 10% auto 0;
-	width: 426px;
-	height: 590px;	
+	margin: 5% auto 0;
+	width: 600px;
+	height: auto;	
 	position: relative;
 }
-.mask .close{
+.mask img{
+	width: 100%;
+}
+.mask .close,.logindiv .close{
 	height: 30px;
 	width: 30px;
 	line-height: 30px;
@@ -624,18 +643,7 @@ label{
 	cursor: pointer;
 }
 
-/* 清除浮动 */
-.clearfix{
-  zoom:1
-}
-.clearfix::after{
-  content: ".";
-  height: 0;
-  width: 100%;
-  display: block;
-  visibility: hidden;
-  clear: both;
-}
+
 /* 列表页面 ↓ */
 .l-banner{
 	text-align: center;
@@ -659,12 +667,32 @@ label{
 	float: left;
 	margin: 0 15px;
 	width: 120%;
-
 }
 .de-t-l{
 	float: left;
 	width: 40%;
 	padding: 0 15px;
+	position: relative;
+}
+#mask{
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 100%;
+	height: 500px;
+	width: 100%;
+	z-index: 999;
+	overflow: hidden;
+	border: 1px solid #f67777;
+	display: none;
+}
+#mask div{
+	width: 1000px !important;
+	height: auto;
+	position: absolute;
+}
+#mask img{
+	width: 100%;
 }
 /* .de-btm{
 	float: right;
@@ -674,9 +702,13 @@ label{
 	border: 1px solid #d1cfcf;
 	height: 500px;
 	overflow: hidden;
+	position: relative;
+	cursor: move;
+	text-align: center;
 }
+
 .img-big img{
-	height: 500px;
+	width: 100%;
 }
 .img-small{
 	margin: 5px;
@@ -696,6 +728,7 @@ label{
 .img-small img{
 	opacity: .7;
 	transition: 1s ease;
+	height: 100%;
 }
 .img-small img:hover{
 	opacity: 1;
@@ -838,6 +871,9 @@ label{
     font-size: 0.9em;
     line-height: 2em;
     padding: 0 0 1em;
+}
+.login .w-mid{
+	padding-top: 5em;
 }
 .login-form{
 	float: left;
@@ -1010,6 +1046,14 @@ label{
 	text-align: center !important;
 	cursor: pointer;
 }
+.cart-num span{
+	margin-top: 26px;
+}
+.cart-num .del {
+	padding: 0.5em 1em;
+	background: #f67777;
+	color: #fff;
+}
 .checkout span{
 	width: 40%;
 	float: left;
@@ -1072,6 +1116,7 @@ label{
 		padding-bottom: 2em;
 	}
 }
+
 @media screen and (min-width: 768px) and (max-width: 991px){
 	.cont-t-lt, .cont-t-rt{
 		float: none;
@@ -1082,7 +1127,7 @@ label{
 		padding-bottom: 2em;
 	}
 	.banner-dot{
-		top: 11%;
+		top: 10.5%;
 		left: 42%;
 	}
 	.bannerfix {
@@ -1122,6 +1167,12 @@ label{
 	
 
 }
+@media screen and (min-width: 768px) and (max-width: 795px){
+	.banner-dot{
+		top: 7.5%;
+		left: 42%;
+	}
+}
 @media screen and (min-width: 992px) and (max-width: 1199px){
 	.container {
 		width: 970px;
@@ -1149,11 +1200,69 @@ label{
 		margin: 0 auto;
 	}
 	.banner-dot{
-		top: 35%;
+		top: 19%;
 		left: 45%;
 	}
 	.bannerfix {
 		top: 8%;
 		left: 20%;
 	}
+}
+
+#tologin{
+	position: fixed;
+	z-index: 888;
+	width: 100%;
+	height: 100%;
+	opacity: .3;
+	background: #000;
+	left: 0;
+	top: 0;
+}
+
+.logindiv{
+	position: fixed;
+	width: 30%;
+	background: #fff;
+	left: 33%;
+	top: 25%;
+	z-index: 999;
+	border-radius: 10px;
+}
+.logindiv ul{
+	width: 90%;
+	margin: 5% 5% 0;
+}
+.logindiv li{
+	padding: 0.5em 1em;
+    margin-bottom: 2em;
+	border: 1px solid #E9E9E9;
+	width: 100%;
+}
+.logindiv input {
+	border: none;
+	outline: none;
+	font-size: 0.9em;
+    color: #999;
+	width: 95%;
+}
+.logindiv .sure{
+	margin: 0 10% 5%;
+}
+.logindiv span{
+	background-color: #F67777;
+    color: #fff;
+    padding: 0.5em 1em;
+    font-size: 1em;
+	cursor: pointer;
+}
+.sure a{
+	display: inline-block;
+	padding: .5em 1em;
+	cursor: pointer;
+	margin-left: 1em;
+}
+.wrong{
+	color: red;
+	display: none;
 }

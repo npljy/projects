@@ -72,8 +72,20 @@ class App extends Component{
         })
     }
     clearCart = ()=>{
+        let {cont} = this.state;
         let ck = document.cookie.split("; ").find(e=>/^u=/.test(e));
         let user = ck ? ck.split("=")[1]:null;
+        let carts =JSON.parse(localStorage.getItem(user));
+        // 清空购物车，库存随之改变
+        if(carts){
+            carts.forEach(e=>{
+                cont.forEach(el=>{
+                    if(el.id === Number(e.id)){
+                        el.send -= Number(e.sum);
+                    }
+                })
+            })
+        }
         localStorage.removeItem(user);
         this.setState({
             cart:0,
@@ -203,9 +215,7 @@ class App extends Component{
                 {/* list遮罩 ↑ */}
                 
                 {/* footer ↓ */}
-                
                 <Foot />
-                
                 {/* footer ↑ */}
             </div>
         )
