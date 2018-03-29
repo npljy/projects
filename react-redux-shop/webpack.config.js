@@ -18,6 +18,7 @@ const wp = {
     mode: 'development' ,
 
     entry:{
+        // entry 是个对象，可以写多个文件，即 多入口
         index:'./src/index.js'
     },
     output:{
