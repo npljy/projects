@@ -35,7 +35,7 @@ class ListR extends Component{
             this.refs.tips.style.top = 0;
             let _this = this;
             let rest;
-            if(_this.refs.tips){
+            if(_this.refs.tips && _this.refs.tips.style){
                 _this.refs.tips.innerText = "成功添加到购物车";
                 setTimeout(function(){
                     _this.refs.tips.style.transition = 'none';

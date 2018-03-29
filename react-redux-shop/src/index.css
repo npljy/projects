@@ -1266,3 +1266,20 @@ label{
 	color: red;
 	display: none;
 }
+.contact input{
+	border: none;
+	outline: none;
+	background: #fff;
+	color: #000;
+	font-size: 20px;
+}
+.contact div{
+	border: none;
+	outline: none;
+}
+.contact p{
+	font-size: 1.2em;
+	line-height: 2em;
+	text-indent: 2em;
+	color: #999;
+}
