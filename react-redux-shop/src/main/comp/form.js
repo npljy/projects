@@ -18,22 +18,22 @@ class Contact extends Component{
                             <div className="login clearfix">
                                 <div className="login-form contact">
                                     <div className="login-user reg-user">
-                                        <input placeholder="联系地址"
+                                        <input placeholder="联系地址" disabled
                                             value="联系地址：北京市海淀区西三旗育新花园"
                                         />
                                     </div>
                                     <div className="login-phone reg-phone">
-                                        <input placeholder="联系电话"
+                                        <input placeholder="联系电话" disabled
                                             value="联系电话：176-0038-0719"
                                         />
                                     </div>
                                     <div className="login-email reg-email">
-                                        <input placeholder="联系邮件"
+                                        <input placeholder="联系邮件" disabled
                                             value="联系邮件：niepeng521@126.com"
                                         />
                                     </div>
                                     <div className="login-pwd reg-pwd">
-                                        <input type="text" placeholder="工作时间"
+                                        <input type="text" placeholder="工作时间" disabled
                                             value="工作时间：工作日 9:00 - 18:00"
                                         />
                                     </div>                                    
