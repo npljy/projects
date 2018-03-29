@@ -74,7 +74,7 @@ class CartListR extends Component{
     newPath = ()=>{
         let {dispatch} = this.props;
         dispatch({type:'NEW_PATH'});
-        dispatch({ type: "ADD_CART" });
+        dispatch({ type: "ADD_CART" }); //向 store 发送购物车状态
         document.documentElement.scrollTop = "0";
         document.body.scrollTop = "0";  
     }

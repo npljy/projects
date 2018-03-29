@@ -269,9 +269,9 @@ class DetailR extends Component{
     render(){
         
         let {cont,addnum,one,two,three,tolog,userval,pwdval,wrong} = this.state;
-        let {oid,cartreducer,addreducer:{add}} = this.props;
-
+        let {oid,cartreducer,addreducer:{add}} = this.props; //获取store中的addreducer中的add
         let pro = cont.find(e=>e.id===Number(oid));
+        // 如果add为真，则说明从购物车跳过来的，则详情页中物品数量改为购物车中的数量
         if(add){
             cartreducer.forEach(e=>{
                 if(e.id === Number(oid))addnum = e.sum;
@@ -281,7 +281,6 @@ class DetailR extends Component{
             return <Error />
         }
         else{
-            
             return(
                 <div className="replace login">
                     <div id="tologin" className="tologin" ref="tologin" 
